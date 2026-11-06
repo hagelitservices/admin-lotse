@@ -1,0 +1,288 @@
+{
+  "erweiterung_name": {
+    "message": "Admin Pilot for Microsoft 365"
+  },
+  "erweiterung_kurzname": {
+    "message": "Admin Pilot"
+  },
+  "erweiterung_beschreibung": {
+    "message": "Explains settings in the Microsoft 365 admin center, Entra, Intune and Exchange, with recommendations and what differs from them."
+  },
+  "erweiterung_titel": {
+    "message": "Open Admin Pilot"
+  },
+  "seitenleiste_leer": {
+    "message": "There is no explanation for this page yet."
+  },
+  "ausserhalb_hinweis": {
+    "message": "Open one of them, and the pilot explains the settings on that page."
+  },
+  "optionen_titel": {
+    "message": "Admin Pilot – Settings"
+  },
+  "portal_m365": {
+    "message": "Microsoft 365 admin center"
+  },
+  "portal_entra": {
+    "message": "Microsoft Entra admin center"
+  },
+  "portal_intune": {
+    "message": "Microsoft Intune admin center"
+  },
+  "portal_exo": {
+    "message": "Exchange admin center"
+  },
+  "ausserhalb_titel": {
+    "message": "The pilot works in these four portals"
+  },
+  "leer_vorschlag": {
+    "message": "Worth a look in this portal:"
+  },
+  "kein_portal": {
+    "message": "This tab is not one of the four admin portals."
+  },
+  "erst_titel": {
+    "message": "How the pilot works"
+  },
+  "erst_was": {
+    "message": "The pilot explains the setting you are looking at and tells you what we recommend."
+  },
+  "erst_zusagen": {
+    "message": "It changes nothing and sends nothing. Everything stays in your browser."
+  },
+  "erst_keine_pruefung": {
+    "message": "Not an audit, an explanation: it only reads what the page shows. The decision is yours."
+  },
+  "knopf_verstanden": {
+    "message": "Got it"
+  },
+  "lese_text": {
+    "message": "Reading the page …"
+  },
+  "band_titel": {
+    "message": "On this page"
+  },
+  "status_passt": {
+    "message": "Matches"
+  },
+  "status_weicht_ab": {
+    "message": "Differs"
+  },
+  "status_nicht_lesbar": {
+    "message": "Not readable"
+  },
+  "status_bewusst": {
+    "message": "Intentional"
+  },
+  "zeile_angezeigt": {
+    "message": "Shown: $1"
+  },
+  "zeile_empfohlen": {
+    "message": "Recommended: $1"
+  },
+  "wert_ja": {
+    "message": "Yes"
+  },
+  "wert_nein": {
+    "message": "No"
+  },
+  "wert_domain_eine": {
+    "message": "1 domain"
+  },
+  "wert_domains": {
+    "message": "$1 domains"
+  },
+  "spanne_zwischen": {
+    "message": "$1 to $2"
+  },
+  "spanne_hoechstens": {
+    "message": "at most $1"
+  },
+  "spanne_mindestens": {
+    "message": "at least $1"
+  },
+  "wort_oder": {
+    "message": "or"
+  },
+  "grund_zeitgrenze": {
+    "message": "The page did not show the value."
+  },
+  "grund_mehrdeutig": {
+    "message": "The setting appears more than once on the page. To avoid mixing them up, I do not rate it."
+  },
+  "grund_unbekannt": {
+    "message": "I do not know the value shown, so I do not rate it."
+  },
+  "grund_aufbau": {
+    "message": "The page looks different than expected. The explanation still applies, but I do not read the value."
+  },
+  "grund_sprache": {
+    "message": "I only read values when the portal language is German or English."
+  },
+  "knopf_erneut": {
+    "message": "Read again"
+  },
+  "neuladen_titel": {
+    "message": "Please reload the page once."
+  },
+  "neuladen_text": {
+    "message": "The page was already open when the pilot was added. After a reload it reads the values."
+  },
+  "knopf_neuladen": {
+    "message": "Reload page"
+  },
+  "karte_was": {
+    "message": "What it does"
+  },
+  "karte_empfehlung": {
+    "message": "Our recommendation"
+  },
+  "karte_bleibt": {
+    "message": "If it stays this way"
+  },
+  "karte_vorher": {
+    "message": "Before you change it"
+  },
+  "karte_domains": {
+    "message": "Domains on this page"
+  },
+  "karte_sogehts": {
+    "message": "How to do it"
+  },
+  "karte_lizenz": {
+    "message": "License"
+  },
+  "karte_vergleich": {
+    "message": "Hamburg comparison"
+  },
+  "karte_quelle": {
+    "message": "Source"
+  },
+  "karte_quellen": {
+    "message": "Sources"
+  },
+  "karte_geprueft": {
+    "message": "Content checked on $1"
+  },
+  "lizenz_entra_p1": {
+    "message": "Requires Microsoft Entra ID P1 (included in Microsoft 365 Business Premium)."
+  },
+  "lizenz_m365_business_standard": {
+    "message": "Included from Microsoft 365 Business Standard."
+  },
+  "knopf_einstellungen": {
+    "message": "Settings"
+  },
+  "fuss_frage": {
+    "message": "Questions about your Microsoft 365?"
+  },
+  "fuss_hilft": {
+    "message": "hagel IT can help."
+  },
+  "zusage_kurz": {
+    "message": "Changes nothing. Sends nothing."
+  },
+  "fuss_version": {
+    "message": "Version $1"
+  },
+  "ansage_lese": {
+    "message": "Reading the page"
+  },
+  "ansage_weicht_eine": {
+    "message": "1 setting differs"
+  },
+  "ansage_weicht": {
+    "message": "$1 settings differ"
+  },
+  "ansage_nicht_lesbar": {
+    "message": "$1 not readable"
+  },
+  "ansage_passt": {
+    "message": "$1 as recommended"
+  },
+  "optionen_zusagen_titel": {
+    "message": "What the pilot does"
+  },
+  "optionen_daten": {
+    "message": "Values it reads stay in your browser and are gone once you close the tab. The only thing stored is that you have read the introduction."
+  },
+  "sprache": {
+    "message": "en",
+    "description": "Sprache dieser Übersetzung; bestimmt die Sprache der Inhaltstexte (gleiche Wahl wie getMessage)."
+  },
+  "band_firma": {
+    "message": "Set up by your IT"
+  },
+  "band_firma_text": {
+    "message": "Your organisation sets some of this guide’s settings."
+  },
+  "bewusst_firma": {
+    "message": "Decided by your IT: $1"
+  },
+  "bewusst_nutzer": {
+    "message": "Hidden by you"
+  },
+  "knopf_ausblenden": {
+    "message": "Hide this notice"
+  },
+  "ausblenden_hilfe": {
+    "message": "Is this deliberate for you? Then it no longer counts as a deviation. Undo here or in the settings."
+  },
+  "knopf_wieder": {
+    "message": "Show again"
+  },
+  "fuss_hilft_name": {
+    "message": "$1 can help."
+  },
+  "werte_aus_firma": {
+    "message": "Your IT has switched off reading values. You see the explanations only."
+  },
+  "optionen_ausgeblendet_titel": {
+    "message": "Hidden notices"
+  },
+  "optionen_ausgeblendet_leer": {
+    "message": "You have not hidden any notice."
+  },
+  "optionen_firma_bewusst": {
+    "message": "Your IT has marked these deviations as deliberate:"
+  },
+  "optionen_werte_aus": {
+    "message": "Reading values: switched off by your IT."
+  },
+  "zugriff_titel": {
+    "message": "The guide may not read this page"
+  },
+  "zugriff_text": {
+    "message": "Site access for $1 is restricted. Without it the guide cannot recognise the page or explain anything."
+  },
+  "zugriff_weg": {
+    "message": "Allow access with the button. Or right-click the guide’s icon, “Can read and change site data”, then “On $1”."
+  },
+  "zugriff_zusage": {
+    "message": "Even with access, the guide changes nothing and sends nothing."
+  },
+  "zugriff_fehlt_titel": {
+    "message": "Site access is missing for these portals"
+  },
+  "knopf_erlauben": {
+    "message": "Allow access to $1"
+  },
+  "zugriff_abgelehnt": {
+    "message": "Not allowed. You can try again at any time."
+  },
+  "start_titel": {
+    "message": "How to open the Admin Pilot"
+  },
+  "start_schritt_1": {
+    "message": "Click the puzzle icon (Extensions) at the top right, next to the address bar."
+  },
+  "start_schritt_2": {
+    "message": "Pin the Admin Pilot: in Chrome with the pin, in Edge with the eye (“Show in toolbar”). The icon then stays visible."
+  },
+  "start_schritt_3": {
+    "message": "Open a Microsoft 365 admin center and click the icon. The panel opens to the right of the page."
+  },
+  "start_zahl": {
+    "message": "A red number on the icon shows how many settings on the page differ from our recommendation."
+  }
+}

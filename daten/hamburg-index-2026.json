@@ -1,0 +1,292 @@
+{
+  "jahr": 2026,
+  "veroeffentlicht": "2026-10-01",
+  "erhoben_von": "2026-10-01",
+  "erhoben_bis": "2026-10-01",
+  "stichprobe_quelle": "Wikidata (CC0): Objekte mit Sitz in Hamburg und offizieller Website",
+  "mindestgruppe": 25,
+  "gesamt": {
+    "gemessen": 812,
+    "mit_mailempfang": 749,
+    "erreichbar": 732,
+    "spf": {
+      "vorhanden": 699,
+      "vorhanden_prozent": 93.3,
+      "streng": 406,
+      "streng_prozent": 54.2
+    },
+    "dmarc": {
+      "vorhanden": 535,
+      "vorhanden_prozent": 71.4,
+      "wirksam": 303,
+      "wirksam_prozent": 40.5,
+      "richtlinien": {
+        "quarantine": 129,
+        "none": 232,
+        "reject": 174
+      }
+    },
+    "mta_sts": {
+      "vorhanden": 26,
+      "prozent": 3.5
+    },
+    "tls_rpt": {
+      "vorhanden": 33,
+      "prozent": 4.4
+    },
+    "dnssec": {
+      "vorhanden": 40,
+      "prozent": 4.9
+    },
+    "tls": {
+      "tls13": 673,
+      "tls13_prozent": 91.9,
+      "veraltet": 0,
+      "veraltet_prozent": 0.0,
+      "kette_unvollstaendig": 74,
+      "kette_unvollstaendig_prozent": 10.1,
+      "zertifikat_laeuft_bald_ab": 2,
+      "zertifikat_laeuft_bald_ab_prozent": 0.3
+    },
+    "hsts": {
+      "vorhanden": 324,
+      "prozent": 44.3
+    },
+    "kopfzeilen": {
+      "csp": {
+        "vorhanden": 176,
+        "prozent": 24.0
+      },
+      "x_frame_options": {
+        "vorhanden": 253,
+        "prozent": 34.6
+      },
+      "x_content_type_options": {
+        "vorhanden": 338,
+        "prozent": 46.2
+      },
+      "referrer_policy": {
+        "vorhanden": 167,
+        "prozent": 22.8
+      },
+      "alle_vier": {
+        "vorhanden": 73,
+        "prozent": 10.0
+      }
+    }
+  },
+  "nach_groessenklasse": {
+    "unbekannt": {
+      "gemessen": 728,
+      "mit_mailempfang": 670,
+      "erreichbar": 657,
+      "spf": {
+        "vorhanden": 620,
+        "vorhanden_prozent": 92.5,
+        "streng": 351,
+        "streng_prozent": 52.4
+      },
+      "dmarc": {
+        "vorhanden": 470,
+        "vorhanden_prozent": 70.1,
+        "wirksam": 262,
+        "wirksam_prozent": 39.1,
+        "richtlinien": {
+          "quarantine": 110,
+          "none": 208,
+          "reject": 152
+        }
+      },
+      "mta_sts": {
+        "vorhanden": 23,
+        "prozent": 3.4
+      },
+      "tls_rpt": {
+        "vorhanden": 30,
+        "prozent": 4.5
+      },
+      "dnssec": {
+        "vorhanden": 34,
+        "prozent": 4.7
+      },
+      "tls": {
+        "tls13": 606,
+        "tls13_prozent": 92.2,
+        "veraltet": 0,
+        "veraltet_prozent": 0.0,
+        "kette_unvollstaendig": 71,
+        "kette_unvollstaendig_prozent": 10.8,
+        "zertifikat_laeuft_bald_ab": 2,
+        "zertifikat_laeuft_bald_ab_prozent": 0.3
+      },
+      "hsts": {
+        "vorhanden": 281,
+        "prozent": 42.8
+      },
+      "kopfzeilen": {
+        "csp": {
+          "vorhanden": 144,
+          "prozent": 21.9
+        },
+        "x_frame_options": {
+          "vorhanden": 219,
+          "prozent": 33.3
+        },
+        "x_content_type_options": {
+          "vorhanden": 289,
+          "prozent": 44.0
+        },
+        "referrer_policy": {
+          "vorhanden": 139,
+          "prozent": 21.2
+        },
+        "alle_vier": {
+          "vorhanden": 56,
+          "prozent": 8.5
+        }
+      }
+    },
+    "1.000 und mehr": {
+      "gemessen": 39,
+      "mit_mailempfang": 36,
+      "erreichbar": 35,
+      "spf": {
+        "vorhanden": 36,
+        "vorhanden_prozent": 100.0,
+        "streng": 25,
+        "streng_prozent": 69.4
+      },
+      "dmarc": {
+        "vorhanden": 28,
+        "vorhanden_prozent": 77.8,
+        "wirksam": 18,
+        "wirksam_prozent": 50.0,
+        "richtlinien": {
+          "quarantine": 7,
+          "reject": 11,
+          "none": 10
+        }
+      },
+      "mta_sts": {
+        "vorhanden": 2,
+        "prozent": 5.6
+      },
+      "tls_rpt": {
+        "vorhanden": 2,
+        "prozent": 5.6
+      },
+      "dnssec": {
+        "vorhanden": 4,
+        "prozent": 10.3
+      },
+      "tls": {
+        "tls13": 32,
+        "tls13_prozent": 91.4,
+        "veraltet": 0,
+        "veraltet_prozent": 0.0,
+        "kette_unvollstaendig": 1,
+        "kette_unvollstaendig_prozent": 2.9,
+        "zertifikat_laeuft_bald_ab": 0,
+        "zertifikat_laeuft_bald_ab_prozent": 0.0
+      },
+      "hsts": {
+        "vorhanden": 19,
+        "prozent": 54.3
+      },
+      "kopfzeilen": {
+        "csp": {
+          "vorhanden": 17,
+          "prozent": 48.6
+        },
+        "x_frame_options": {
+          "vorhanden": 13,
+          "prozent": 37.1
+        },
+        "x_content_type_options": {
+          "vorhanden": 23,
+          "prozent": 65.7
+        },
+        "referrer_policy": {
+          "vorhanden": 13,
+          "prozent": 37.1
+        },
+        "alle_vier": {
+          "vorhanden": 9,
+          "prozent": 25.7
+        }
+      }
+    }
+  },
+  "nach_branche": {
+    "ohne Angabe": {
+      "gemessen": 513,
+      "mit_mailempfang": 467,
+      "erreichbar": 452,
+      "spf": {
+        "vorhanden": 428,
+        "vorhanden_prozent": 91.6,
+        "streng": 251,
+        "streng_prozent": 53.7
+      },
+      "dmarc": {
+        "vorhanden": 308,
+        "vorhanden_prozent": 66.0,
+        "wirksam": 173,
+        "wirksam_prozent": 37.0,
+        "richtlinien": {
+          "quarantine": 60,
+          "none": 135,
+          "reject": 113
+        }
+      },
+      "mta_sts": {
+        "vorhanden": 11,
+        "prozent": 2.4
+      },
+      "tls_rpt": {
+        "vorhanden": 18,
+        "prozent": 3.9
+      },
+      "dnssec": {
+        "vorhanden": 22,
+        "prozent": 4.3
+      },
+      "tls": {
+        "tls13": 418,
+        "tls13_prozent": 92.5,
+        "veraltet": 0,
+        "veraltet_prozent": 0.0,
+        "kette_unvollstaendig": 51,
+        "kette_unvollstaendig_prozent": 11.3,
+        "zertifikat_laeuft_bald_ab": 2,
+        "zertifikat_laeuft_bald_ab_prozent": 0.4
+      },
+      "hsts": {
+        "vorhanden": 189,
+        "prozent": 41.8
+      },
+      "kopfzeilen": {
+        "csp": {
+          "vorhanden": 101,
+          "prozent": 22.3
+        },
+        "x_frame_options": {
+          "vorhanden": 152,
+          "prozent": 33.6
+        },
+        "x_content_type_options": {
+          "vorhanden": 199,
+          "prozent": 44.0
+        },
+        "referrer_policy": {
+          "vorhanden": 92,
+          "prozent": 20.4
+        },
+        "alle_vier": {
+          "vorhanden": 40,
+          "prozent": 8.8
+        }
+      }
+    }
+  }
+}

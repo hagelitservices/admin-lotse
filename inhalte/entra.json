@@ -1,0 +1,1385 @@
+[
+  {
+    "id": "entra-app-registrierung",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings",
+    "titelProbe": {
+      "de": [
+        "Benutzer"
+      ],
+      "en": [
+        "Users"
+      ]
+    },
+    "titel": {
+      "de": "Benutzer können Anwendungen registrieren",
+      "en": "Users can register applications"
+    },
+    "wasEsTut": {
+      "de": "Legt fest, ob alle in Ihrer Firma eigene Anwendungen im Microsoft-Konto anlegen dürfen. Wer das tut, wird automatisch Besitzer der Anwendung und bestimmt, welche Rechte sie anfordert.",
+      "en": "Decides whether everyone in your company may create their own applications in the Microsoft account. Whoever does so automatically becomes the owner and decides which permissions the application requests."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Auf „Nein“ stellen.",
+        "en": "Set to “No”."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes Konto kann Anwendungen anlegen, ihnen Namen und angeforderte Rechte geben und sie selbst verwalten, ohne dass Ihre IT sie freigibt. Das gilt auch für ein gestohlenes Konto.",
+        "en": "Any account can create applications, give them a name and requested permissions and manage them itself, without your IT team approving them. That includes a stolen account."
+      },
+      "vorher": {
+        "de": "Wer weiter Anwendungen anlegen muss, etwa Ihre IT, bekommt danach die Rolle „Anwendungsentwickler“.",
+        "en": "Anyone who still needs to create applications, such as your IT team, then gets the “Application Developer” role."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Den Schalter „Benutzer können Anwendungen registrieren“ auf „Nein“ stellen.",
+        "Unten auf „Speichern“ klicken."
+      ],
+      "en": [
+        "Set “Users can register applications” to “No”.",
+        "Select “Save” at the bottom."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/fundamentals/users-default-permissions",
+        "titel": {
+          "de": "Standardberechtigungen für Benutzer",
+          "en": "Default user permissions"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "haekchen",
+      "rolle": "checkbox",
+      "name": {
+        "de": [
+          "Benutzer können Anwendungen registrieren"
+        ],
+        "en": [
+          "Users can register applications"
+        ]
+      },
+      "empfohlen": [
+        "nein"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:10"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-adminportal",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/UserSettings",
+    "titelProbe": {
+      "de": [
+        "Benutzer"
+      ],
+      "en": [
+        "Users"
+      ]
+    },
+    "titel": {
+      "de": "Zugriff auf das Entra Admin Center einschränken",
+      "en": "Restrict access to the Microsoft Entra admin center"
+    },
+    "wasEsTut": {
+      "de": "Legt fest, ob Ihre Leute ohne Admin-Rolle die üblichen Seiten des Entra Admin Centers öffnen können, etwa die Startseite und die Benutzerliste. Microsoft nennt die Einstellung ausdrücklich keine Sicherheitsmaßnahme: Über direkte Links oder Programme kommt man weiter an die Daten.",
+      "en": "Decides whether people without an admin role can open the usual pages of the Microsoft Entra admin center, such as the home page and the user list. Microsoft explicitly says the setting is not a security measure: direct links or programs still reach the data."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Auf „Ja“ stellen, als Hürde, nicht als Schutz.",
+        "en": "Set to “Yes”, as a hurdle, not as protection."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes Konto ohne Admin-Rolle kann sich durch Startseite, Übersicht und Benutzerliste klicken. Vor Angreifern schützt die Einstellung nicht, sie hält nur Neugierige ab.",
+        "en": "Any account without an admin role can browse the home page, the overview and the user list. It does not stop attackers; it only keeps curious users out."
+      },
+      "vorher": {
+        "de": "Wer eine Gruppe besitzt und sie im Admin Center verwaltet, kann das danach nicht mehr. Diesen Leuten eine passende Rolle geben, etwa „Globaler Leser“.",
+        "en": "People who own a group and manage it in the admin center can no longer do so. Give them a suitable role, such as Global Reader."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Den Schalter „Zugriff auf Microsoft Entra Admin Center einschränken“ auf „Ja“ stellen.",
+        "Unten auf „Speichern“ klicken."
+      ],
+      "en": [
+        "Set “Restrict access to Microsoft Entra admin center” to “Yes”.",
+        "Select “Save” at the bottom."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/fundamentals/users-default-permissions",
+        "titel": {
+          "de": "Standardberechtigungen für Benutzer",
+          "en": "Default user permissions"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "haekchen",
+      "rolle": "checkbox",
+      "name": {
+        "de": [
+          "Zugriff auf Microsoft Entra Admin Center einschränken"
+        ],
+        "en": [
+          "Restrict access to Microsoft Entra admin center"
+        ]
+      },
+      "empfohlen": [
+        "ja"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-benutzereinwilligung",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/~/UserSettings",
+    "titelProbe": {
+      "de": [
+        "Einwilligung und Berechtigungen"
+      ],
+      "en": [
+        "Consent and permissions"
+      ]
+    },
+    "titel": {
+      "de": "Benutzereinwilligung für Apps",
+      "en": "User consent for apps"
+    },
+    "wasEsTut": {
+      "de": "Legt fest, ob Ihre Leute einer fremden App selbst erlauben dürfen, auf Firmendaten zuzugreifen, etwa auf ihr Postfach. Ab Werk dürfen alle das für Rechte, die keine Admin-Zustimmung brauchen.",
+      "en": "Decides whether your staff may allow a third-party app to access company data on their own, such as their mailbox. By default, everyone may do so for permissions that don't require admin consent."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Nicht zulassen oder nur verifizierte Herausgeber; Anfragen an Admins einrichten.",
+        "en": "Don't allow, or verified publishers only; set up admin consent requests."
+      },
+      "wennEsSoBleibt": {
+        "de": "Eine App, die sich als harmloses Werkzeug ausgibt, kann eine Mitarbeiterin dazu bringen, ihr mit einem Klick Zugriff zu geben, etwa auf ihr Postfach. Microsoft rät deshalb, das nur für Apps verifizierter Herausgeber zuzulassen.",
+        "en": "An app posing as a harmless tool can get an employee to grant it access with one click, for example to her mailbox. Microsoft therefore advises allowing this only for apps from verified publishers."
+      },
+      "vorher": {
+        "de": "Erst die Einwilligungsanfrage für Admins einschalten und Prüfer benennen. Sonst können Ihre Leute für Apps, die sie brauchen, keine Freigabe anfragen. Bei verifizierten Herausgebern dürfen Ihre Leute nur Berechtigungen zustimmen, die Sie als „geringe Auswirkung“ eingestuft haben. Prüfen Sie, welche das sind.",
+        "en": "First turn on the admin consent workflow and name reviewers. Otherwise your staff can't request approval for apps they need. With verified publishers, your staff can only consent to permissions you have classified as low impact. Check which ones those are."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „Benutzereinwilligung für Anwendungen“ „Benutzereinwilligung nicht zulassen“ oder die Variante für verifizierte Herausgeber wählen und „Speichern“. Die Option „Lassen Sie Microsoft … verwalten“ beschreibt Microsoft Learn noch nicht.",
+        "Links „Einstellungen für die Administratoreinwilligung“ öffnen, die Anfragen einschalten, Prüfer benennen und „Speichern“."
+      ],
+      "en": [
+        "Under “User consent for applications”, choose “Do not allow user consent” or the option for verified publishers, then “Save”. Microsoft Learn doesn't describe the “Let Microsoft manage …” option yet.",
+        "Open “Admin consent settings” on the left, turn on requests, name reviewers, then “Save”."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/enterprise-apps/configure-user-consent",
+        "titel": {
+          "de": "Benutzereinwilligung für Anwendungen konfigurieren",
+          "en": "Configure how users consent to applications"
+        }
+      },
+      {
+        "pfad": "entra/identity/enterprise-apps/configure-admin-consent-workflow",
+        "titel": {
+          "de": "Workflow für die Administratoreinwilligung konfigurieren",
+          "en": "Configure the admin consent workflow"
+        }
+      },
+      {
+        "pfad": "entra/identity/enterprise-apps/configure-permission-classifications",
+        "titel": {
+          "de": "Konfigurieren von Berechtigungsklassifizierungen",
+          "en": "Configure permission classifications"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Benutzereinwilligung für Anwendungen"
+        ],
+        "en": [
+          "User consent for applications"
+        ]
+      },
+      "werte": {
+        "nicht": [
+          "Benutzereinwilligung nicht zulassen",
+          "Do not allow user consent"
+        ],
+        "verifiziert": [
+          "Für ausgewählte Berechtigungen die Benutzereinwilligung für Apps von verifizierten Herausgebern zulassen",
+          "Allow user consent for apps from verified publishers, for selected permissions"
+        ],
+        "alle": [
+          "Benutzereinwilligung für Apps zulassen",
+          "Allow user consent for apps"
+        ]
+      },
+      "empfohlen": [
+        "nicht",
+        "verifiziert"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:10"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-externe-zusammenarbeit",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/AllowlistPolicyBlade",
+    "titelProbe": {
+      "de": [
+        "Einstellungen für externe Zusammenarbeit"
+      ],
+      "en": [
+        "External collaboration settings"
+      ]
+    },
+    "titel": {
+      "de": "Gäste: was sie in Ihrem Verzeichnis sehen",
+      "en": "Guests: what they can see in your directory"
+    },
+    "wasEsTut": {
+      "de": "Gäste sind Konten von außen, etwa von Steuerberatung oder Agentur, die bei Ihnen mitarbeiten, etwa auf SharePoint-Websites. Hier legen Sie fest, wie viel sie von Ihrem Verzeichnis sehen: andere Benutzer, Gruppen und wer in welcher Gruppe ist.",
+      "en": "Guests are outside accounts, such as your tax advisor or agency, who work with you, for example on SharePoint sites. Here you decide how much of your directory they see: other users, groups and who is in which group."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Gäste sehen nur ihr eigenes Profil.",
+        "en": "Guests see only their own profile."
+      },
+      "wennEsSoBleibt": {
+        "de": "In der Standardstufe sehen Gäste, wer in Ihren Gruppen ist, außer in ausgeblendeten. Ein Gast kann damit eine Gruppe über ihren Namen suchen und sehen, wer darin ist, auch wenn er selbst nicht dazugehört.",
+        "en": "At the default level, guests can see who is in your groups, except hidden ones. A guest can thus search for a group by name and see who is in it, even if they don't belong to it."
+      },
+      "vorher": {
+        "de": "Arbeiten Gäste bei Ihnen in Forms, Project Online, Viva Engage oder Planner in SharePoint, kann es dort nach der Umstellung Probleme geben. In Teams, Outlook und SharePoint bleibt für Gäste alles wie gewohnt.",
+        "en": "If guests work with you in Forms, Project Online, Viva Engage or Planner in SharePoint, those may cause problems after the change. In Teams, Outlook and SharePoint nothing changes for guests."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „Zugriffseinschränkungen für Gastbenutzer“ die Option „Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt“ wählen.",
+        "Oben auf „Speichern“ klicken."
+      ],
+      "en": [
+        "Under “Guest user access restrictions”, choose “Guest user access is restricted to properties and memberships of their own directory objects”.",
+        "Select “Save” at the top."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/external-id/external-collaboration-settings-configure",
+        "titel": {
+          "de": "Externe Zusammenarbeit konfigurieren",
+          "en": "Configure external collaboration"
+        }
+      },
+      {
+        "pfad": "entra/fundamentals/users-default-permissions",
+        "titel": {
+          "de": "Standardberechtigungen für Benutzer",
+          "en": "Default user permissions"
+        }
+      },
+      {
+        "pfad": "entra/identity/users/users-restrict-guest-permissions",
+        "titel": {
+          "de": "Gastzugriffsberechtigungen in Microsoft Entra ID einschränken",
+          "en": "Restrict guest access permissions in Microsoft Entra ID"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Zugriffseinschränkungen für Gastbenutzer"
+        ],
+        "en": [
+          "Guest user access restrictions"
+        ]
+      },
+      "werte": {
+        "wie-mitglieder": [
+          "Gastbenutzer haben denselben Zugriff wie Mitglieder (umfassendste Einstellung).",
+          "Guest users have the same access as members (most inclusive)"
+        ],
+        "eingeschraenkt": [
+          "Gastbenutzer haben eingeschränkten Zugriff auf Eigenschaften und Mitgliedschaften von Verzeichnisobjekten.",
+          "Guest users have limited access to properties and memberships of directory objects"
+        ],
+        "nur-eigenes": [
+          "Der Gastbenutzerzugriff ist auf Eigenschaften und Mitgliedschaften eigener Verzeichnisobjekte beschränkt (restriktivste Einstellung).",
+          "Guest user access is restricted to properties and memberships of their own directory objects (most restrictive)"
+        ]
+      },
+      "empfohlen": [
+        "nur-eigenes"
+      ],
+      "gruppeUeberOption": true,
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:5"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-gasteinladungen",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/AllowlistPolicyBlade",
+    "titelProbe": {
+      "de": [
+        "Einstellungen für externe Zusammenarbeit"
+      ],
+      "en": [
+        "External collaboration settings"
+      ]
+    },
+    "titel": {
+      "de": "Gäste: wer sie einladen darf",
+      "en": "Guests: who may invite them"
+    },
+    "wasEsTut": {
+      "de": "Hier legen Sie fest, wer Konten von außen als Gäste einladen darf, etwa für ein gemeinsames Team. „Gasteinladender“ ist eine Rolle, die nur das Einladen erlaubt.",
+      "en": "Here you decide who may invite outside accounts as guests, for example into a shared team. Guest Inviter is a role that only allows inviting."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Einladen dürfen nur Benutzeradministratoren und Gasteinladende.",
+        "en": "Only User Administrators and Guest Inviters may invite."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ab Werk dürfen alle, auch Gäste, weitere Gäste einladen. Dann kann auch ein Gast weitere Fremde in Ihr Verzeichnis holen.",
+        "en": "By default everyone, guests included, may invite more guests. Then even a guest can bring more outsiders into your directory."
+      },
+      "vorher": {
+        "de": "Wer regelmäßig Externe einlädt, etwa die Projektleitung, bekommt vorher die Rolle „Gasteinladender“.",
+        "en": "Anyone who regularly invites outsiders, such as project leads, gets the Guest Inviter role first."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „Einschränkungen für Gasteinladungen“ „Nur Benutzer mit bestimmten Administratorrollen können Gastbenutzer einladen“ wählen.",
+        "Oben auf „Speichern“ klicken."
+      ],
+      "en": [
+        "Under “Guest invite restrictions”, choose “Only users assigned to specific admin roles can invite guest users”.",
+        "Select “Save” at the top."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/external-id/external-collaboration-settings-configure",
+        "titel": {
+          "de": "Externe Zusammenarbeit konfigurieren",
+          "en": "Configure external collaboration"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Einschränkungen für Gasteinladungen"
+        ],
+        "en": [
+          "Guest invite restrictions"
+        ]
+      },
+      "werte": {
+        "jeder": [
+          "Jeder Benutzer (auch Gäste und Nicht-Administratoren) in der Organisation kann Gastbenutzer einladen (umfassendste Einstellung)",
+          "Anyone in the organization can invite guest users including guests and non-admins (most inclusive)"
+        ],
+        "mitglieder": [
+          "Mitgliedsbenutzer (Gastbenutzer mit Mitgliedsberechtigungen eingeschlossen) und Benutzer mit bestimmten Administratorrollen können Gastbenutzer einladen",
+          "Member users and users assigned to specific admin roles can invite guest users including guests with member permissions"
+        ],
+        "nur-admins": [
+          "Nur Benutzer mit bestimmten Administratorrollen können Gastbenutzer einladen",
+          "Only users assigned to specific admin roles can invite guest users"
+        ],
+        "niemand": [
+          "Niemand in der Organisation (Administratoren eingeschlossen) kann Gastbenutzer einladen (restriktivste Einstellung)",
+          "No one in the organization can invite guest users including admins (most restrictive)"
+        ]
+      },
+      "empfohlen": [
+        "nur-admins",
+        "niemand"
+      ],
+      "gruppeUeberOption": true,
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:5"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-gaeste",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers",
+    "titelProbe": {
+      "de": [
+        "Benutzer"
+      ],
+      "en": [
+        "Users"
+      ]
+    },
+    "titel": {
+      "de": "Gastkonten aufräumen",
+      "en": "Clean up guest accounts"
+    },
+    "wasEsTut": {
+      "de": "Die Liste aller Benutzer zeigt mit dem Filter „Benutzertyp: Gast“ jedes Konto von außen, das Zugang zu Ihren Daten hat. Endet ein Projekt, bleiben die Gastkonten oft liegen.",
+      "en": "With the filter “User type: Guest”, the list of all users shows every outside account that has access to your data. When a project ends, guest accounts often stay behind."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Gäste ohne Anmeldung seit 90 Tagen sperren, danach entfernen.",
+        "en": "Block guests with no sign-in for 90 days, then remove them."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes dieser Konten ist ein offener Zugang zu Ihren Dateien. Niemand benutzt ihn mehr, niemand vermisst ihn.",
+        "en": "Each of these accounts is an open door to your files. Nobody uses it any more, nobody misses it."
+      },
+      "vorher": {
+        "de": "Bei laufenden Projekten kurz nachfragen, ob der Gast noch gebraucht wird. Ein gesperrtes Konto lässt sich wieder freigeben, ein gelöschter Gast bis zu 30 Tage lang wiederherstellen.",
+        "en": "For ongoing projects, briefly ask whether the guest is still needed. A blocked account can be unblocked, a deleted guest restored for up to 30 days."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Filter hinzufügen: „Benutzertyp“ gleich „Gast“.",
+        "Mit Entra ID Governance zeigt „ID Governance“ › „Dashboard“ › „Inaktive Gäste anzeigen“ alle Gäste ohne Anmeldung seit 90 Tagen; ohne diese Lizenz je Gast bei den Projektverantwortlichen nachfragen.",
+        "Nicht mehr gebrauchte Gäste erst sperren, später löschen."
+      ],
+      "en": [
+        "Add a filter: “User type” equals “Guest”.",
+        "With Microsoft Entra ID Governance, “ID Governance” › “Dashboard” › “View inactive guests” lists guests without sign-in for 90 days; without that license, ask the project owner for each guest.",
+        "Block guests no longer needed, delete them later."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/users/clean-up-stale-guest-accounts",
+        "titel": {
+          "de": "Veraltete Gastkonten überwachen und bereinigen",
+          "en": "Monitor and clean up stale guest accounts"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:5",
+      "kjello:gastkonten"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-anmeldeprotokolle",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/SignInEventsV3Blade",
+    "titelProbe": {
+      "de": [
+        "Anmeldeereignisse"
+      ],
+      "en": [
+        "Sign-in events"
+      ]
+    },
+    "titel": {
+      "de": "Anmeldeprotokolle: wie lange sie reichen",
+      "en": "Sign-in logs: how far back they go"
+    },
+    "wasEsTut": {
+      "de": "Hier steht jede Anmeldung Ihrer Leute, mit Zeit, Ort und Ergebnis. Wie weit die Liste zurückreicht, hängt von der Lizenz ab: ohne Entra ID P1 sieben Tage, mit P1 30 Tage. P1 ist in Microsoft 365 Business Premium enthalten.",
+      "en": "This lists every sign-in by your staff with time, location and result. How far back it goes depends on the license: seven days without Microsoft Entra ID P1, 30 days with P1. P1 is included in Microsoft 365 Business Premium."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Bei Verdacht sofort exportieren, nicht erst nach dem Wochenende.",
+        "en": "Export right away when something looks wrong, not after the weekend."
+      },
+      "wennEsSoBleibt": {
+        "de": "Fällt ein fremder Zugriff erst nach zehn Tagen auf, sind die Anmeldungen ohne P1 schon gelöscht. Dann fehlen in Entra die Einträge, an denen man sehen würde, wann und von wo der Angreifer kam.",
+        "en": "If an intrusion is noticed after ten days, the sign-ins are already gone without P1. Then Entra no longer has the entries that would show when and from where the attacker came."
+      },
+      "schwere": "info"
+    },
+    "soGehts": {
+      "de": [
+        "Bei „Datum“ den längsten Zeitraum wählen, dann oben „Herunterladen“ und das Format wählen.",
+        "Für längere Aufbewahrung lässt Ihre IT die Protokolle in einen Azure-Speicher weiterleiten."
+      ],
+      "en": [
+        "Set “Date” to the longest range, then select “Download” at the top and choose the format.",
+        "For longer retention, your IT team routes the logs to Azure storage."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/monitoring-health/reference-reports-data-retention",
+        "titel": {
+          "de": "Datenaufbewahrung in Microsoft Entra",
+          "en": "Microsoft Entra data retention"
+        }
+      },
+      {
+        "pfad": "entra/identity/monitoring-health/howto-download-logs",
+        "titel": {
+          "de": "Protokolle in Microsoft Entra ID herunterladen",
+          "en": "How to download logs in Microsoft Entra ID"
+        }
+      },
+      {
+        "pfad": "entra/fundamentals/licensing",
+        "titel": {
+          "de": "Lizenzierung von Microsoft Entra",
+          "en": "Microsoft Entra licensing"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-anwendungen",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/~/AppAppsPreview",
+    "titelProbe": {
+      "de": [
+        "Unternehmensanwendungen"
+      ],
+      "en": [
+        "Enterprise applications"
+      ]
+    },
+    "titel": {
+      "de": "Unternehmensanwendungen prüfen",
+      "en": "Review enterprise applications"
+    },
+    "wasEsTut": {
+      "de": "Hier stehen die Apps, die in Ihrem Mandanten, also Ihrem Firmenkonto bei Microsoft, eingerichtet sind, auch solche, denen jemand per Einwilligung Zugriff gegeben hat. Welche Rechte eine App hat, sehen Sie, wenn Sie sie öffnen.",
+      "en": "This lists the apps set up in your tenant, your company's Microsoft account, including those someone gave access by consenting. You see an app's permissions when you open it."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Unbekannte Apps mit weitreichenden Rechten prüfen und entfernen.",
+        "en": "Review and remove unknown apps with broad permissions."
+      },
+      "wennEsSoBleibt": {
+        "de": "Eine App mit dem Recht, Postfächer oder Dateien zu lesen, behält dieses Recht, bis jemand es widerruft. Das fällt im Alltag niemandem auf.",
+        "en": "An app with permission to read mailboxes or files keeps that permission until someone revokes it. Nobody notices this in daily work."
+      },
+      "vorher": {
+        "de": "Vor dem Löschen klären, wer die App benutzt. Ein Zwischenschritt ist, die Anmeldung für die App zu sperren.",
+        "en": "Before deleting, find out who uses the app. A middle step is to disable sign-in for the app."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Eine unbekannte App öffnen und unter „Berechtigungen“ nachsehen, was sie darf.",
+        "Unter „Eigenschaften“ „Aktiviert für die Anmeldung von Benutzern?“ auf „Nein“ stellen und „Speichern“, bis geklärt ist, wer sie braucht."
+      ],
+      "en": [
+        "Open an unknown app and check under “Permissions” what it may do.",
+        "Under “Properties”, set “Enabled for users to sign-in?” to “No” and select “Save” until it's clear who needs it."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/enterprise-apps/manage-application-permissions",
+        "titel": {
+          "de": "Berechtigungen von Unternehmensanwendungen überprüfen",
+          "en": "Review permissions granted to enterprise applications"
+        }
+      },
+      {
+        "pfad": "entra/identity/enterprise-apps/disable-user-sign-in-portal",
+        "titel": {
+          "de": "Benutzeranmeldung für eine Anwendung deaktivieren",
+          "en": "Disable user sign-in for application"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:10"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-ca-richtlinien",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_ConditionalAccess/ConditionalAccessBlade/~/Policies",
+    "titelProbe": {
+      "de": [
+        "Bedingter Zugriff"
+      ],
+      "en": [
+        "Conditional Access"
+      ]
+    },
+    "titel": {
+      "de": "Regeln für den bedingten Zugriff",
+      "en": "Conditional Access policies"
+    },
+    "wasEsTut": {
+      "de": "Bedingter Zugriff heißt: Regeln, wann wer sich wie anmelden darf, etwa nur mit zweitem Faktor. Hier stehen alle Regeln mit ihrem Status. „Nur melden“ zeichnet auf, was die Regel täte, erzwingt aber nichts.",
+      "en": "Conditional Access means rules for when and how who may sign in, for example only with a second factor. This page lists every policy and its state. Report-only records what a policy would do but enforces nothing."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Zweiter Faktor für alle und für Admins, alte Anmeldewege sperren.",
+        "en": "A second factor for everyone and for admins, block legacy sign-in."
+      },
+      "wennEsSoBleibt": {
+        "de": "Alte Anmeldewege kennen keine zweite Anmeldung. Wer das Kennwort hat, kann darüber hineinkommen.",
+        "en": "Legacy sign-in methods have no second factor. Anyone with the password can get in that way."
+      },
+      "vorher": {
+        "de": "Erst sicherstellen, dass alle einen zweiten Faktor eingerichtet haben. Zwei Notfallkonten (Admin-Zugänge nur für den Fall, dass alle anderen gesperrt sind) von Regeln ausnehmen, die Anmeldungen sperren oder einschränken, etwa einen zweiten Faktor verlangen. Neue Regeln erst auf „Nur melden“ laufen lassen.",
+        "en": "First make sure everyone has registered a second factor. Exclude two emergency access accounts (admin accounts only for when all others are locked out) from policies that block or restrict sign-in, such as requiring a second factor. Run new policies in report-only first."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "„Neue Richtlinie aus Vorlage“ wählen und die Vorlagen für den zweiten Faktor und für alte Anmeldewege nehmen.",
+        "Den Status zuerst auf „Nur melden“ lassen, frühestens nach einer Woche auf „Ein“ stellen."
+      ],
+      "en": [
+        "Choose “New policy from template” and pick the templates for a second factor and for legacy authentication.",
+        "Leave the state on “Report-only” first, then switch it to “On” after at least a week."
+      ]
+    },
+    "lizenz": "entra-p1",
+    "quellen": [
+      {
+        "pfad": "entra/identity/conditional-access/plan-conditional-access",
+        "titel": {
+          "de": "Planen einer Bereitstellung für bedingten Zugriff",
+          "en": "Plan a Conditional Access deployment"
+        }
+      },
+      {
+        "pfad": "entra/identity/conditional-access/policy-block-legacy-authentication",
+        "titel": {
+          "de": "Legacy-Authentifizierung mit bedingtem Zugriff blockieren",
+          "en": "Block legacy authentication with Conditional Access"
+        }
+      },
+      {
+        "pfad": "entra/identity/conditional-access/concept-conditional-access-report-only",
+        "titel": {
+          "de": "Analyse der Auswirkungen von Richtlinien für bedingten Zugriff",
+          "en": "Analyze Conditional Access policy impact"
+        }
+      },
+      {
+        "pfad": "entra/identity/role-based-access-control/security-emergency-access",
+        "titel": {
+          "de": "Verwalten von Konten für den Notfallzugriff in Microsoft Entra ID",
+          "en": "Manage emergency access accounts in Microsoft Entra ID"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:3",
+      "kjello:alt_protokolle"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-auth-methoden",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/AdminAuthMethods",
+    "titelProbe": {
+      "de": [
+        "Authentifizierungsmethoden"
+      ],
+      "en": [
+        "Authentication methods"
+      ]
+    },
+    "titel": {
+      "de": "Authentifizierungsmethoden",
+      "en": "Authentication methods"
+    },
+    "wasEsTut": {
+      "de": "Legt fest, womit sich Ihre Leute als zweiten Faktor ausweisen dürfen, etwa mit der Authenticator-App, einem Hauptschlüssel (Passkey), per SMS oder Anruf. Ist der Umzug aus den alten MFA- und SSPR-Einstellungen nicht fertig, können dort weitere Methoden erlaubt sein.",
+      "en": "Decides which second factors your staff may use, such as the Authenticator app, a passkey, a text message or a phone call. If migration from the legacy MFA and SSPR settings isn't complete, more methods may still be allowed there."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Authenticator und Passkeys an, SMS und Sprachanruf aus, wo es geht.",
+        "en": "Authenticator and passkeys on, SMS and voice off where you can."
+      },
+      "wennEsSoBleibt": {
+        "de": "Einmalcodes per SMS, E-Mail oder App lassen sich Ihren Leuten mit einem Vorwand am Telefon oder auf einer falschen Seite entlocken. Microsoft rät zu Verfahren, die gegen solches Phishing schützen, etwa Passkeys.",
+        "en": "One-time codes by text, email or app can be coaxed out of your staff with a pretext on the phone or on a fake page. Microsoft recommends phishing-resistant methods such as passkeys."
+      },
+      "vorher": {
+        "de": "Erst prüfen, wer sich noch per SMS oder Anruf anmeldet, und diesen Leuten die Authenticator-App einrichten. Sonst kommen sie nach dem Abschalten nicht mehr hinein.",
+        "en": "First check who still signs in by text or call and set up the Authenticator app for them. Otherwise they are locked out once you turn it off."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "In der Liste eine Methode anklicken, etwa „SMS“, und dort die Einstellung ändern."
+      ],
+      "en": [
+        "Select a method in the list, such as “SMS”, and change its setting there."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/authentication/concept-authentication-methods-manage",
+        "titel": {
+          "de": "Verwalten von Authentifizierungsmethoden für Microsoft Entra ID",
+          "en": "Manage authentication methods for Microsoft Entra ID"
+        }
+      },
+      {
+        "pfad": "entra/identity/authentication/concept-authentication-methods",
+        "titel": {
+          "de": "Übersicht zur Microsoft Entra-Authentifizierung",
+          "en": "Microsoft Entra authentication overview"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "zelle",
+      "rolle": "grid",
+      "name": {
+        "de": [
+          "Liste der Authentifizierungsmethoden"
+        ],
+        "en": [
+          "List of authentication methods"
+        ]
+      },
+      "spalte": {
+        "de": [
+          "Aktiviert"
+        ],
+        "en": [
+          "Enabled"
+        ]
+      },
+      "zeilen": [
+        {
+          "de": [
+            "SMS"
+          ],
+          "en": [
+            "SMS"
+          ]
+        },
+        {
+          "de": [
+            "Sprachanruf"
+          ],
+          "en": [
+            "Voice call"
+          ]
+        }
+      ],
+      "werte": {
+        "ja": [
+          "Ja",
+          "Yes"
+        ],
+        "nein": [
+          "Nein",
+          "No"
+        ]
+      },
+      "empfohlen": [
+        "nein"
+      ],
+      "nurAbweichung": true,
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-kennwortschutz",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/AuthenticationMethodsMenuBlade/~/PasswordProtection",
+    "titelProbe": {
+      "de": [
+        "Authentifizierungsmethoden"
+      ],
+      "en": [
+        "Authentication methods"
+      ]
+    },
+    "titel": {
+      "de": "Eigene Liste gesperrter Kennwörter",
+      "en": "Custom banned password list"
+    },
+    "wasEsTut": {
+      "de": "Microsoft sperrt ab Werk häufige, schwache Kennwörter. Zusätzlich können Sie eigene Begriffe sperren, etwa Firmenname, Produkte und Ort. Geprüft wird, wenn jemand sein Kennwort ändert oder zurücksetzt.",
+      "en": "Microsoft blocks common weak passwords by default. You can also ban your own terms, such as your company name, products and location. The check runs when someone changes or resets a password."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "„Benutzerdefinierte Liste erzwingen“ auf „Ja“, Begriffe eintragen.",
+        "en": "Set “Enforce custom list” to “Yes” and add your terms."
+      },
+      "wennEsSoBleibt": {
+        "de": "Kennwörter aus Firmenname und Jahreszahl können durchgehen, solange Microsofts allgemeine Liste den Namen nicht kennt. Genau für solche Begriffe ist die eigene Liste gedacht.",
+        "en": "Passwords made of your company name and a year can be accepted as long as Microsoft's global list doesn't know the name. The custom list is meant for exactly such terms."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "„Benutzerdefinierte Liste erzwingen“ auf „Ja“ stellen.",
+        "Firmenname, Produktnamen und Ort in die Liste eintragen, oben „Speichern“."
+      ],
+      "en": [
+        "Set “Enforce custom list” to “Yes”.",
+        "Enter your company name, product names and location in the list, then “Save” at the top."
+      ]
+    },
+    "lizenz": "entra-p1",
+    "quellen": [
+      {
+        "pfad": "entra/identity/authentication/concept-password-ban-bad",
+        "titel": {
+          "de": "Ausschließen unsicherer Kennwörter mithilfe des Microsoft Entra-Kennwortschutzes",
+          "en": "Eliminate bad passwords using Microsoft Entra Password Protection"
+        }
+      },
+      {
+        "pfad": "entra/identity/authentication/tutorial-configure-custom-password-protection",
+        "titel": {
+          "de": "Tutorial: Konfigurieren von benutzerdefinierten gesperrten Kennwörtern",
+          "en": "Tutorial: Configure custom banned passwords"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Benutzerdefinierte Liste erzwingen"
+        ],
+        "en": [
+          "Enforce custom list"
+        ]
+      },
+      "werte": {
+        "ja": [
+          "Ja",
+          "Yes"
+        ],
+        "nein": [
+          "Nein",
+          "No"
+        ]
+      },
+      "empfohlen": [
+        "ja"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-sspr",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/PasswordResetMenuBlade/~/Properties",
+    "titelProbe": {
+      "de": [
+        "Zurücksetzen des Kennworts",
+        "Kennwortzurücksetzung"
+      ],
+      "en": [
+        "Password reset"
+      ]
+    },
+    "titel": {
+      "de": "Self-Service-Kennwortzurücksetzung",
+      "en": "Self-service password reset"
+    },
+    "wasEsTut": {
+      "de": "Mit der Self-Service-Kennwortzurücksetzung setzen Ihre Leute ein vergessenes Kennwort selbst zurück. Hier legen Sie fest, für wen: niemand, eine Gruppe oder alle. Kommen Ihre Konten aus einem lokalen Server, braucht das Entra ID P1 (in Business Premium).",
+      "en": "With self-service password reset, your staff reset a forgotten password themselves. Here you decide for whom: nobody, one group or everyone. If your accounts sync from an on-premises server, this needs Entra ID P1 (in Business Premium)."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Auf „Alle“ stellen.",
+        "en": "Set to “All”."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes vergessene Kennwort wird zu einem Anruf bei Ihrer IT, und bis dahin kann die Person nicht arbeiten.",
+        "en": "Every forgotten password becomes a call to your IT, and until then the person can't work."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Erst „Ausgewählt“ mit einer Testgruppe wählen und ausprobieren.",
+        "Dann „Alle“ wählen und oben „Speichern“."
+      ],
+      "en": [
+        "First choose “Selected” with a test group and try it.",
+        "Then choose “All” and “Save” at the top."
+      ]
+    },
+    "lizenz": "m365-business-standard",
+    "quellen": [
+      {
+        "pfad": "entra/identity/authentication/tutorial-enable-sspr",
+        "titel": {
+          "de": "Tutorial: Ermöglichen der Kennwortzurücksetzung mithilfe der Self-Service-Kennwortzurücksetzung",
+          "en": "Tutorial: Enable users to reset passwords using self-service password reset"
+        }
+      },
+      {
+        "pfad": "entra/identity/authentication/concept-sspr-licensing",
+        "titel": {
+          "de": "Lizenzanforderungen für die Self-Service-Kennwortzurücksetzung",
+          "en": "Licensing requirements for self-service password reset"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Self-Service-Kennwortzurücksetzung aktiviert"
+        ],
+        "en": [
+          "Self service password reset enabled"
+        ]
+      },
+      "werte": {
+        "alle": [
+          "Alle",
+          "All"
+        ],
+        "ausgewaehlt": [
+          "Ausgewählt",
+          "Selected"
+        ],
+        "kein": [
+          "Kein",
+          "None"
+        ]
+      },
+      "empfohlen": [
+        "alle"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-rollen",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/AllRolesBlade",
+    "titelProbe": {
+      "de": [
+        "Rollen und Administratoren",
+        "Alle Rollen"
+      ],
+      "en": [
+        "Roles and administrators",
+        "All roles"
+      ]
+    },
+    "titel": {
+      "de": "Rolle Globaler Administrator",
+      "en": "Global Administrator role"
+    },
+    "wasEsTut": {
+      "de": "Ein Globaler Administrator darf fast jede Einstellung lesen und ändern. Microsoft rät zu weniger als fünf Personen mit der Rolle und zu zwei oder mehr Notfallkonten (Admin-Zugänge für den Fall, dass alle anderen gesperrt sind). „Zuweisungen“ zählt keine Personen: Hat eine Gruppe die Rolle, haben sie alle Mitglieder.",
+      "en": "A Global Administrator can read and change almost every setting. Microsoft advises fewer than five people with the role and two or more emergency access accounts (for when all other admins are locked out). “Assignments” doesn't count people: if a group holds the role, all its members have it."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Weniger als fünf Globale Admins, die Notfallkonten eingerechnet.",
+        "en": "Fewer than five Global Admins, counting emergency accounts."
+      },
+      "wennEsSoBleibt": {
+        "de": "Je mehr Zugänge mit vollen Rechten es gibt, desto mehr Türen gibt es.",
+        "en": "The more accounts with full rights, the more doors there are."
+      },
+      "schwere": "gelb",
+      "vorher": {
+        "de": "Erst prüfen, dass sich die Notfallkonten anmelden können, dann Rollen entziehen. Sonst nehmen Sie sich womöglich selbst die Verwaltung.",
+        "en": "First check that the emergency accounts can sign in, then remove roles. Otherwise you may lock yourself out of administration."
+      }
+    },
+    "soGehts": {
+      "de": [
+        "„Globaler Administrator“ öffnen und die Liste der Zuweisungen durchgehen.",
+        "Wer die Rolle nicht täglich braucht, bekommt eine engere Rolle, etwa „Benutzeradministrator“."
+      ],
+      "en": [
+        "Open “Global Administrator” and go through the assignments.",
+        "Anyone who doesn't need it every day gets a narrower role, such as User Administrator."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/role-based-access-control/best-practices",
+        "titel": {
+          "de": "Bewährte Methoden für Microsoft Entra-Rollen",
+          "en": "Best practices for Microsoft Entra roles"
+        }
+      },
+      {
+        "pfad": "entra/identity/role-based-access-control/security-emergency-access",
+        "titel": {
+          "de": "Verwalten von Konten für den Notfallzugriff in Microsoft Entra ID",
+          "en": "Manage emergency access accounts in Microsoft Entra ID"
+        }
+      },
+      {
+        "pfad": "entra/identity/role-based-access-control/groups-concept",
+        "titel": {
+          "de": "Verwalten von Rollenzuweisungen mit Microsoft Entra-Gruppen",
+          "en": "Use Microsoft Entra groups to manage role assignments"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "zelle",
+      "rolle": "grid",
+      "name": {
+        "de": [
+          "Rolle"
+        ],
+        "en": [
+          "Role"
+        ]
+      },
+      "spalte": {
+        "de": [
+          "Zuweisungen"
+        ],
+        "en": [
+          "Assignments"
+        ]
+      },
+      "zeilen": [
+        {
+          "de": [
+            "Globaler Administrator"
+          ],
+          "en": [
+            "Global Administrator"
+          ]
+        }
+      ],
+      "empfohlen": [],
+      "spanne": {
+        "max": 4
+      },
+      "nurAbweichung": true,
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:2",
+      "kjello:admins"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-geraete",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_Devices/DevicesMenuBlade/~/DeviceSettings",
+    "titelProbe": {
+      "de": [
+        "Geräte"
+      ],
+      "en": [
+        "Devices"
+      ]
+    },
+    "titel": {
+      "de": "Lokale Administratorkennwörter (LAPS)",
+      "en": "Local administrator passwords (LAPS)"
+    },
+    "wasEsTut": {
+      "de": "Jedes Windows-Gerät hat ein eingebautes lokales Administratorkonto. Mit Microsoft Entra LAPS bekommt es auf jedem in Entra eingebundenen Gerät ein eigenes Kennwort, das Entra verwahrt. LAPS ist ab Entra ID Free enthalten.",
+      "en": "Every Windows device has a built-in local administrator account. With Microsoft Entra LAPS it gets its own password on each Entra-joined device, stored in Entra. LAPS is included from Entra ID Free."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "LAPS auf „Ja“; Einbindende nicht als lokale Admins.",
+        "en": "LAPS to “Yes”; don't make joining users local admins."
+      },
+      "wennEsSoBleibt": {
+        "de": "Teilen sich die Geräte dasselbe lokale Administratorkennwort, öffnet ein erbeutetes Kennwort alle. Microsoft nennt das Weiterwandern von Gerät zu Gerät als Grund für LAPS.",
+        "en": "If devices share the same local administrator password, one stolen password opens them all. Microsoft cites attackers moving from device to device as the reason for LAPS."
+      },
+      "vorher": {
+        "de": "LAPS wirkt erst, wenn die Geräte zusätzlich eine LAPS-Richtlinie bekommen, etwa aus Intune. Wer ein Gerät neu einbindet, ist danach nicht mehr lokaler Admin darauf.",
+        "en": "LAPS only takes effect once the devices also get a LAPS policy, for example from Intune. Whoever joins a new device is no longer a local admin on it."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "„Aktivieren der lokalen Microsoft Entra-Administratorkennwortlösung (Local Administrator Password Solution, LAPS)“ auf „Ja“ stellen.",
+        "„Der registrierende Benutzer wird während dem Microsoft Entra-Beitritt (Vorschau) als lokaler Administrator auf dem Gerät hinzugefügt.“ auf „Keine“, oben „Speichern“."
+      ],
+      "en": [
+        "Set “Enable Microsoft Entra Local Administrator Password Solution (LAPS)” to “Yes”.",
+        "Set “Registering user is added as local administrator on the device during Microsoft Entra join (Preview)” to “None”, then “Save” at the top."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/devices/howto-manage-local-admin-passwords",
+        "titel": {
+          "de": "Windows Local Administrator Password Solution in Microsoft Entra ID",
+          "en": "Windows Local Administrator Password Solution in Microsoft Entra ID"
+        }
+      },
+      {
+        "pfad": "entra/identity/devices/assign-local-admin",
+        "titel": {
+          "de": "Verwalten der lokalen Administratorgruppe auf in Microsoft Entra ID eingebundenen Geräten",
+          "en": "How to manage the local administrators group on Microsoft Entra joined devices"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Aktivieren der lokalen Microsoft Entra-Administratorkennwortlösung (Local Administrator Password Solution, LAPS)"
+        ],
+        "en": [
+          "Enable Microsoft Entra Local Administrator Password Solution (LAPS)"
+        ]
+      },
+      "werte": {
+        "ja": [
+          "Ja",
+          "Yes"
+        ],
+        "nein": [
+          "Nein",
+          "No"
+        ]
+      },
+      "empfohlen": [
+        "ja"
+      ],
+      "rahmen": "beliebig",
+      "dialog": null
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "entra-sicherheitsstandards",
+    "portal": "entra",
+    "route": "view:Microsoft_AAD_IAM/TenantProperties.ReactView",
+    "titelProbe": {
+      "de": [
+        "Microsoft Entra Admin Center"
+      ],
+      "en": [
+        "Microsoft Entra admin center",
+        "Microsoft Entra Admin Center"
+      ]
+    },
+    "titel": {
+      "de": "Sicherheitsstandards",
+      "en": "Security defaults"
+    },
+    "wasEsTut": {
+      "de": "Sicherheitsstandards sind Microsofts fester Grundschutz: Alle registrieren sich für die Mehr-Faktor-Anmeldung, eine zweite Bestätigung der Anmeldung, etwa per App. Administratoren bestätigen damit jede Anmeldung, andere bei Bedarf. Alte Anmeldewege sind gesperrt. Den Zustand zeigt „Sicherheitsstandards verwalten“.",
+      "en": "Security defaults are a fixed baseline from Microsoft: everyone registers for multifactor authentication, a second confirmation of each sign-in, for example in an app. Admins confirm every sign-in, others when needed. Legacy sign-in routes are blocked. “Manage security defaults” shows the setting."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "„Aktiviert“ lassen, solange kein bedingter Zugriff sie ersetzt.",
+        "en": "Keep “Enabled” unless Conditional Access replaces them."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ohne Sicherheitsstandards und ohne Regeln des bedingten Zugriffs schützt nur noch eine Mehr-Faktor-Anmeldung, die für einzelne Konten eingerichtet ist. Für alle anderen Konten reicht dann ein gestohlenes Kennwort. Microsoft rät, nach dem Abschalten sofort Regeln des bedingten Zugriffs einzuschalten. Ersetzen solche Regeln die Standards (bedingter Zugriff braucht Entra ID P1, in Business Premium enthalten), ist „Deaktiviert“ richtig.",
+        "en": "Without security defaults and without Conditional Access policies, only multifactor authentication set up for individual accounts still protects you. For every other account a stolen password is then enough. Microsoft advises turning on Conditional Access policies straight after switching them off. If such policies replace the defaults (Conditional Access needs Entra ID P1, included in Business Premium), “Disabled” is correct."
+      },
+      "vorher": {
+        "de": "Vor dem Einschalten: Danach müssen sich alle für den zweiten Faktor registrieren. Prüfen, dass Administratoren keine alten Anmeldewege nutzen, und alle Administratoren gleich danach einmal anmelden lassen.",
+        "en": "Before turning it on: afterwards everyone has to register for the second factor. Make sure admins don't use legacy sign-in routes, and have every admin sign in once straight afterwards."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Unten auf der Seite „Sicherheitsstandards verwalten“ öffnen.",
+        "„Sicherheitsstandards“ auf „Aktiviert“ stellen, „Speichern“."
+      ],
+      "en": [
+        "At the bottom of the page, open “Manage security defaults”.",
+        "Set “Security defaults” to “Enabled”, then “Save”."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/fundamentals/security-defaults",
+        "titel": {
+          "de": "Sicherheitsstandards in Microsoft Entra ID",
+          "en": "Security defaults in Microsoft Entra ID"
+        }
+      },
+      {
+        "pfad": "entra/fundamentals/licensing",
+        "titel": {
+          "de": "Microsoft Entra-Lizenzierung",
+          "en": "Microsoft Entra licensing"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "combobox",
+      "name": {
+        "de": [
+          "Sicherheitsstandards"
+        ],
+        "en": [
+          "Security defaults"
+        ]
+      },
+      "werte": {
+        "an": [
+          "Aktiviert",
+          "Enabled"
+        ],
+        "aus": [
+          "Deaktiviert",
+          "Disabled",
+          "Deaktiviert (nicht empfohlen)",
+          "Disabled (not recommended)"
+        ]
+      },
+      "empfohlen": [
+        "an"
+      ],
+      "rahmen": "oben",
+      "dialog": {
+        "de": [
+          "Sicherheitsstandards"
+        ],
+        "en": [
+          "Security defaults"
+        ]
+      }
+    },
+    "herkunft": [
+      "haertungs-check:1"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  }
+]

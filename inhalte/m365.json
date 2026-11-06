@@ -1,0 +1,898 @@
+[
+  {
+    "id": "m365-domains",
+    "portal": "m365",
+    "route": "Domains",
+    "titelProbe": {
+      "de": [
+        "Domänen"
+      ],
+      "en": [
+        "Domains"
+      ]
+    },
+    "titel": {
+      "de": "Domänen und Schutz vor gefälschten Mails",
+      "en": "Domains and protection against forged email"
+    },
+    "wasEsTut": {
+      "de": "Hier stehen die Domänen Ihres Microsoft-365-Kontos. Ob andere in Ihrem Namen Mails fälschen können, hängt an drei DNS-Einträgen: SPF nennt die erlaubten Absender, DKIM unterschreibt jede ausgehende Mail, sobald es eingerichtet ist, DMARC sagt dem Empfänger, was mit Fälschungen geschehen soll.",
+      "en": "This page lists the domains in your Microsoft 365 account. Whether others can forge email in your name depends on three DNS records: SPF names the allowed senders, DKIM signs each outgoing message once it is set up, and DMARC tells the recipient what to do with forgeries."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "DMARC auf quarantine oder reject, SPF mit -all, DKIM an.",
+        "en": "DMARC at quarantine or reject, SPF with -all, DKIM on."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ohne wirksames DMARC bekommt der Empfänger von Ihnen keine Anweisung, gefälschte Mails mit Ihrer Domain abzulehnen. Solche Mails sind ein häufiger Einstieg für Rechnungsbetrug und Phishing.",
+        "en": "Without an effective DMARC policy, recipients get no instruction from you to reject forged mail using your domain. Such mail is a common way in for invoice fraud and phishing."
+      },
+      "vorher": {
+        "de": "DMARC in Stufen anheben: erst none, dann quarantine, dann reject. Vorher SPF und DKIM für alle Absender einrichten, auch für Newsletter- und Shop-Dienste. Sonst lehnen Empfänger echte Mails ab.",
+        "en": "Raise DMARC in stages: none first, then quarantine, then reject. Set up SPF and DKIM for all senders first, including newsletter and shop services. Otherwise recipients reject genuine mail."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "SPF und DKIM für jede eigene Domain einrichten, die Mails verschickt; SPF mit „-all“ abschließen, also alle anderen Absender unzulässig. Für Domains, die keine Mails verschicken, SPF „v=spf1 -all“ und DMARC „reject“ setzen.",
+        "Den DMARC-Eintrag legen Sie bei Ihrem Domain-Anbieter an. Für eigene Domains gibt es dafür bei Microsoft keine Einstellung.",
+        "Berichte einige Zeit beobachten, erst dann die Stufe anheben: „quarantine“ verschiebt Fälschungen in die Quarantäne, „reject“ lehnt sie ab."
+      ],
+      "en": [
+        "Set up SPF and DKIM for every custom domain that sends mail; end SPF with “-all”, meaning all other senders are not allowed. For domains that send no mail, publish SPF “v=spf1 -all” and DMARC “reject”.",
+        "Create the DMARC record at your domain provider. Microsoft has no setting for this on custom domains.",
+        "Watch the reports for a while before raising the policy: “quarantine” moves forgeries to quarantine, “reject” refuses them."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "defender-office-365/email-authentication-dmarc-configure",
+        "titel": {
+          "de": "DMARC in Microsoft 365 einrichten",
+          "en": "Set up DMARC in Microsoft 365"
+        }
+      },
+      {
+        "pfad": "defender-office-365/email-authentication-spf-configure",
+        "titel": {
+          "de": "SPF für eigene Domains einrichten",
+          "en": "Set up SPF for custom domains"
+        }
+      },
+      {
+        "pfad": "defender-office-365/email-authentication-dkim-configure",
+        "titel": {
+          "de": "DKIM für eigene Domains einrichten",
+          "en": "Set up DKIM for custom domains"
+        }
+      },
+      {
+        "url": "https://www.hagel-it.de/it-sicherheits-index-hamburg",
+        "titel": {
+          "de": "Selbsttest: Ihre eigene Domain prüfen",
+          "en": "Self-test: check your own domain (German)"
+        }
+      }
+    ],
+    "index": [
+      {
+        "kennzahl": "dmarc.wirksam_prozent",
+        "satz": {
+          "de": "Wirksames DMARC haben {wert} % von {basis} gemessenen Hamburger Unternehmen mit Mailempfang (IT-Sicherheits-Index Hamburg {jahr}).",
+          "en": "{wert}% of {basis} measured Hamburg companies that receive email have an effective DMARC policy (Hamburg IT Security Index {jahr})."
+        }
+      },
+      {
+        "kennzahl": "spf.streng_prozent",
+        "satz": {
+          "de": "Einen strengen SPF-Eintrag haben {wert} % von ihnen.",
+          "en": "{wert}% of them have a strict SPF record."
+        }
+      }
+    ],
+    "leser": {
+      "art": "domains",
+      "rolle": "treegrid",
+      "name": {
+        "de": [
+          "Domänen"
+        ],
+        "en": [
+          "Domains"
+        ]
+      },
+      "empfohlen": [],
+      "rahmen": "oben",
+      "dialog": null
+    },
+    "herkunft": [
+      "hamburg-index:dmarc",
+      "hamburg-index:spf"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-domain-dns",
+    "portal": "m365",
+    "route": "Domains/Details/:domain",
+    "titelProbe": {
+      "de": [
+        "Domänen"
+      ],
+      "en": [
+        "Domains"
+      ]
+    },
+    "titel": {
+      "de": "Domäne: MTA-STS, TLS-RPT und DNSSEC",
+      "en": "Domain: MTA-STS, TLS-RPT and DNSSEC"
+    },
+    "wasEsTut": {
+      "de": "Hier stehen die DNS-Einträge, die Microsoft 365 für diese Domäne braucht. Bei eigenen Domänen kommen drei dazu: MTA-STS verlangt geprüfte Verschlüsselung, TLS-RPT meldet Zustellprobleme, DNSSEC unterschreibt die DNS-Einträge. Bei der Domäne auf „onmicrosoft.com“ verwaltet Microsoft das DNS, dort ist nichts zu tun.",
+      "en": "This page shows the DNS records Microsoft 365 needs for this domain. Your own domains need three more: MTA-STS requires checked encryption, TLS-RPT reports delivery problems, DNSSEC signs the DNS records. For the “onmicrosoft.com” domain, Microsoft manages DNS and there is nothing to do."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "MTA-STS und TLS-RPT einrichten, DNSSEC beim Domain-Anbieter prüfen.",
+        "en": "Set up MTA-STS and TLS-RPT, check DNSSEC with your domain provider."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ohne MTA-STS verlangen sendende Server keine geprüfte Verschlüsselung, und wer sich zwischen zwei Mailserver schaltet, hat es leichter. Ohne TLS-RPT erfahren Sie von Zustellproblemen nichts.",
+        "en": "Without MTA-STS, sending servers don't require checked encryption, which makes it easier for someone who gets between two mail servers. Without TLS-RPT, you hear nothing about delivery problems."
+      },
+      "vorher": {
+        "de": "MTA-STS zuerst im Modus „testing“ einführen und die TLS-RPT-Berichte lesen, erst dann auf „enforce“. Ein Fehler in der Richtlinie kann sonst Mails an Sie aufhalten.",
+        "en": "Start MTA-STS in “testing” mode and read the TLS-RPT reports before switching to “enforce”. Otherwise a mistake in the policy can hold up mail to you."
+      },
+      "schwere": "info"
+    },
+    "soGehts": {
+      "de": [
+        "MTA-STS braucht einen DNS-Eintrag und eine Richtlinie auf einer Webadresse Ihrer Domain; Microsoft beschreibt einen Weg mit Azure.",
+        "DNSSEC schalten Sie bei Ihrem Domain-Anbieter ein, wenn er es anbietet."
+      ],
+      "en": [
+        "MTA-STS needs a DNS record and a policy on a web address of your domain; Microsoft describes a way to host it with Azure.",
+        "Turn on DNSSEC at your domain provider if it offers it."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/security-and-compliance/enhance-mail-flow-using-strict-transport-security",
+        "titel": {
+          "de": "Mailfluss mit MTA-STS absichern",
+          "en": "Enhancing mail flow with MTA-STS"
+        }
+      },
+      {
+        "pfad": "exchange/security-and-compliance/how-dane-secures-email",
+        "titel": {
+          "de": "Wie DANE und DNSSEC E-Mails schützen",
+          "en": "How DANE and DNSSEC secure email"
+        }
+      },
+      {
+        "url": "https://www.hagel-it.de/it-sicherheits-index-hamburg",
+        "titel": {
+          "de": "Selbsttest: Ihre eigene Domain prüfen",
+          "en": "Self-test: check your own domain (German)"
+        }
+      }
+    ],
+    "index": [
+      {
+        "kennzahl": "mta_sts.prozent",
+        "satz": {
+          "de": "MTA-STS haben {wert} % von {basis} gemessenen Hamburger Unternehmen mit Mailempfang (IT-Sicherheits-Index Hamburg {jahr}).",
+          "en": "{wert}% of {basis} measured Hamburg companies that receive email have MTA-STS (Hamburg IT Security Index {jahr})."
+        }
+      },
+      {
+        "kennzahl": "tls_rpt.prozent",
+        "satz": {
+          "de": "TLS-RPT haben {wert} % von ihnen.",
+          "en": "{wert}% of them have TLS-RPT."
+        }
+      },
+      {
+        "kennzahl": "dnssec.prozent",
+        "satz": {
+          "de": "DNSSEC haben {wert} % von {basis} gemessenen Domains.",
+          "en": "{wert}% of {basis} measured domains use DNSSEC."
+        }
+      }
+    ],
+    "leser": null,
+    "herkunft": [
+      "hamburg-index:mta_sts",
+      "hamburg-index:tls_rpt",
+      "hamburg-index:dnssec"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-benutzer",
+    "portal": "m365",
+    "route": "users",
+    "titelProbe": {
+      "de": [
+        "Aktive Benutzer"
+      ],
+      "en": [
+        "Active users"
+      ]
+    },
+    "titel": {
+      "de": "Aktive Benutzer: Admin-Konten und Ausgeschiedene",
+      "en": "Active users: admin accounts and former staff"
+    },
+    "wasEsTut": {
+      "de": "Hier stehen alle Konten Ihrer Firma. Zwei Dinge lohnen einen Blick: ob jemand mit seinem Alltagskonto zugleich Administrator ist und ob noch Konten von Leuten aktiv sind, die nicht mehr bei Ihnen arbeiten.",
+      "en": "This page lists every account in your organization. Two things are worth a look: whether someone is an administrator on their everyday account, and whether accounts of people who have left are still active."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Eigene Admin-Konten für die Verwaltung. Ausgeschiedene zuerst sperren.",
+        "en": "Use dedicated admin accounts. Block former staff first."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ein gestohlenes Kennwort kann genügen, um im Konto Ihrer Firma alles zu ändern, wenn das Alltagskonto zugleich alles verwalten darf. Das Konto eines Ehemaligen ist ein offener Zugang: Niemand benutzt ihn mehr, niemand vermisst ihn.",
+        "en": "One stolen password can be enough to change everything in your organization if the everyday account can also administer it. An account of a former employee is an open door: nobody uses it, nobody misses it."
+      },
+      "vorher": {
+        "de": "Vor dem Sperren klären, wer Postfach und Dateien der ausgeschiedenen Person übernimmt.",
+        "en": "Before blocking, decide who takes over the former employee's mailbox and files."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Sobald jemand ausscheidet: Konto öffnen und „Anmeldung blockieren“ wählen.",
+        "Für Verwaltungsaufgaben ein eigenes Konto anlegen und nur dafür benutzen."
+      ],
+      "en": [
+        "As soon as someone leaves, open their account and choose “Block sign-in”.",
+        "Create a separate account for admin tasks and use it only for that."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "microsoft-365/enterprise/protect-your-global-administrator-accounts",
+        "titel": {
+          "de": "Administratorkonten in Microsoft 365 schützen",
+          "en": "Protect your Microsoft 365 administrator accounts"
+        }
+      },
+      {
+        "pfad": "microsoft-365/admin/add-users/remove-former-employee",
+        "titel": {
+          "de": "Ehemalige Mitarbeitende entfernen und Daten sichern",
+          "en": "Remove a former employee and secure data"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:2",
+      "haertungs-check:12",
+      "kjello:mfa_admins",
+      "kjello:gastkonten"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-mfa-je-benutzer",
+    "portal": "m365",
+    "route": "users/UserDetails/:id",
+    "titelProbe": {
+      "de": [
+        "Benutzerdetails"
+      ],
+      "en": [
+        "User Details"
+      ]
+    },
+    "titel": {
+      "de": "Mehr-Faktor je Benutzer",
+      "en": "Per-user multifactor authentication"
+    },
+    "wasEsTut": {
+      "de": "Die Seite zeigt das Konto einer Person, aber nicht, ob sie einen zweiten Faktor nutzt. Die alte Einstellung je Konto öffnet in der Benutzerliste der Menüpunkt „Multi-Faktor-Authentifizierung“. Microsoft rät davon ab, sobald Sie Sicherheitsstandards oder bedingten Zugriff (Regeln, wer sich wie anmelden darf) nutzen.",
+      "en": "This page shows one person's account, but not whether they use a second factor. The old per-account setting opens from the user list, under the “Multi-factor authentication” menu item. Microsoft advises against it once you use security defaults or Conditional Access (rules for who may sign in how)."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Mehr-Faktor für alle: Sicherheitsstandards oder bedingter Zugriff.",
+        "en": "Multifactor for everyone: security defaults or Conditional Access."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ohne zweiten Faktor genügt ein gestohlenes Kennwort, um sich als diese Person anzumelden. Je Konto geschaltet, startet jedes neue Konto ohne zweiten Faktor, und bis zur Registrierung gelten alte Anmeldewege mit Kennwort allein weiter.",
+        "en": "Without a second factor, one stolen password is enough to sign in as this person. Set per account, every new account starts without a second factor, and until a person registers, legacy sign-in with just a password keeps working."
+      },
+      "vorher": {
+        "de": "Mit den Sicherheitsstandards muss sich danach jede Person für den zweiten Faktor registrieren, sagen Sie das vorher an. Nutzen Sie bedingten Zugriff, schalten Sie die Einstellung je Konto aus: Microsoft rät, beides nicht zusammen zu verwenden.",
+        "en": "With security defaults, everyone then has to register a second factor, so announce it in advance. If you use Conditional Access, turn the per-account setting off: Microsoft advises against using both together."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Ohne Entra ID P1: im Entra Admin Center unter „Übersicht“ › „Eigenschaften“ die Sicherheitsstandards einschalten.",
+        "Mit Entra ID P1 (in Business Premium enthalten): eine Regel des bedingten Zugriffs, die Mehr-Faktor für alle verlangt."
+      ],
+      "en": [
+        "Without Entra ID P1: in the Microsoft Entra admin center, turn on security defaults under “Overview” › “Properties”.",
+        "With Entra ID P1 (included in Business Premium): a Conditional Access policy that requires multifactor for everyone."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/authentication/howto-mfa-userstates",
+        "titel": {
+          "de": "Mehr-Faktor je Benutzer aktivieren",
+          "en": "Enable per-user multifactor authentication"
+        }
+      },
+      {
+        "pfad": "entra/fundamentals/security-defaults",
+        "titel": {
+          "de": "Sicherheitsstandards in Microsoft Entra ID",
+          "en": "Security defaults in Microsoft Entra ID"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:1",
+      "kjello:mfa_admins"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-rollen",
+    "portal": "m365",
+    "route": "rbac/directory",
+    "titelProbe": {
+      "de": [
+        "Rollenzuweisungen",
+        "Rollen"
+      ],
+      "en": [
+        "Role assignments",
+        "Roles"
+      ]
+    },
+    "titel": {
+      "de": "Rollen: Wer darf alles?",
+      "en": "Roles: who can change everything?"
+    },
+    "wasEsTut": {
+      "de": "Hier vergeben Sie Verwaltungsrechte. Die Rolle Globaler Administrator darf im ganzen Microsoft-365-Konto alles. Ein Notfallkonto ist ein Reservekonto mit dieser Rolle, das nur dann benutzt wird, wenn kein Admin mehr hereinkommt.",
+      "en": "This is where you assign admin rights. The Global Administrator role can do anything in the whole Microsoft 365 account. An emergency access account is a spare account with this role, used only when no admin can sign in any more."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Weniger als fünf Globale Administratoren, mindestens zwei Notfallkonten.",
+        "en": "Fewer than five Global Administrators, at least two emergency accounts."
+      },
+      "wennEsSoBleibt": {
+        "de": "Je mehr Zugänge mit vollen Rechten es gibt, desto mehr Türen gibt es. Ohne Notfallkonto sperren Sie sich selbst aus, wenn das letzte Admin-Konto nicht mehr hereinkommt.",
+        "en": "The more accounts with full rights, the more doors there are. Without an emergency access account you lock yourself out when the last admin account can no longer sign in."
+      },
+      "vorher": {
+        "de": "Bevor Sie jemandem die Rolle nehmen: prüfen, ob eine engere Rolle für seine Aufgaben reicht. Die Notfallkonten regelmäßig testen, mindestens alle 90 Tage.",
+        "en": "Before removing the role from someone, check whether a narrower role covers their tasks. Test the emergency access accounts regularly, at least every 90 days."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Die Rolle Globaler Administrator öffnen und nachsehen, wem sie zugewiesen ist.",
+        "Notfallkonten nur in der Cloud anlegen (Adresse auf .onmicrosoft.com) und im Alltag nicht benutzen."
+      ],
+      "en": [
+        "Open the Global Administrator role and check who it is assigned to.",
+        "Create emergency access accounts as cloud-only accounts (.onmicrosoft.com address) and don't use them day to day."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "entra/identity/role-based-access-control/best-practices",
+        "titel": {
+          "de": "Bewährte Methoden für Rollen in Microsoft Entra",
+          "en": "Best practices for Microsoft Entra roles"
+        }
+      },
+      {
+        "pfad": "entra/identity/role-based-access-control/security-emergency-access",
+        "titel": {
+          "de": "Notfallkonten einrichten",
+          "en": "Manage emergency access accounts"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:2",
+      "kjello:admins"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-kennwortablauf",
+    "portal": "m365",
+    "route": "Settings/SecurityPrivacy/Settings/L1/PasswordPolicy",
+    "titelProbe": {
+      "de": [
+        "Einstellungen"
+      ],
+      "en": [
+        "Settings"
+      ]
+    },
+    "titel": {
+      "de": "Kennwortablauf",
+      "en": "Password expiration"
+    },
+    "wasEsTut": {
+      "de": "Hier legen Sie fest, ob Kennwörter nach einer bestimmten Zahl von Tagen ablaufen. Ohne Änderung laufen sie bei Microsoft 365 nie ab.",
+      "en": "This is where you decide whether passwords expire after a number of days. By default they never expire in Microsoft 365."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "„Nie ablaufen“ anlassen, dazu eine zweite Bestätigung der Anmeldung.",
+        "en": "Keep “never expire” on, with a second sign-in confirmation."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ihre Leute müssen regelmäßig neue Kennwörter erfinden, ohne dass es Sie besser schützt. Microsoft rät bei Cloud-Konten inzwischen davon ab und setzt auf Mehr-Faktor, also eine zweite Bestätigung der Anmeldung, etwa in einer App.",
+        "en": "Your staff have to keep inventing new passwords without it protecting you any better. Microsoft now advises against expiry for cloud accounts and relies on multifactor authentication, a second confirmation of each sign-in, for example in an app."
+      },
+      "vorher": {
+        "de": "Erst Mehr-Faktor für alle einschalten, dann den Ablauf abschalten.",
+        "en": "Turn on multifactor authentication for everyone first, then switch off expiry."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Das Kästchen „Kennwörter so festlegen, dass sie nie ablaufen (empfohlen)“ setzen.",
+        "Speichern."
+      ],
+      "en": [
+        "Select “Set passwords to never expire (recommended)”.",
+        "Save."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "microsoft-365/admin/manage/set-password-expiration-policy",
+        "titel": {
+          "de": "Kennwortablaufrichtlinie festlegen",
+          "en": "Set the password expiration policy"
+        }
+      },
+      {
+        "pfad": "microsoft-365/admin/misc/password-policy-recommendations",
+        "titel": {
+          "de": "Empfehlungen zur Kennwortrichtlinie",
+          "en": "Password policy recommendations"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "haekchen",
+      "rolle": "checkbox",
+      "name": {
+        "de": [
+          "Kennwörter so festlegen, dass sie nie ablaufen (empfohlen)"
+        ],
+        "en": [
+          "Set passwords to never expire (recommended)"
+        ]
+      },
+      "empfohlen": [
+        "ja"
+      ],
+      "rahmen": "oben",
+      "dialog": null
+    },
+    "herkunft": [
+      "haertungs-check:11"
+    ],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-sspr",
+    "portal": "m365",
+    "route": "Settings/SecurityPrivacy/Settings/L1/SelfServiceReset",
+    "titelProbe": {
+      "de": [
+        "Einstellungen"
+      ],
+      "en": [
+        "Settings"
+      ]
+    },
+    "titel": {
+      "de": "Kennwort selbst zurücksetzen",
+      "en": "Self-service password reset"
+    },
+    "wasEsTut": {
+      "de": "Mit der Self-Service-Kennwortzurücksetzung setzen Ihre Leute ein vergessenes Kennwort selbst zurück, ohne Anruf bei der IT. Eingeschaltet wird sie im Entra Admin Center.",
+      "en": "With self-service password reset, your staff reset a forgotten password themselves without calling IT. You turn it on in the Microsoft Entra admin center."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Für alle einschalten, im Entra Admin Center.",
+        "en": "Turn it on for everyone, in the Microsoft Entra admin center."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes vergessene Kennwort wird zu einem Anruf bei Ihrer IT, und bis dahin kann die Person nicht arbeiten.",
+        "en": "Every forgotten password becomes a call to your IT, and until then the person can't work."
+      },
+      "schwere": "info"
+    },
+    "soGehts": {
+      "de": [
+        "Im Entra Admin Center „Entra ID“ › „Passwort zurücksetzen“ öffnen.",
+        "Unter „Eigenschaften“ erst „Ausgewählt“ mit einer Testgruppe, dann „Alle“ wählen."
+      ],
+      "en": [
+        "In the Microsoft Entra admin center, open “Entra ID” › “Password reset”.",
+        "Under “Properties”, choose “Selected” with a test group first, then “All”."
+      ]
+    },
+    "lizenz": "m365-business-standard",
+    "quellen": [
+      {
+        "pfad": "entra/identity/authentication/tutorial-enable-sspr",
+        "titel": {
+          "de": "Self-Service-Kennwortzurücksetzung einschalten",
+          "en": "Enable self-service password reset"
+        }
+      },
+      {
+        "pfad": "entra/identity/authentication/concept-sspr-licensing",
+        "titel": {
+          "de": "Lizenzen für die Self-Service-Kennwortzurücksetzung",
+          "en": "Licensing for self-service password reset"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-kalender-extern",
+    "portal": "m365",
+    "route": "Settings/Services/Settings/L1/Calendar",
+    "titelProbe": {
+      "de": [
+        "Einstellungen"
+      ],
+      "en": [
+        "Settings"
+      ]
+    },
+    "titel": {
+      "de": "Kalender nach außen teilen",
+      "en": "Sharing calendars outside your organization"
+    },
+    "wasEsTut": {
+      "de": "Hier legen Sie fest, ob Ihre Leute Kalender mit Personen außerhalb der Firma teilen dürfen: mit Nutzern von Microsoft 365 oder Exchange und, als zweite Stufe, per Link in einer E-Mail-Einladung ohne Anmeldung. Für diese Stufe wählen Sie, wie viel man sieht. Was jemand teilt, entscheidet jede Person selbst.",
+      "en": "This is where you decide whether staff may share calendars with people outside the company: with Microsoft 365 or Exchange users and, as a second step, via a link in an email invitation without signing in. For that step you choose how much is visible. What gets shared is up to each person."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Per E-Mail-Einladung nur „Frei/Gebucht … nur mit Zeit“ erlauben.",
+        "en": "Via email invitation, allow only “free/busy … with time only”."
+      },
+      "wennEsSoBleibt": {
+        "de": "Wer den Link einer solchen Freigabe hat, sieht ohne Anmeldung nicht nur, wann jemand belegt ist, sondern auch Betreff und Ort der Termine, bei „Alle Kalendertermininformationen anzeigen“ alle Angaben zum Termin.",
+        "en": "Anyone with the link to such a share sees, without signing in, not just when someone is busy but also the subject and location of their appointments, and with “Show all calendar appointment information” every detail of the appointment."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Im Fenster „Kalender“ unter „Jedem den Zugriff auf Kalender mit einer E-Mail-Einladung gestatten“ die Option „Frei/Gebucht-Kalenderinformationen nur mit Zeit anzeigen“ wählen.",
+        "Speichern."
+      ],
+      "en": [
+        "In the “Calendar” pane, under “Allow anyone to access calendars with an email invitation”, choose “Show calendar free/busy information with time only”.",
+        "Save."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "microsoft-365/admin/manage/share-calendars-with-external-users",
+        "titel": {
+          "de": "Microsoft 365-Kalender für Personen außerhalb Ihrer Organisation freigeben",
+          "en": "Share Microsoft 365 calendars with people outside your organization"
+        }
+      }
+    ],
+    "index": null,
+    "leser": {
+      "art": "auswahl",
+      "rolle": "radiogroup",
+      "name": {
+        "de": [
+          "Kalenderinformationen für den Zugriff per E-Mail-Einladung"
+        ],
+        "en": [
+          "Calendar information for access via email invitation"
+        ]
+      },
+      "werte": {
+        "frei-gebucht": [
+          "Frei/Gebucht-Kalenderinformationen nur mit Zeit anzeigen",
+          "Show calendar free/busy information with time only"
+        ],
+        "titel-ort": [
+          "Zeigen Sie die Frei/Gebucht-Informationen des Kalenders mit Uhrzeit, Betreff und Standort an",
+          "Show calendar free/busy information with time, subject, and location"
+        ],
+        "alle": [
+          "Alle Kalendertermininformationen anzeigen",
+          "Show all calendar appointment information"
+        ]
+      },
+      "empfohlen": [
+        "frei-gebucht"
+      ],
+      "gruppeUeberOption": true,
+      "nurWenn": {
+        "de": [
+          "Jedem den Zugriff auf Kalender mit einer E-Mail-Einladung gestatten"
+        ],
+        "en": [
+          "Allow anyone to access calendars with an email invitation"
+        ]
+      },
+      "rahmen": "oben",
+      "dialog": {
+        "de": [
+          "Kalender"
+        ],
+        "en": [
+          "Calendar"
+        ]
+      }
+    },
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-moderne-auth",
+    "portal": "m365",
+    "route": "Settings/Services/Settings/L1/ModernAuthentication",
+    "titelProbe": {
+      "de": [
+        "Einstellungen"
+      ],
+      "en": [
+        "Settings"
+      ]
+    },
+    "titel": {
+      "de": "Moderne Authentifizierung und SMTP",
+      "en": "Modern authentication and SMTP"
+    },
+    "wasEsTut": {
+      "de": "Moderne Authentifizierung: Die Anmeldung läuft über Microsoft und kann einen zweiten Faktor verlangen. Die alte Standardauthentifizierung schickt nur Benutzername und Kennwort. Exchange Online lässt sie nur noch für den Mailversand per SMTP zu, im Fenster das Häkchen „Authentifiziertes SMTP“.",
+      "en": "Modern authentication: sign-in runs through Microsoft and can require a second factor. Legacy basic authentication sends only a user name and password. Exchange Online now allows it only for sending mail via SMTP, the “Authenticated SMTP” checkbox in this pane."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "„Authentifiziertes SMTP“ aus, sobald nichts mehr darüber sendet.",
+        "en": "Turn off “Authenticated SMTP” once nothing sends through it."
+      },
+      "wennEsSoBleibt": {
+        "de": "Alte Anmeldewege kennen keinen zweiten Faktor. Über SMTP kann jemand mit einem gestohlenen Kennwort Mails im Namen Ihrer Leute versenden, auch wenn die Anmeldung sonst abgesichert ist. Microsoft schaltet diese Anmeldung für SMTP Ende Dezember 2026 ab Werk ab; Administratoren können sie danach noch einschalten. Sind die Sicherheitsstandards an, sperren sie alte Anmeldewege ohnehin, auch wenn das Häkchen hier gesetzt ist.",
+        "en": "Legacy sign-in routes don't know a second factor. Via SMTP, someone with a stolen password can send mail in your staff's name even if sign-in is otherwise protected. Microsoft switches this sign-in off by default for SMTP at the end of December 2026; admins can still turn it on afterwards. If security defaults are on, they block legacy sign-in routes anyway, even if the checkbox here is selected."
+      },
+      "vorher": {
+        "de": "Erst klären, welche Geräte und Programme über SMTP senden (Scanner, Kopierer, Fachprogramme), und sie auf einen anderen Versandweg umstellen. Microsoft beschreibt die Wege für Multifunktionsgeräte.",
+        "en": "First find out which devices and programs send via SMTP (scanners, copiers, line-of-business apps) and move them to another way of sending. Microsoft describes the options for multifunction devices."
+      },
+      "schwere": "rot"
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online",
+        "titel": {
+          "de": "Abschaffung der Standardauthentifizierung in Exchange Online",
+          "en": "Deprecation of Basic authentication in Exchange Online"
+        }
+      },
+      {
+        "url": "https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835",
+        "titel": {
+          "de": "Neuer Zeitplan für das Ende der SMTP-Standardauthentifizierung (Exchange-Team, englisch)",
+          "en": "Updated Exchange Online SMTP AUTH Basic Authentication Deprecation Timeline"
+        }
+      },
+      {
+        "pfad": "exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365",
+        "titel": {
+          "de": "Multifunktionsgerät oder Anwendung für den Mailversand mit Microsoft 365 einrichten",
+          "en": "How to set up a multifunction device or application to send email using Microsoft 365"
+        }
+      },
+      {
+        "pfad": "entra/fundamentals/security-defaults",
+        "titel": {
+          "de": "Sicherheitsstandards in Microsoft Entra ID",
+          "en": "Security defaults in Microsoft Entra ID"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:3",
+      "kjello:alt_protokolle"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-freigegebene-postfaecher",
+    "portal": "m365",
+    "route": "SharedMailbox",
+    "titelProbe": {
+      "de": [
+        "Freigegebene Postfächer"
+      ],
+      "en": [
+        "Shared mailboxes"
+      ]
+    },
+    "titel": {
+      "de": "Freigegebene Postfächer",
+      "en": "Shared mailboxes"
+    },
+    "wasEsTut": {
+      "de": "Ein freigegebenes Postfach wie info@ lesen mehrere Leute mit ihren eigenen Konten. Microsoft legt dafür trotzdem ein aktives Benutzerkonto an, mit einem Kennwort, das niemand kennt.",
+      "en": "Several people read a shared mailbox such as info@ with their own accounts. Microsoft still creates an active user account for it, with a password nobody knows."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Die Anmeldung an diesen Konten blockieren.",
+        "en": "Block sign-in for these accounts."
+      },
+      "wennEsSoBleibt": {
+        "de": "Zum Arbeiten mit dem Postfach braucht niemand die Anmeldung an diesem Konto. Bleibt sie offen, steht dort ein aktives Konto, das niemand pflegt. Neu im Microsoft 365 Admin Center angelegte Postfächer sind schon gesperrt, ältere oder anders angelegte oft nicht.",
+        "en": "Nobody needs to sign in to this account to work with the mailbox. Left open, it stays an active account that nobody looks after. Shared mailboxes created in the Microsoft 365 admin center have sign-in blocked by default; older ones or ones created elsewhere often don't."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „Aktive Benutzer“ das Konto des Postfachs öffnen.",
+        "„Anmeldung blockieren“ wählen."
+      ],
+      "en": [
+        "Under “Active users”, open the mailbox's account.",
+        "Choose “Block sign-in”."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/collaboration-exo/shared-mailboxes",
+        "titel": {
+          "de": "Freigegebene Postfächer in Exchange Online",
+          "en": "Shared mailboxes in Exchange Online"
+        }
+      },
+      {
+        "pfad": "microsoft-365/admin/email/create-a-shared-mailbox",
+        "titel": {
+          "de": "Freigegebenes Postfach erstellen",
+          "en": "Create a shared mailbox"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-05",
+    "status": "aktiv"
+  },
+  {
+    "id": "m365-lizenzen",
+    "portal": "m365",
+    "route": "licenses",
+    "titelProbe": {
+      "de": [
+        "Lizenzen"
+      ],
+      "en": [
+        "Licenses"
+      ]
+    },
+    "titel": {
+      "de": "Lizenzen, die niemand nutzt",
+      "en": "Licenses nobody uses"
+    },
+    "wasEsTut": {
+      "de": "Die Liste zeigt je Produkt, wie viele Lizenzen frei und wie viele zugewiesen sind. Ein Produkt kann Lizenzen aus mehreren Abonnements enthalten, auch aus kostenlosen oder Testabonnements. Steht unter „Verfügbare Lizenzen“ mehr als 0, prüfen Sie, ob diese freien Lizenzen bezahlt sind.",
+      "en": "The list shows, per product, how many licenses are free and how many are assigned. A product can hold licenses from several subscriptions, including free or trial ones. If “Available licenses” shows more than 0, check whether those free licenses are paid for."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Freie Lizenzen zuweisen oder zum nächsten Verlängerungstermin abbestellen.",
+        "en": "Assign free licenses or remove them at the next renewal."
+      },
+      "wennEsSoBleibt": {
+        "de": "Freie bezahlte Lizenzen kosten jeden Monat Geld, ohne dass jemand sie nutzt.",
+        "en": "Free paid licenses cost money every month without anyone using them."
+      },
+      "vorher": {
+        "de": "Bei vielen Abonnements lassen sich Lizenzen nur in den sieben Tagen nach Kauf oder Verlängerung abbestellen. Den Termin vorher nachsehen.",
+        "en": "For many subscriptions, licenses can only be removed within seven days of buying or renewing. Check the date in advance."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Erst die Zuweisung bei Konten aufheben, die die Lizenz nicht mehr brauchen.",
+        "Dann das Abonnement öffnen und „Lizenzen entfernen“ wählen."
+      ],
+      "en": [
+        "First unassign the license from accounts that no longer need it.",
+        "Then open the subscription and select “Remove licenses”."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "microsoft-365/commerce/licenses/subscriptions-and-licenses",
+        "titel": {
+          "de": "Abonnements und Lizenzen in Microsoft 365",
+          "en": "Understand subscriptions and licenses in Microsoft 365"
+        }
+      },
+      {
+        "pfad": "microsoft-365/commerce/licenses/buy-licenses",
+        "titel": {
+          "de": "Lizenzen kaufen oder entfernen",
+          "en": "Buy or remove licenses for a Microsoft business subscription"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "kjello:ungenutzte_lizenzen"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "//": "Nur für den Website-Bau: vite sucht für jede .ts-Datei die nächste tsconfig. Die der Erweiterung erbt von .wxt/ (nicht im Repo, entsteht erst mit `wxt prepare`) und bricht auf dem Hetzner-Publisher den Bau ab (06.11.2026). Daher hier die für esbuild wichtigen Felder ohne extends. tsc/wxt der Erweiterung nutzen weiter ../tsconfig.json.",
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "Preserve",
+    "moduleResolution": "Bundler",
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "noEmit": true,
+    "skipLibCheck": true
+  }
+}

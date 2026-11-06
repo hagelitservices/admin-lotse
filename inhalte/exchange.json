@@ -1,0 +1,459 @@
+[
+  {
+    "id": "exo-weiterleitung",
+    "portal": "exo",
+    "route": "mailboxes",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "Weiterleitung von Postfächern nach außen",
+      "en": "Mailbox forwarding to outside addresses"
+    },
+    "wasEsTut": {
+      "de": "Ein Postfach kann jede eingehende Mail an eine andere Adresse weiterleiten, auch an eine fremde. Hier sehen Sie das je Postfach. Ob automatische Weiterleitungen nach außen zugestellt werden, regelt vor allem die Richtlinie für ausgehenden Spam im Defender-Portal.",
+      "en": "A mailbox can forward every incoming message to another address, including an outside one. Here you see this per mailbox. Whether automatic forwarding to outside addresses is delivered is mainly controlled by the outbound spam policy in the Defender portal."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Automatische Weiterleitung nach außen in der Spam-Richtlinie abschalten.",
+        "en": "Turn off automatic external forwarding in the outbound spam policy."
+      },
+      "wennEsSoBleibt": {
+        "de": "Über eine Weiterleitung nach außen können Firmendaten unbemerkt abfließen. Angreifer nutzen sie, um Ihre Firma oder Ihre Partner anzugreifen.",
+        "en": "Forwarding to outside addresses can leak company information unnoticed. Attackers use it to attack your organisation or your partners."
+      },
+      "vorher": {
+        "de": "Erst nachsehen, wer heute nach außen weiterleitet, und diese Fälle klären. Nach dem Umstellen kommen solche Mails nicht mehr an, der Absender erhält eine Unzustellbarkeitsnachricht.",
+        "en": "First check who forwards to outside addresses today and settle those cases. After the change, such messages no longer arrive and the sender gets a non-delivery report."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Postfach in der Liste anklicken und oben im Seitenfenster „E-Mail-Weiterleitung“ öffnen: Dort steht, ob und wohin dieses Postfach weiterleitet.",
+        "Für alle Postfächer gilt die Richtlinie für ausgehenden Spam im Microsoft Defender-Portal. „Automatisch – Systemgesteuert“ verhält sich nicht in jedem Mandanten gleich; Microsoft rät, „Aus – Weiterleitung ist deaktiviert“ oder „An – Weiterleitung ist aktiviert“ ausdrücklich zu wählen. Wer weiterleiten muss, bekommt eine eigene Richtlinie.",
+        "Postfach-Überwachung, also das Protokoll, wer in einem Postfach was getan hat, ist ab Werk eingeschaltet. Ob das noch gilt, zeigt Exchange Online PowerShell: Get-OrganizationConfig | Format-List AuditDisabled. „False“ heißt: eingeschaltet."
+      ],
+      "en": [
+        "Click a mailbox in the list and open “Email forwarding” at the top of the pane: it shows whether and where this mailbox forwards.",
+        "For all mailboxes, the outbound spam policy in the Microsoft Defender portal applies. “Automatic - System-controlled” does not behave the same in every tenant; Microsoft advises choosing “Off - Forwarding is disabled” or “On - Forwarding is enabled” explicitly. Anyone who must forward gets a separate policy.",
+        "Mailbox auditing, the log of who did what in a mailbox, is on by default. To check it still is, use Exchange Online PowerShell: Get-OrganizationConfig | Format-List AuditDisabled. “False” means it is on."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "defender-office-365/outbound-spam-policies-external-email-forwarding",
+        "titel": {
+          "de": "Steuern der automatischen externen E-Mail-Weiterleitung aus Cloudpostfächern",
+          "en": "Control automatic external email forwarding from cloud mailboxes"
+        }
+      },
+      {
+        "pfad": "exchange/recipients-in-exchange-online/manage-user-mailboxes/configure-email-forwarding",
+        "titel": {
+          "de": "Konfigurieren der E-Mail-Weiterleitung für ein Postfach in Exchange Online",
+          "en": "Configure email forwarding for a mailbox in Exchange Online"
+        }
+      },
+      {
+        "pfad": "purview/audit-mailboxes",
+        "titel": {
+          "de": "Verwalten der Postfachüberwachung",
+          "en": "Manage mailbox auditing"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:4",
+      "kjello:weiterleitung",
+      "haertungs-check:9",
+      "kjello:postfach_protokoll"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "exo-email-apps",
+    "portal": "exo",
+    "route": "mailboxes",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "POP und IMAP je Postfach",
+      "en": "POP and IMAP per mailbox"
+    },
+    "wasEsTut": {
+      "de": "POP und IMAP sind alte Wege, mit denen Mailprogramme ein Postfach abrufen. Microsoft schaltet sie bei jedem neuen Postfach ein. Ob ein Postfach sie zulässt, steht in seinen Einstellungen für E-Mail-Apps.",
+      "en": "POP and IMAP are old protocols that email programs use to fetch a mailbox. Microsoft turns them on for every new mailbox. Whether a mailbox allows them is shown in its email apps settings."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "POP und IMAP ausschalten, wo niemand sie braucht.",
+        "en": "Turn off POP and IMAP wherever nobody needs them."
+      },
+      "wennEsSoBleibt": {
+        "de": "Jedes Postfach bleibt über diese alten Wege erreichbar, auch wenn niemand sie nutzt.",
+        "en": "Every mailbox stays reachable through these older protocols, even if nobody uses them."
+      },
+      "vorher": {
+        "de": "Prüfen, ob ein älteres Mailprogramm oder eine Anwendung das Postfach per POP oder IMAP abruft. Für dieses Postfach bleibt der Weg an.",
+        "en": "Check whether an older email program or an application fetches the mailbox via POP or IMAP. For that mailbox, keep it on."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Postfach in der Liste anklicken und im Seitenfenster im Reiter „Allgemein“ „Einstellungen für E-Mail-Apps verwalten“ öffnen.",
+        "POP3 und IMAP für Postfächer ausschalten, die sie nicht brauchen."
+      ],
+      "en": [
+        "Click a mailbox in the list and, on the “General” tab of the pane, open “Manage email apps settings”.",
+        "Turn off POP3 and IMAP for mailboxes that do not need them."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/recipients-in-exchange-online/manage-user-mailboxes/managing-email-apps-for-user-mailboxes",
+        "titel": {
+          "de": "Verwalten von E-Mail-Apps für Benutzerpostfächer",
+          "en": "Managing email apps for user mailboxes"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "exo-remotedomaenen",
+    "portal": "exo",
+    "route": "remotedomains",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "Remotedomäne „Default“: automatische Weiterleitung",
+      "en": "Remote domain “Default”: automatic forwarding"
+    },
+    "wasEsTut": {
+      "de": "Remotedomänen legen fest, was an fremde Domänen hinausgeht. „Default“ gilt für alle, die keinen eigenen Eintrag haben. Ab Werk lässt sie automatische Weiterleitungen zu.",
+      "en": "Remote domains define what goes out to outside domains. “Default” applies to every domain without its own entry. Out of the box it allows automatic forwarding."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "In „Default“ die automatische Weiterleitung nicht zulassen.",
+        "en": "Do not allow automatic forwarding in “Default”."
+      },
+      "wennEsSoBleibt": {
+        "de": "Eine Posteingangsregel, die Mails an eine fremde Adresse schickt, wird hier nicht gestoppt. Solche Regeln entstehen auch, wenn ein Konto übernommen wurde.",
+        "en": "An inbox rule that sends mail to an outside address is not stopped here. Such rules are also created when an account has been taken over."
+      },
+      "vorher": {
+        "de": "Erst klären, wer per Posteingangsregel oder Outlook im Web nach außen weiterleitet. Nach dem Umstellen gehen diese Weiterleitungen nicht mehr hinaus, und niemand erhält eine Fehlermeldung. Die Einstellung sperrt nur Weiterleitungen, die Benutzer selbst einrichten. Eine Weiterleitung, die ein Admin am Postfach setzt, geht trotzdem hinaus. Für beide gilt die Richtlinie für ausgehenden Spam im Defender-Portal.",
+        "en": "First find out who forwards to outside addresses via inbox rules or Outlook on the web. After the change, this forwarding no longer goes out and nobody gets an error message. The setting only blocks forwarding that users set up themselves. Forwarding that an admin sets on the mailbox still goes out. The outbound spam policy in the Defender portal covers both."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "„Default“ in der Liste anklicken; im Seitenfenster steht unter „E-Mail-Antworttypen“, ob „Automatische Weiterleitung zulassen“ gilt.",
+        "Über „Antworttypen bearbeiten“ die automatische Weiterleitung abwählen. Erlaubte Ziele als eigene Remotedomäne anlegen."
+      ],
+      "en": [
+        "Click “Default” in the list; under “Email reply types” the pane shows whether automatic forwarding is allowed.",
+        "Edit the reply types and clear automatic forwarding. Add permitted destinations as their own remote domain."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/mail-flow-best-practices/remote-domains/remote-domains",
+        "titel": {
+          "de": "Remotedomänen in Exchange Online",
+          "en": "Remote domains in Exchange Online"
+        }
+      },
+      {
+        "pfad": "exchange/mail-flow-best-practices/remote-domains/manage-remote-domains",
+        "titel": {
+          "de": "Verwalten von Remotedomänen in Exchange Online",
+          "en": "Manage remote domains in Exchange Online"
+        }
+      },
+      {
+        "pfad": "defender-office-365/outbound-spam-policies-external-email-forwarding",
+        "titel": {
+          "de": "Steuern der automatischen externen E-Mail-Weiterleitung aus Cloudpostfächern",
+          "en": "Control automatic external email forwarding from cloud mailboxes"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "haertungs-check:4"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "exo-regeln",
+    "portal": "exo",
+    "route": "transportrules",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "Nachrichtenflussregeln",
+      "en": "Mail flow rules"
+    },
+    "wasEsTut": {
+      "de": "Nachrichtenflussregeln, auch Transportregeln genannt, prüfen Mails, die durch Ihr Exchange laufen, und handeln bei denen, auf die ihre Bedingungen passen: umleiten, zusätzliche Empfänger als Blindkopie (Bcc) setzen, ablehnen, Hinweise anfügen.",
+      "en": "Mail flow rules, also called transport rules, check messages passing through your Exchange and act on those that match their conditions: redirect, add recipients as blind copy (Bcc), reject, add notices."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Regeln kennen, die Mails umleiten oder nach außen kopieren.",
+        "en": "Know the rules that redirect mail or copy it outside."
+      },
+      "wennEsSoBleibt": {
+        "de": "Eine unbekannte Regel, die Mails in Kopie an eine fremde Adresse schickt, kann unbemerkt mitlesen.",
+        "en": "An unknown rule that copies mail to an outside address can read along unnoticed."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Jede Regel anklicken und ihre Aktion lesen: Umleiten, Empfänger hinzufügen oder Bcc an eine fremde Adresse sind die Fälle, die eine Begründung brauchen.",
+        "Eine Regel, die niemand erklären kann, mit dem Verantwortlichen klären."
+      ],
+      "en": [
+        "Click each rule and read its action: redirecting, adding recipients or Bcc to an outside address are the cases that need a reason.",
+        "Settle any rule that nobody can explain with whoever is responsible."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/security-and-compliance/mail-flow-rules/mail-flow-rules",
+        "titel": {
+          "de": "Nachrichtenflussregeln (Transportregeln) in Exchange Online",
+          "en": "Mail flow rules (transport rules) in Exchange Online"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "exo-connectors",
+    "portal": "exo",
+    "route": "connectors",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "Connectors",
+      "en": "Connectors"
+    },
+    "wasEsTut": {
+      "de": "Connectors leiten Mails auf eigenen Wegen zu oder von Ihrem Microsoft 365, etwa über einen eigenen Mailserver, einen Filterdienst oder einen Partner. Die meisten Firmen brauchen für den normalen Mailverkehr keinen.",
+      "en": "Connectors route mail along their own paths to or from your Microsoft 365, for example through your own mail server, a filtering service or a partner. Most organisations need none for regular mail flow."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Jeden Connector einem Zweck zuordnen; einen unbekannten klären.",
+        "en": "Match every connector to a purpose; settle any unknown one."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ein Connector, den niemand kennt, kann Mails über einen fremden Server leiten, ohne dass jemand weiß, ob das gewollt ist.",
+        "en": "A connector nobody knows can route mail through an outside server without anyone knowing whether that is intended."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Bei jedem Connector nachsehen, von wo nach wo er Mails leitet, und den zugehörigen Dienst oder Server benennen.",
+        "Einen Connector, zu dem es keinen Dienst mehr gibt, mit dem Verantwortlichen klären."
+      ],
+      "en": [
+        "For each connector, check where it routes mail from and to, and name the service or server behind it.",
+        "Settle any connector whose service no longer exists with whoever is responsible."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow",
+        "titel": {
+          "de": "Konfigurieren des Nachrichtenflusses mithilfe von Connectors in Exchange Online",
+          "en": "Configure mail flow using connectors in Exchange Online"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "exo-domaenen",
+    "portal": "exo",
+    "route": "accepteddomains",
+    "titelProbe": {
+      "de": [
+        "Exchange admin center"
+      ],
+      "en": [
+        "Exchange admin center"
+      ]
+    },
+    "titel": {
+      "de": "Akzeptierte Domänen und Schutz vor gefälschten Mails",
+      "en": "Accepted domains and protection against forged email"
+    },
+    "wasEsTut": {
+      "de": "Akzeptierte Domänen sind die Domänen, für die Ihr Exchange Mails annimmt. Ob andere in ihrem Namen Mails fälschen können, hängt an drei DNS-Einträgen: SPF nennt die erlaubten Absender, DKIM unterschreibt jede ausgehende Mail, sobald es eingerichtet ist, DMARC sagt dem Empfänger, was mit Fälschungen geschehen soll.",
+      "en": "Accepted domains are the domains your Exchange accepts mail for. Whether others can forge email in their name depends on three DNS records: SPF names the allowed senders, DKIM signs each outgoing message once it is set up, and DMARC tells the recipient what to do with forgeries."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "DMARC auf quarantine oder reject, SPF mit -all, DKIM an.",
+        "en": "DMARC at quarantine or reject, SPF with -all, DKIM on."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ohne wirksames DMARC bekommt der Empfänger von Ihnen keine Anweisung, gefälschte Mails mit Ihrer Domain abzulehnen. Solche Mails sind ein häufiger Einstieg für Rechnungsbetrug und Phishing.",
+        "en": "Without an effective DMARC policy, recipients get no instruction from you to reject forged mail using your domain. Such mail is a common way in for invoice fraud and phishing."
+      },
+      "vorher": {
+        "de": "DMARC in Stufen anheben: erst none, dann quarantine, dann reject. Vorher SPF und DKIM für alle Absender einrichten, auch für Newsletter- und Shop-Dienste. Sonst lehnen Empfänger echte Mails ab.",
+        "en": "Raise DMARC in stages: none first, then quarantine, then reject. Set up SPF and DKIM for all senders first, including newsletter and shop services. Otherwise recipients reject genuine mail."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "SPF und DKIM für jede eigene Domain einrichten, die Mails verschickt; SPF mit „-all“ abschließen, also alle anderen Absender unzulässig. Für Domains, die keine Mails verschicken, SPF „v=spf1 -all“ und DMARC „reject“ setzen.",
+        "Den DMARC-Eintrag legen Sie bei Ihrem Domain-Anbieter an. Für eigene Domains gibt es dafür bei Microsoft keine Einstellung.",
+        "Berichte einige Zeit beobachten, erst dann die Stufe anheben: „quarantine“ verschiebt Fälschungen in die Quarantäne, „reject“ lehnt sie ab."
+      ],
+      "en": [
+        "Set up SPF and DKIM for every custom domain that sends mail; end SPF with “-all”, meaning all other senders are not allowed. For domains that send no mail, publish SPF “v=spf1 -all” and DMARC “reject”.",
+        "Create the DMARC record at your domain provider. Microsoft has no setting for this on custom domains.",
+        "Watch the reports for a while before raising the policy: “quarantine” moves forgeries to quarantine, “reject” refuses them."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains",
+        "titel": {
+          "de": "Verwalten akzeptierter Domänen in Exchange Online",
+          "en": "Manage accepted domains in Exchange Online"
+        }
+      },
+      {
+        "pfad": "defender-office-365/email-authentication-dmarc-configure",
+        "titel": {
+          "de": "DMARC in Microsoft 365 einrichten",
+          "en": "Set up DMARC in Microsoft 365"
+        }
+      },
+      {
+        "pfad": "defender-office-365/email-authentication-spf-configure",
+        "titel": {
+          "de": "SPF für eigene Domains einrichten",
+          "en": "Set up SPF for custom domains"
+        }
+      },
+      {
+        "pfad": "defender-office-365/email-authentication-dkim-configure",
+        "titel": {
+          "de": "DKIM für eigene Domains einrichten",
+          "en": "Set up DKIM for custom domains"
+        }
+      },
+      {
+        "url": "https://www.hagel-it.de/it-sicherheits-index-hamburg",
+        "titel": {
+          "de": "Selbsttest: Ihre eigene Domain prüfen",
+          "en": "Self-test: check your own domain (German)"
+        }
+      }
+    ],
+    "index": [
+      {
+        "kennzahl": "dmarc.wirksam_prozent",
+        "satz": {
+          "de": "Wirksames DMARC haben {wert} % von {basis} gemessenen Hamburger Unternehmen mit Mailempfang (IT-Sicherheits-Index Hamburg {jahr}).",
+          "en": "{wert}% of {basis} measured Hamburg companies that receive email have an effective DMARC policy (Hamburg IT Security Index {jahr})."
+        }
+      },
+      {
+        "kennzahl": "spf.streng_prozent",
+        "satz": {
+          "de": "Einen strengen SPF-Eintrag haben {wert} % von ihnen.",
+          "en": "{wert}% of them have a strict SPF record."
+        }
+      }
+    ],
+    "leser": {
+      "art": "domains",
+      "rolle": "grid",
+      "name": {
+        "de": [
+          "Akzeptierter Domänenraster"
+        ],
+        "en": [
+          "Accepted Domain grid"
+        ]
+      },
+      "empfohlen": [],
+      "rahmen": "oben",
+      "dialog": null
+    },
+    "herkunft": [
+      "hamburg-index:dmarc",
+      "hamburg-index:spf"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  }
+]

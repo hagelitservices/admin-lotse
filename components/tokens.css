@@ -1,0 +1,130 @@
+/* ============================================================================
+   Admin-Lotse — Design-Token (Spez. §11.4, „Nordic Authority“ + „Instrumententafel“, TOOLS-SPEC §2)
+   Zwischen den Markierungen wörtlich aus src/styles/global.css der Website; U-50 prüft den Gleichlauf.
+   Dunkel ist eigen (die Website hat keinen dunklen Modus) und baut auf der Palette auf (zwei Flächen für Vorsicht-Kästen sind eigen).
+   Orange nur für Handlungsaufforderungen, Status nie in Orange (TOOLS-SPEC §2.2).
+   ========================================================================= */
+
+:root {
+  color-scheme: light dark;
+
+  /* palette:start */
+  --color-accent-50:  #FFF4ED;
+  --color-accent-100: #FFE5D2;
+  --color-accent-200: #FFC7A4;
+  --color-accent-300: #FFA06B;
+  --color-accent-400: #FF6F2E;
+  --color-accent-500: #E8621A;
+  --color-accent-600: #CC4E0E;
+  --color-accent-700: #A33B0A;
+  --color-accent-800: #7A2E0F;
+  --color-accent-900: #5C2410;
+  --color-navy-50:  #EEF3FA;
+  --color-navy-100: #D4E0F0;
+  --color-navy-200: #A8C0DE;
+  --color-navy-300: #7A9DC6;
+  --color-navy-400: #5078A8;
+  --color-navy-500: #3A5F8A;
+  --color-navy-600: #2E5C8F;
+  --color-navy-700: #234B78;
+  --color-navy-800: #1B3A62;
+  --color-navy-900: #152E50;
+  --color-navy-950: #0F2440;
+  --color-slate-50:  #F8FAFC;
+  --color-slate-100: #F1F5F9;
+  --color-slate-200: #E2E8F0;
+  --color-slate-300: #CBD5E1;
+  --color-slate-400: #94A3B8;
+  --color-slate-500: #64748B;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1E293B;
+  --color-slate-900: #0F172A;
+  --color-slate-950: #020617;
+  --color-status-ok:                #34D399;
+  --color-status-ok-on-light:       #047857;
+  --color-status-degraded:          #FBBF24;
+  --color-status-degraded-on-light: #B45309;
+  --color-status-down:              #F87171;
+  --color-status-down-on-light:     #DC2626;
+  --color-status-unknown:           #94A3B8;
+  --color-status-unknown-on-light:  #64748B;
+  --color-status-planned:           #7A9DC6;
+  --color-status-planned-on-light:  #2E5C8F;
+  /* palette:ende */
+
+  /* Bedeutung, hell */
+  --flaeche: var(--color-slate-50);
+  --karte: #FFFFFF;
+  --tinte: var(--color-navy-900);
+  --tinte-2: var(--color-slate-600);
+  --linie: var(--color-slate-200);
+  --linie-stark: var(--color-slate-300);
+  --leise: var(--color-slate-100);
+  --fokus: var(--color-navy-600);
+  --link: var(--color-navy-600);
+  --aktion: var(--color-accent-700);
+  --aktion-hover: var(--color-accent-800);
+  --auf-aktion: #FFFFFF;
+  --hinweis-flaeche: var(--color-navy-50);
+  --hinweis-linie: var(--color-navy-200);
+  --vorsicht-flaeche: #FFF8EB; /* eigen: heller Bernstein-Grund */
+  --vorsicht-linie: var(--color-status-degraded-on-light);
+  --skelett: var(--color-slate-200);
+
+  /* Statusfarbe auf heller Karte: die -on-light-Werte (≥ 4,5:1 auf Weiß) */
+  --status-ok: var(--color-status-ok-on-light);
+  --status-down: var(--color-status-down-on-light);
+  --status-degraded: var(--color-status-degraded-on-light);
+  --status-unknown: var(--color-status-unknown-on-light);
+  --status-planned: var(--color-status-planned-on-light);
+
+  /* Instrumentenband: in beiden Modi navy-950, Status in den hellen Werten */
+  --band: var(--color-navy-950);
+  --band-tinte: var(--color-slate-100);
+  --band-tinte-2: var(--color-navy-200);
+  --band-linie: var(--color-navy-800);
+
+  --font-titel: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --radius: 8px;
+  --radius-klein: 6px;
+  --dauer: 150ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --flaeche: var(--color-navy-950);
+    --karte: var(--color-navy-900);
+    --tinte: var(--color-slate-100);
+    --tinte-2: var(--color-navy-200);
+    --linie: var(--color-navy-800);
+    --linie-stark: var(--color-navy-700);
+    --leise: var(--color-navy-800);
+    --fokus: var(--color-navy-200);
+    --link: var(--color-navy-200);
+    --aktion: var(--color-accent-700);
+    --aktion-hover: var(--color-accent-600);
+    --hinweis-flaeche: var(--color-navy-800);
+    --hinweis-linie: var(--color-navy-600);
+    --vorsicht-flaeche: #2A2410;
+    --vorsicht-linie: var(--color-status-degraded);
+    --skelett: var(--color-navy-800);
+
+    --status-ok: var(--color-status-ok);
+    --status-down: var(--color-status-down);
+    --status-degraded: var(--color-status-degraded);
+    --status-unknown: var(--color-status-unknown);
+    --status-planned: var(--color-status-planned);
+
+    --band-linie: var(--color-navy-800);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dauer: 0ms;
+  }
+}

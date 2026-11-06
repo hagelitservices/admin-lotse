@@ -1,0 +1,288 @@
+{
+  "erweiterung_name": {
+    "message": "Admin-Lotse für Microsoft 365"
+  },
+  "erweiterung_kurzname": {
+    "message": "Admin-Lotse"
+  },
+  "erweiterung_beschreibung": {
+    "message": "Erklärt Einstellungen im Microsoft 365 Admin Center, in Entra, Intune und Exchange auf Deutsch – mit Empfehlung und Abweichungen."
+  },
+  "erweiterung_titel": {
+    "message": "Admin-Lotse öffnen"
+  },
+  "seitenleiste_leer": {
+    "message": "Für diese Seite gibt es noch keine Erklärung."
+  },
+  "ausserhalb_hinweis": {
+    "message": "Öffnen Sie eines davon. Dann erklärt der Lotse die Einstellungen der Seite."
+  },
+  "optionen_titel": {
+    "message": "Admin-Lotse – Einstellungen"
+  },
+  "portal_m365": {
+    "message": "Microsoft 365 Admin Center"
+  },
+  "portal_entra": {
+    "message": "Microsoft Entra Admin Center"
+  },
+  "portal_intune": {
+    "message": "Microsoft Intune Admin Center"
+  },
+  "portal_exo": {
+    "message": "Exchange Admin Center"
+  },
+  "ausserhalb_titel": {
+    "message": "Der Lotse arbeitet in diesen vier Portalen"
+  },
+  "leer_vorschlag": {
+    "message": "Wichtig in diesem Portal:"
+  },
+  "kein_portal": {
+    "message": "Dieser Tab zeigt keines der vier Admin-Portale."
+  },
+  "erst_titel": {
+    "message": "So arbeitet der Lotse"
+  },
+  "erst_was": {
+    "message": "Der Lotse erklärt die Einstellung, die Sie gerade sehen, und sagt, was wir empfehlen."
+  },
+  "erst_zusagen": {
+    "message": "Er ändert nichts und sendet nichts. Alles bleibt in Ihrem Browser."
+  },
+  "erst_keine_pruefung": {
+    "message": "Keine Prüfung, eine Erklärung: Er liest nur, was auf der Seite steht. Entscheiden tun Sie."
+  },
+  "knopf_verstanden": {
+    "message": "Verstanden"
+  },
+  "lese_text": {
+    "message": "Lese die Seite …"
+  },
+  "band_titel": {
+    "message": "Auf dieser Seite"
+  },
+  "status_passt": {
+    "message": "Passt"
+  },
+  "status_weicht_ab": {
+    "message": "Weicht ab"
+  },
+  "status_nicht_lesbar": {
+    "message": "Nicht lesbar"
+  },
+  "status_bewusst": {
+    "message": "Bewusst so"
+  },
+  "zeile_angezeigt": {
+    "message": "Angezeigt: $1"
+  },
+  "zeile_empfohlen": {
+    "message": "Empfohlen: $1"
+  },
+  "wert_ja": {
+    "message": "Ja"
+  },
+  "wert_nein": {
+    "message": "Nein"
+  },
+  "wert_domain_eine": {
+    "message": "1 Domäne"
+  },
+  "wert_domains": {
+    "message": "$1 Domänen"
+  },
+  "spanne_zwischen": {
+    "message": "$1 bis $2"
+  },
+  "spanne_hoechstens": {
+    "message": "höchstens $1"
+  },
+  "spanne_mindestens": {
+    "message": "mindestens $1"
+  },
+  "wort_oder": {
+    "message": "oder"
+  },
+  "grund_zeitgrenze": {
+    "message": "Die Seite hat den Wert nicht gezeigt."
+  },
+  "grund_mehrdeutig": {
+    "message": "Die Einstellung steht mehr als einmal auf der Seite. Damit nichts verwechselt wird, bewerte ich sie nicht."
+  },
+  "grund_unbekannt": {
+    "message": "Den angezeigten Wert kenne ich nicht. Ich bewerte ihn deshalb nicht."
+  },
+  "grund_aufbau": {
+    "message": "Die Seite sieht anders aus als erwartet. Die Erklärung gilt weiter, den Wert lese ich nicht."
+  },
+  "grund_sprache": {
+    "message": "Werte lese ich nur bei deutscher oder englischer Portalsprache."
+  },
+  "knopf_erneut": {
+    "message": "Erneut lesen"
+  },
+  "neuladen_titel": {
+    "message": "Bitte die Seite einmal neu laden."
+  },
+  "neuladen_text": {
+    "message": "Die Seite war schon offen, als der Lotse dazukam. Nach dem Neuladen liest er die Werte."
+  },
+  "knopf_neuladen": {
+    "message": "Seite neu laden"
+  },
+  "karte_was": {
+    "message": "Was das tut"
+  },
+  "karte_empfehlung": {
+    "message": "Unsere Empfehlung"
+  },
+  "karte_bleibt": {
+    "message": "Wenn es so bleibt"
+  },
+  "karte_vorher": {
+    "message": "Vorher bedenken"
+  },
+  "karte_domains": {
+    "message": "Domänen auf dieser Seite"
+  },
+  "karte_sogehts": {
+    "message": "So geht’s"
+  },
+  "karte_lizenz": {
+    "message": "Lizenz"
+  },
+  "karte_vergleich": {
+    "message": "Hamburger Vergleich"
+  },
+  "karte_quelle": {
+    "message": "Quelle"
+  },
+  "karte_quellen": {
+    "message": "Quellen"
+  },
+  "karte_geprueft": {
+    "message": "Inhalt geprüft am $1"
+  },
+  "lizenz_entra_p1": {
+    "message": "Braucht Microsoft Entra ID P1 (in Microsoft 365 Business Premium enthalten)."
+  },
+  "lizenz_m365_business_standard": {
+    "message": "Ab Microsoft 365 Business Standard enthalten."
+  },
+  "knopf_einstellungen": {
+    "message": "Einstellungen"
+  },
+  "fuss_frage": {
+    "message": "Fragen zu Ihrem Microsoft 365?"
+  },
+  "fuss_hilft": {
+    "message": "hagel IT hilft."
+  },
+  "zusage_kurz": {
+    "message": "Ändert nichts. Sendet nichts."
+  },
+  "fuss_version": {
+    "message": "Version $1"
+  },
+  "ansage_lese": {
+    "message": "Lese die Seite"
+  },
+  "ansage_weicht_eine": {
+    "message": "1 Einstellung weicht ab"
+  },
+  "ansage_weicht": {
+    "message": "$1 Einstellungen weichen ab"
+  },
+  "ansage_nicht_lesbar": {
+    "message": "$1 nicht lesbar"
+  },
+  "ansage_passt": {
+    "message": "$1 wie empfohlen"
+  },
+  "optionen_zusagen_titel": {
+    "message": "Was der Lotse tut"
+  },
+  "optionen_daten": {
+    "message": "Gelesene Werte bleiben in Ihrem Browser und sind weg, sobald Sie den Tab schließen. Gespeichert wird nur, dass Sie die Einführung gelesen haben."
+  },
+  "sprache": {
+    "message": "de",
+    "description": "Sprache dieser Übersetzung; bestimmt die Sprache der Inhaltstexte (gleiche Wahl wie getMessage)."
+  },
+  "band_firma": {
+    "message": "Von Ihrer IT eingerichtet"
+  },
+  "band_firma_text": {
+    "message": "Einige Einstellungen dieses Lotsen legt Ihre Firma fest."
+  },
+  "bewusst_firma": {
+    "message": "Von Ihrer IT so entschieden: $1"
+  },
+  "bewusst_nutzer": {
+    "message": "Von Ihnen ausgeblendet"
+  },
+  "knopf_ausblenden": {
+    "message": "Hinweis ausblenden"
+  },
+  "ausblenden_hilfe": {
+    "message": "Ist das bei Ihnen bewusst so? Dann zählt es nicht mehr als Abweichung. Rückgängig hier oder in den Einstellungen."
+  },
+  "knopf_wieder": {
+    "message": "Wieder anzeigen"
+  },
+  "fuss_hilft_name": {
+    "message": "$1 hilft."
+  },
+  "werte_aus_firma": {
+    "message": "Ihre IT hat das Lesen der Werte abgeschaltet. Sie sehen nur die Erklärungen."
+  },
+  "optionen_ausgeblendet_titel": {
+    "message": "Ausgeblendete Hinweise"
+  },
+  "optionen_ausgeblendet_leer": {
+    "message": "Sie haben keinen Hinweis ausgeblendet."
+  },
+  "optionen_firma_bewusst": {
+    "message": "Diese Abweichungen hat Ihre IT als bewusst markiert:"
+  },
+  "optionen_werte_aus": {
+    "message": "Werte lesen: von Ihrer IT abgeschaltet."
+  },
+  "zugriff_titel": {
+    "message": "Der Lotse darf diese Seite nicht lesen"
+  },
+  "zugriff_text": {
+    "message": "Der Website-Zugriff für $1 ist eingeschränkt. Ohne ihn erkennt der Lotse die Seite nicht und kann nichts erklären."
+  },
+  "zugriff_weg": {
+    "message": "Erlauben Sie den Zugriff mit dem Knopf. Oder: Rechtsklick auf das Lotsen-Symbol, „Kann Websitedaten lesen und ändern“, dann „Auf $1“."
+  },
+  "zugriff_zusage": {
+    "message": "Auch mit Zugriff ändert der Lotse nichts und sendet nichts."
+  },
+  "zugriff_fehlt_titel": {
+    "message": "Für diese Portale fehlt der Website-Zugriff"
+  },
+  "knopf_erlauben": {
+    "message": "Zugriff auf $1 erlauben"
+  },
+  "zugriff_abgelehnt": {
+    "message": "Nicht erlaubt. Sie können es jederzeit wieder versuchen."
+  },
+  "start_titel": {
+    "message": "So öffnen Sie den Lotsen"
+  },
+  "start_schritt_1": {
+    "message": "Klicken Sie oben rechts neben der Adresszeile auf das Puzzle-Symbol (Erweiterungen)."
+  },
+  "start_schritt_2": {
+    "message": "Heften Sie den Admin-Lotsen an: in Chrome mit der Stecknadel, in Edge mit dem Auge („In Symbolleiste anzeigen“). Dann bleibt das Symbol sichtbar."
+  },
+  "start_schritt_3": {
+    "message": "Öffnen Sie ein Admin Center von Microsoft 365 und klicken Sie auf das Symbol. Die Leiste öffnet sich rechts neben der Seite."
+  },
+  "start_zahl": {
+    "message": "Eine rote Zahl am Symbol zeigt, wie viele Einstellungen auf der Seite von unserer Empfehlung abweichen."
+  }
+}

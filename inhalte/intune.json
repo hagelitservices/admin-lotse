@@ -1,0 +1,484 @@
+[
+  {
+    "id": "intune-konformitaet",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_DeviceSettings/DevicesMenu/~/compliance",
+    "titelProbe": {
+      "de": [
+        "Geräte"
+      ],
+      "en": [
+        "Devices"
+      ]
+    },
+    "titel": {
+      "de": "Konformitätsrichtlinien",
+      "en": "Compliance policies"
+    },
+    "wasEsTut": {
+      "de": "Eine Konformitätsrichtlinie legt fest, wann ein Gerät als sicher gilt, etwa mit Verschlüsselung, Virenschutz und aktueller Windows-Version. Regeln des bedingten Zugriffs (Anmelderegeln in Microsoft Entra, die den Zugang an Bedingungen knüpfen) können dann nur konformen Geräten Mail und Dateien öffnen.",
+      "en": "A compliance policy defines when a device counts as safe, for example with encryption, antivirus and a current Windows version. Conditional Access policies (sign-in rules in Microsoft Entra that tie access to conditions) can then open mail and files only to compliant devices."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Richtlinie je Plattform anlegen, Geräte ohne eine als nicht konform werten.",
+        "en": "Create a policy per platform; mark devices without one as not compliant."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ein Gerät ohne Richtlinie gilt in der Grundeinstellung als konform. Eine Regel, die konforme Geräte verlangt, lässt es dann durch, obwohl niemand es geprüft hat.",
+        "en": "By default, a device without a policy counts as compliant. A policy that requires compliant devices then lets it in although nothing was checked."
+      },
+      "vorher": {
+        "de": "Verlangt eine Anmelderegel konforme Geräte, sperrt diese Umstellung alle Geräte ohne Richtlinie aus. Ebenso jede neue Anforderung: Ein Gerät, das sie noch nicht erfüllt (etwa noch unverschlüsselt), kommt nicht mehr an Mail und Dateien. Erst prüfen, welche Geräte die Anforderungen erfüllen. Ein Notfallkonto für Administratoren von der Anmelderegel ausnehmen, damit sich niemand ganz aussperrt.",
+        "en": "If a sign-in rule requires compliant devices, this change locks out every device without a policy. The same goes for each new requirement: a device that doesn't meet it yet (for example not yet encrypted) loses access to mail and files. Check first which devices meet the requirements. Exclude an emergency admin account from the sign-in rule so nobody is locked out completely."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "„Richtlinie erstellen“ wählen, die Plattform wählen und unter anderem BitLocker (die Festplattenverschlüsselung von Windows), Virenschutz und die Mindestversion des Betriebssystems verlangen.",
+        "Im Reiter „Konformitätseinstellungen“ festlegen, dass Geräte ohne zugewiesene Richtlinie als nicht konform gelten."
+      ],
+      "en": [
+        "Select “Create policy”, pick the platform and require, among others, BitLocker (Windows disk encryption), antivirus and a minimum OS version.",
+        "On the “Compliance settings” tab, set devices with no compliance policy assigned to count as not compliant."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-security/compliance/overview",
+        "titel": {
+          "de": "Verwenden von Konformitätsrichtlinien zum Festlegen von Regeln für Geräte, die Sie mit Intune verwalten",
+          "en": "Use compliance policies to set rules for devices you manage with Intune"
+        }
+      },
+      {
+        "pfad": "intune/device-security/compliance/ref-windows-settings",
+        "titel": {
+          "de": "Gerätekompatibilitätseinstellungen für Windows in Intune",
+          "en": "Device compliance settings for Windows in Intune"
+        }
+      },
+      {
+        "pfad": "entra/identity/conditional-access/policy-all-users-device-compliance",
+        "titel": {
+          "de": "Erforderlich ist die Geräte-Compliance bei bedingtem Zugriff.",
+          "en": "Require device compliance with Conditional Access"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-antivirus",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_Workflows/SecurityManagementMenu/~/antivirus",
+    "titelProbe": {
+      "de": [
+        "Endpunktsicherheit"
+      ],
+      "en": [
+        "Endpoint security"
+      ]
+    },
+    "titel": {
+      "de": "Virenschutz und Manipulationsschutz",
+      "en": "Antivirus and tamper protection"
+    },
+    "wasEsTut": {
+      "de": "Hier stehen die Richtlinien für Microsoft Defender Antivirus. Der Manipulationsschutz hilft zu verhindern, dass der Virenschutz auf dem Gerät abgeschaltet oder verändert wird; er steckt im Profil „Benutzeroberfläche für Windows-Sicherheit“.",
+      "en": "This lists the policies for Microsoft Defender Antivirus. Tamper protection helps keep the antivirus on the device from being turned off or changed; it is part of the “Windows Security experience” profile."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Manipulationsschutz einschalten; der Cloud-Schutz schaltet sich mit ein.",
+        "en": "Turn on tamper protection; cloud-delivered protection turns on with it."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ein Schadprogramm kann zuerst den Schutz abschalten und danach unbemerkt weiterarbeiten.",
+        "en": "Malware can turn off the protection first and then carry on unnoticed."
+      },
+      "vorher": {
+        "de": "Intune verwaltet den Manipulationsschutz nur auf Geräten, die bei Microsoft Defender for Endpoint (Plan 1 oder 2) oder Microsoft Defender for Business angemeldet sind. Der Cloud-Schutz heißt: Microsoft prüft verdächtige Dateien zusätzlich online.",
+        "en": "Intune manages tamper protection only on devices onboarded to Microsoft Defender for Endpoint (Plan 1 or 2) or Microsoft Defender for Business. Cloud-delivered protection means Microsoft also checks suspicious files online."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „AV-Richtlinien“ „Richtlinie erstellen“ wählen, Plattform „Windows“, Profil „Benutzeroberfläche für Windows-Sicherheit“.",
+        "Den Manipulationsschutz auf „Ein“ stellen und die Richtlinie allen Windows-Geräten zuweisen."
+      ],
+      "en": [
+        "Under “AV policies”, select “Create Policy”, platform “Windows”, profile “Windows Security experience”.",
+        "Set tamper protection to “On” and assign the policy to all Windows devices."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-configuration/endpoint-security/antivirus",
+        "titel": {
+          "de": "Antivirusrichtlinie für Endpunktsicherheit in Microsoft Intune",
+          "en": "Antivirus policy for endpoint security in Microsoft Intune"
+        }
+      },
+      {
+        "pfad": "defender-endpoint/tamper-protection-overview",
+        "titel": {
+          "de": "Überblick über den Manipulationsschutz",
+          "en": "Tamper protection overview"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "kjello:manipulationsschutz"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-verschluesselung",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_Workflows/SecurityManagementMenu/~/diskencryption",
+    "titelProbe": {
+      "de": [
+        "Endpunktsicherheit"
+      ],
+      "en": [
+        "Endpoint security"
+      ]
+    },
+    "titel": {
+      "de": "Datenträgerverschlüsselung mit BitLocker",
+      "en": "Disk encryption with BitLocker"
+    },
+    "wasEsTut": {
+      "de": "Hier legen Sie fest, dass Windows-Geräte ihre Festplatte mit BitLocker verschlüsseln. Bei stiller Verschlüsselung muss niemand etwas tun. Der Wiederherstellungsschlüssel (Notfallschlüssel, falls der Rechner die Festplatte nicht freigibt) landet dann in Microsoft Entra ID, der Benutzerverwaltung von Microsoft 365.",
+      "en": "This is where you make Windows devices encrypt their disk with BitLocker. With silent encryption nobody has to do anything. The recovery key (the emergency key if the computer won't unlock the disk) is backed up to Microsoft Entra ID, the user directory of Microsoft 365."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "BitLocker auf allen Windows-Geräten einschalten, Schlüssel in Entra ID sichern.",
+        "en": "Turn on BitLocker on every Windows device; back up the key to Entra ID."
+      },
+      "wennEsSoBleibt": {
+        "de": "Ein verlorenes Notebook ist dann ein offenes Buch, mit allen Dateien und gespeicherten Zugängen.",
+        "en": "A lost laptop is then an open book, with all files and saved logins."
+      },
+      "vorher": {
+        "de": "Den Schlüssel sichert Intune nur bei Geräten, die in Microsoft Entra eingebunden sind. Vorher prüfen, dass die Geräte das sind, sonst kommt nach einer Sperre niemand mehr an die Daten.",
+        "en": "Intune backs up the key only for devices joined to Microsoft Entra. Check first that the devices are, or nobody can reach the data after a lockout."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "„Richtlinie erstellen“ wählen, Plattform „Windows“, Profil „BitLocker“.",
+        "Für die stille Verschlüsselung „Geräteverschlüsselung erforderlich“ und „Standardbenutzerverschlüsselung zulassen“ auf „Aktiviert“, „Warnung für andere Datenträgerverschlüsselung zulassen“ auf „Deaktiviert“ stellen, aber nur, wenn keine andere Verschlüsselungssoftware installiert ist.",
+        "Ob es gewirkt hat, zeigt der Verschlüsselungsbericht unter „Geräte“ › „Überwachen“; dort stehen auch die Wiederherstellungsschlüssel."
+      ],
+      "en": [
+        "Select “Create Policy”, platform “Windows”, profile “BitLocker”.",
+        "For silent encryption, set “Require Device Encryption” and “Allow Standard User Encryption” to “Enabled” and “Allow Warning For Other Disk Encryption” to “Disabled”, but only if no other encryption software is installed.",
+        "The encryption report under “Devices” › “Monitor” shows whether it worked; it also lists the recovery keys."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-configuration/endpoint-security/encrypt-bitlocker-windows",
+        "titel": {
+          "de": "Verschlüsseln von Windows-Geräten mit BitLocker mithilfe von Intune",
+          "en": "Encrypt Windows devices with BitLocker using Intune"
+        }
+      },
+      {
+        "pfad": "intune/device-configuration/endpoint-security/disk-encryption",
+        "titel": {
+          "de": "Datenträgerverschlüsselungsrichtlinie für Endpunktsicherheit in Intune",
+          "en": "Disk encryption policy for endpoint security in Intune"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "kjello:verschluesselung"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-asr",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_Workflows/SecurityManagementMenu/~/asr",
+    "titelProbe": {
+      "de": [
+        "Endpunktsicherheit"
+      ],
+      "en": [
+        "Endpoint security"
+      ]
+    },
+    "titel": {
+      "de": "Regeln zur Verringerung der Angriffsfläche",
+      "en": "Attack surface reduction rules"
+    },
+    "wasEsTut": {
+      "de": "Diese Regeln sperren Verhaltensweisen, die Schadprogramme oft nutzen, etwa dass Office-Dateien Programme oder Skripte starten oder eine Mail eine Datei ausführt. Jede Regel lässt sich auf Überwachen oder Blockieren stellen, die meisten auch auf Warnen.",
+      "en": "These rules block behaviors malware often uses, for example Office files starting programs or scripts, or an email running a file. Each rule can be set to audit or block, most also to warn."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Regeln erst überwachen lassen, dann auf Blockieren stellen.",
+        "en": "Run the rules in audit mode first, then set them to block."
+      },
+      "wennEsSoBleibt": {
+        "de": "Eine Word- oder Excel-Datei aus einer Mail kann unbemerkt ein Programm starten.",
+        "en": "A Word or Excel file from an email can start a program without anyone noticing."
+      },
+      "vorher": {
+        "de": "Die Regeln wirken nur, wenn Microsoft Defender Antivirus der Hauptvirenschutz auf dem Gerät ist. Alle Regeln zuerst im Überwachungsmodus laufen lassen und den Bericht zu den Regeln ansehen. Sonst blockiert eine Regel womöglich ein Programm, das im Alltag gebraucht wird.",
+        "en": "The rules only work if Microsoft Defender Antivirus is the primary antivirus on the device. Run all rules in audit mode first and review the attack surface reduction rule report. Otherwise a rule may block a program needed in daily work."
+      },
+      "schwere": "rot"
+    },
+    "soGehts": {
+      "de": [
+        "„Richtlinie erstellen“ wählen, Plattform „Windows“, Profil „Regeln zur Verringerung der Angriffsfläche“, die Regeln auf „Überwachen“.",
+        "Nach dem Bericht die Regeln, die nichts Nötiges treffen, auf „Blockieren“ stellen."
+      ],
+      "en": [
+        "Select “Create Policy”, platform “Windows”, profile “Attack Surface Reduction Rules”, set the rules to “Audit”.",
+        "After reviewing the report, set the rules that hit nothing needed to “Block”."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-configuration/endpoint-security/attack-surface-reduction",
+        "titel": {
+          "de": "Verwenden der Microsoft Intune-Richtlinie zum Verwalten von Regeln zur Angriffsflächenreduzierung",
+          "en": "Use Microsoft Intune policy to manage rules for attack surface reduction"
+        }
+      },
+      {
+        "pfad": "defender-endpoint/attack-surface-reduction-rules-deployment-test",
+        "titel": {
+          "de": "Testen der Bereitstellung von Regeln zur Verringerung der Angriffsfläche (Attack Surface Reduction, ASR)",
+          "en": "Test your attack surface reduction (ASR) rules deployment"
+        }
+      },
+      {
+        "pfad": "defender-endpoint/attack-surface-reduction-rules-reference",
+        "titel": {
+          "de": "Referenz zu den Regeln zur Verringerung der Angriffsfläche (Attack Surface Reduction, ASR)",
+          "en": "Attack surface reduction (ASR) rules reference"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [
+      "kjello:asr_regeln"
+    ],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-updateringe",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_DeviceSettings/DevicesMenu/~/windows10Update",
+    "titelProbe": {
+      "de": [
+        "Geräte"
+      ],
+      "en": [
+        "Devices"
+      ]
+    },
+    "titel": {
+      "de": "Updateringe für Windows",
+      "en": "Windows update rings"
+    },
+    "wasEsTut": {
+      "de": "Updateringe legen fest, wann und wie Windows-Updates auf die Geräte kommen: Aufschub, Neustart, Fristen. Üblich sind Stufen, etwa ein Pilotring mit wenigen Geräten vor dem Rest.",
+      "en": "Update rings define when and how Windows updates reach the devices: deferral, restart, deadlines. Stages are common, for example a pilot ring with a few devices before the rest."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Einen Pilotring und einen Hauptring anlegen, Fristen setzen.",
+        "en": "Create a pilot ring and a main ring, set deadlines."
+      },
+      "wennEsSoBleibt": {
+        "de": "Macht ein neues Update Probleme, merken Sie es erst, wenn es schon auf allen Rechnern ist.",
+        "en": "If a new update causes trouble, you only notice once it is on every computer."
+      },
+      "schwere": "gelb",
+      "vorher": {
+        "de": "Werden die Geräte über Windows Autopatch verwaltet, in der Regel keine eigenen Updateringe zuweisen; die legt dort meist der Dienst an.",
+        "en": "If the devices are managed through Windows Autopatch, usually don't assign your own update rings; the service typically creates them."
+      }
+    },
+    "soGehts": {
+      "de": [
+        "Im Reiter „Ringe aktualisieren“ „Profil erstellen“ wählen und einen Ring für eine kleine Pilotgruppe anlegen, einen zweiten mit längerem Aufschub für alle anderen.",
+        "In beiden Ringen Fristen setzen, also bis wann ein Update spätestens installiert und der Rechner neu gestartet wird."
+      ],
+      "en": [
+        "On the “Update rings” tab, select “Create profile” and create a ring for a small pilot group, and a second with a longer deferral for everyone else.",
+        "Set deadlines in both rings, that is, by when an update must be installed and the computer restarted."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-updates/windows/manage-update-rings",
+        "titel": {
+          "de": "Verwalten von Richtlinien für den Windows Update-Ring",
+          "en": "Manage Windows Update ring policies"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-registrierung",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_DeviceSettings/DevicesMenu/~/enrollment",
+    "titelProbe": {
+      "de": [
+        "Geräte"
+      ],
+      "en": [
+        "Devices"
+      ]
+    },
+    "titel": {
+      "de": "Registrierungsbeschränkungen",
+      "en": "Enrollment restrictions"
+    },
+    "wasEsTut": {
+      "de": "Registrierungsbeschränkungen legen fest, welche Geräte in Intune aufgenommen werden dürfen: Plattform, Version, Hersteller, Zahl je Person und ob private Geräte erlaubt sind.",
+      "en": "Enrollment restrictions define which devices may be enrolled in Intune: platform, version, manufacturer, number per person and whether personal devices are allowed."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Private Windows-Geräte nicht registrieren lassen.",
+        "en": "Block enrollment of personally owned Windows devices."
+      },
+      "wennEsSoBleibt": {
+        "de": "Mitarbeiter können ihre privaten Rechner versehentlich registrieren. Sie landen dann in der Verwaltung der Firma.",
+        "en": "Employees can enroll their personal computers by accident. They then end up managed by the company."
+      },
+      "vorher": {
+        "de": "Die Sperre blockiert auch Firmengeräte, die bei der Einrichtung oder in den Windows-Einstellungen Microsoft Entra beitreten, außer sie sind in Windows Autopilot hinterlegt. Vorher klären, wie neue Rechner in Intune kommen.",
+        "en": "The block also stops company devices that join Microsoft Entra during setup or from Windows Settings, unless they are registered in Windows Autopilot. Clarify first how new computers get into Intune."
+      },
+      "schwere": "gelb"
+    },
+    "soGehts": {
+      "de": [
+        "Unter „Geräteplattformeinschränkung“ die Standardbeschränkung für Windows öffnen und private Geräte blockieren."
+      ],
+      "en": [
+        "Under “Device platform restriction”, open the default restriction for Windows and block personally owned devices."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/device-enrollment/restrictions",
+        "titel": {
+          "de": "Was sind Registrierungseinschränkungen?",
+          "en": "What are enrollment restrictions?"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  },
+  {
+    "id": "intune-app-schutz",
+    "portal": "intune",
+    "route": "view:Microsoft_Intune_DeviceSettings/AppsMenu/~/protection",
+    "titelProbe": {
+      "de": [
+        "Apps"
+      ],
+      "en": [
+        "Apps"
+      ]
+    },
+    "titel": {
+      "de": "App-Schutzrichtlinien",
+      "en": "App protection policies"
+    },
+    "wasEsTut": {
+      "de": "App-Schutzrichtlinien schützen Firmendaten in einzelnen Apps wie Outlook, auch auf Handys, die Intune nicht verwaltet. Sie können etwa eine PIN verlangen und das Kopieren in private Apps verhindern. Das Gerät selbst bleibt privat.",
+      "en": "App protection policies protect company data inside apps such as Outlook, even on phones Intune doesn't manage. They can, for example, require a PIN and prevent copying into personal apps. The device itself stays private."
+    },
+    "empfehlung": {
+      "kurz": {
+        "de": "Firmendaten auf privaten Handys in den Office-Apps schützen.",
+        "en": "Protect company data in the Office apps on personal phones."
+      },
+      "wennEsSoBleibt": {
+        "de": "Firmenmails auf einem privaten Handy lassen sich ungehindert in private Apps kopieren.",
+        "en": "Company email on a personal phone can be copied into personal apps without restriction."
+      },
+      "schwere": "gelb",
+      "vorher": {
+        "de": "Sobald die Anmelderegel greift, kommen Firmenmails nur noch in geschützten Apps wie Outlook an. Vorher alle, die die Mail-App ihres Handys nutzen, auf Outlook umstellen; auf Android-Handys muss zusätzlich die App Unternehmensportal installiert sein. Die Anmelderegel zuerst auf „Nur Bericht“ stellen und mindestens ein Notfallkonto ausnehmen.",
+        "en": "Once the sign-in rule applies, company email only reaches protected apps such as Outlook. Move everyone who uses their phone's built-in mail app to Outlook first; Android phones also need the Company Portal app installed. Set the sign-in rule to “Report-only” first and exclude at least one emergency account."
+      }
+    },
+    "soGehts": {
+      "de": [
+        "„Erstellen“ wählen und je Plattform (iOS/iPadOS, Android) eine Richtlinie für die Office-Apps anlegen.",
+        "Damit die Richtlinie auch greift, zusätzlich eine Regel des bedingten Zugriffs (Anmelderegel in Microsoft Entra, die den Zugang an Bedingungen knüpft) einrichten, die geschützte Apps verlangt."
+      ],
+      "en": [
+        "Select “Create” and create one policy per platform (iOS/iPadOS, Android) for the Office apps.",
+        "To make sure it applies, also set up a Conditional Access policy (a sign-in rule in Microsoft Entra that ties access to conditions) that requires protected apps."
+      ]
+    },
+    "lizenz": null,
+    "quellen": [
+      {
+        "pfad": "intune/app-management/protection/overview",
+        "titel": {
+          "de": "Übersicht über App-Schutzrichtlinien",
+          "en": "App Protection Policies Overview"
+        }
+      },
+      {
+        "pfad": "entra/identity/conditional-access/policy-all-users-approved-app-or-app-protection",
+        "titel": {
+          "de": "Genehmigte Client-Apps oder eine Richtlinie zum Schutz von Apps erforderlich machen",
+          "en": "Require approved client apps or app protection policy"
+        }
+      }
+    ],
+    "index": null,
+    "leser": null,
+    "herkunft": [],
+    "inhaltGeprueftAm": "2026-11-06",
+    "status": "aktiv"
+  }
+]

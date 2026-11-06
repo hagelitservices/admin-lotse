@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "hilfeKontakt": {
+      "title": "Ansprechpartner statt „hagel IT hilft“",
+      "description": "Name und Adresse (https: oder mailto:) der eigenen IT. Ersetzt den Fußhinweis der Seitenleiste.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "title": "Name" },
+        "url": { "type": "string", "title": "Adresse (https: oder mailto:)" }
+      }
+    },
+    "hilfeAusblenden": {
+      "title": "Fußhinweis ausblenden",
+      "description": "true: Der Hinweis auf Hilfe unten in der Seitenleiste entfällt ganz.",
+      "type": "boolean"
+    },
+    "bewussteAbweichungen": {
+      "title": "Bewusste Abweichungen",
+      "description": "Einträge, die in dieser Firma bewusst anders eingestellt sind. Die Seitenleiste zeigt „Bewusst so“ mit der Begründung.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "eintrag": { "type": "string", "title": "Kennung des Eintrags (z. B. entra-sicherheitsstandards)" },
+          "begruendung": { "type": "string", "title": "Begründung der Firma" }
+        }
+      }
+    },
+    "werteLesen": {
+      "title": "Werte lesen",
+      "description": "false: nur Erklärungen anzeigen, keine Werte auf der Seite lesen. Standard: true.",
+      "type": "boolean"
+    },
+    "sprache": {
+      "title": "Sprache der Erweiterung",
+      "description": "auto (Browsersprache), de oder en.",
+      "type": "string",
+      "enum": ["auto", "de", "en"]
+    }
+  }
+}

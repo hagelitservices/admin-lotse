@@ -1,0 +1,37 @@
+{
+  "name": "admin-lotse",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Admin-Lotse für Microsoft 365 — Browser-Erweiterung für Chrome und Edge. Ändert nichts, sendet nichts.",
+  "scripts": {
+    "postinstall": "wxt prepare",
+    "dev": "wxt",
+    "pruefen": "wxt prepare && tsc --noEmit && npm run bauen && vitest run",
+    "bauen": "wxt build && wxt build -b edge",
+    "e2e": "npm run bauen && npm run bauen:muster && playwright test",
+    "zip": "wxt zip && wxt zip -b edge && vitest run tests/unit/u40-u43-manifest.test.ts && node scripts/spiegel.mjs",
+    "bauen:muster": "LOTSE_MUSTER=1 wxt build",
+    "symbole": "node scripts/symbole.mjs",
+    "firmen": "node --experimental-strip-types scripts/firmen.ts",
+    "zip:probe": "node scripts/zip-probe.mjs"
+  },
+  "dependencies": {
+    "preact": "11.1.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "1.64.1",
+    "@preact/preset-vite": "2.10.6",
+    "@types/jsdom": "30.0.0",
+    "jsdom": "29.1.1",
+    "playwright": "1.64.1",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "wxt": "0.21.5",
+    "zod": "4.6.7"
+  },
+  "license": "MIT",
+  "repository": "github:hagelitservices/admin-lotse",
+  "homepage": "https://www.hagel-it.de/tools/admin-lotse"
+}
