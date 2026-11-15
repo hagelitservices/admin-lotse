@@ -3,6 +3,7 @@
 // `test:verwaltet` in `storage.local` die Richtlinie (T-11); das Store-Paket enthält diesen Zweig nicht (U-43b).
 import { firmaAus, ausgeblendetAus, OHNE_FIRMA, type Firma } from './firmenmodus';
 import { AKTIVE_EINTRAEGE } from './inhalte';
+import { SCHALTER } from './stoerung';
 
 export const AUSGEBLENDET = 'ausgeblendet';
 const IDS: ReadonlySet<string> = new Set(AKTIVE_EINTRAEGE.map((e) => e.id));
@@ -29,10 +30,19 @@ export async function ausblenden(id: string, an: boolean): Promise<void> {
   await browser.storage.local.set({ [AUSGEBLENDET]: neu });
 }
 
+/** Schalter der Störungsanzeige (S8) — nur die Wahl des Nutzers; die Firma geht vor (`anzeigeAn`). */
+export async function nutzerAnzeigeLaden(): Promise<boolean> {
+  return (await browser.storage.local.get(SCHALTER))[SCHALTER] === true;
+}
+
+export async function nutzerAnzeigeSetzen(an: boolean): Promise<void> {
+  await browser.storage.local.set({ [SCHALTER]: an });
+}
+
 /** Ruft `neu` bei jeder Änderung an Firmeneinstellungen oder ausgeblendeten Hinweisen. */
 export function beiAenderung(neu: () => void): () => void {
   const hoeren = (c: Record<string, unknown>, bereich: string) => {
-    if (bereich === 'managed' || (bereich === 'local' && (AUSGEBLENDET in c || (__LOTSE_MUSTER__ && 'test:verwaltet' in c)))) neu();
+    if (bereich === 'managed' || (bereich === 'local' && (AUSGEBLENDET in c || SCHALTER in c || (__LOTSE_MUSTER__ && 'test:verwaltet' in c)))) neu();
   };
   browser.storage.onChanged.addListener(hoeren);
   return () => browser.storage.onChanged.removeListener(hoeren);

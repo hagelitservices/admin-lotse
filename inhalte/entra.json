@@ -815,7 +815,7 @@
         }
       },
       {
-        "pfad": "entra/identity/authentication/concept-authentication-methods",
+        "pfad": "entra/identity/authentication/overview-authentication",
         "titel": {
           "de": "Übersicht zur Microsoft Entra-Authentifizierung",
           "en": "Microsoft Entra authentication overview"

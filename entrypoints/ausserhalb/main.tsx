@@ -2,6 +2,8 @@ import '../../components/bausteine.css';
 import { render } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { Ausserhalb } from '../../components/ausserhalb';
+import { StoerungKasten } from '../../components/stoerung';
+import { useStoerung } from '../../lib/stoerung-lesen';
 import { text } from '../../lib/i18n';
 import { seiteVorbereiten } from '../../lib/oberflaeche';
 import { fehlendeHerkuenfte, herkunftVon, HERKUENFTE, type Herkunft } from '../../lib/zugriff';
@@ -13,6 +15,7 @@ await seiteVorbereiten('erweiterung_name');
 function Ansicht() {
   const [lage, setLage] = useState<{ fehlend: Herkunft[]; imTab: boolean; tabId?: number }>({ fehlend: [], imTab: false });
   const [abgelehnt, setAbgelehnt] = useState(false);
+  const stoerung = useStoerung();
   useEffect(() => {
     void (async () => {
       const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
@@ -30,6 +33,7 @@ function Ansicht() {
       fehlend={lage.fehlend}
       imTab={lage.imTab}
       abgelehnt={abgelehnt}
+      stoerung={<StoerungKasten t={text} an={stoerung.an} stand={stoerung.stand} />}
       // Direkt im Klick (Geste). Danach lädt der Tab neu, damit das Inhalts-Skript läuft; der Hintergrund hört `onAdded`.
       onErlauben={(h) =>
         void browser.permissions.request({ origins: [h] }).then((ok) => {

@@ -48,7 +48,7 @@
     "message": "Der Lotse erklärt die Einstellung, die Sie gerade sehen, und sagt, was wir empfehlen."
   },
   "erst_zusagen": {
-    "message": "Er ändert nichts und sendet nichts. Alles bleibt in Ihrem Browser."
+    "message": "Er ändert nichts und sendet nichts aus Ihren Portalen. Alles bleibt in Ihrem Browser."
   },
   "erst_keine_pruefung": {
     "message": "Keine Prüfung, eine Erklärung: Er liest nur, was auf der Seite steht. Entscheiden tun Sie."
@@ -180,7 +180,7 @@
     "message": "hagel IT hilft."
   },
   "zusage_kurz": {
-    "message": "Ändert nichts. Sendet nichts."
+    "message": "Ändert nichts. Sendet nichts aus Ihren Portalen."
   },
   "fuss_version": {
     "message": "Version $1"
@@ -259,7 +259,7 @@
     "message": "Erlauben Sie den Zugriff mit dem Knopf. Oder: Rechtsklick auf das Lotsen-Symbol, „Kann Websitedaten lesen und ändern“, dann „Auf $1“."
   },
   "zugriff_zusage": {
-    "message": "Auch mit Zugriff ändert der Lotse nichts und sendet nichts."
+    "message": "Auch mit Zugriff ändert der Lotse nichts und sendet nichts aus Ihren Portalen."
   },
   "zugriff_fehlt_titel": {
     "message": "Für diese Portale fehlt der Website-Zugriff"
@@ -284,5 +284,41 @@
   },
   "start_zahl": {
     "message": "Eine rote Zahl am Symbol zeigt, wie viele Einstellungen auf der Seite von unserer Empfehlung abweichen."
+  },
+  "stoerung_symbol": {
+    "message": "Störung gemeldet: $1"
+  },
+  "stoerung_titel": {
+    "message": "Microsoft meldet eine Störung"
+  },
+  "stoerung_link": {
+    "message": "$1: Live-Status ansehen"
+  },
+  "stoerung_stand": {
+    "message": "Geprüft um $1 Uhr."
+  },
+  "stoerung_keine": {
+    "message": "Microsoft 365, Teams und Outlook: keine Störung gemeldet. Geprüft um $1 Uhr."
+  },
+  "stoerung_unbekannt": {
+    "message": "Den Microsoft-Status konnten wir gerade nicht abrufen. Eine Störung ist damit nicht ausgeschlossen."
+  },
+  "optionen_stoerung_titel": {
+    "message": "Störungsanzeige"
+  },
+  "optionen_stoerung_schalter": {
+    "message": "Microsoft-Störungen am Symbol anzeigen"
+  },
+  "optionen_stoerung_text": {
+    "message": "Fragt alle fünf Minuten www.hagel-it.de nach dem Microsoft-Status. Aus Ihren Portalen wird nichts gesendet."
+  },
+  "optionen_stoerung_was": {
+    "message": "Meldet Microsoft eine Störung bei Microsoft 365, Teams oder Exchange Online, erscheint ein roter Punkt am Symbol. Ein Klick auf das Symbol nennt den Dienst und führt zu seiner Statusseite."
+  },
+  "optionen_stoerung_firma_an": {
+    "message": "Von Ihrer IT eingeschaltet."
+  },
+  "optionen_stoerung_firma_aus": {
+    "message": "Von Ihrer IT ausgeschaltet."
   }
 }

@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { relative } from 'node:path';
 import { describe, expect, test } from 'vitest';
-import { BERECHTIGUNGEN, CSP, MINDESTVERSION, PORTAL_HOSTS, RAHMEN_HERKUNFT, VERBOTEN } from '../../manifest';
+import { BERECHTIGUNGEN, CSP, STATUS_HERKUNFT, MINDESTVERSION, PORTAL_HOSTS, RAHMEN_HERKUNFT, VERBOTEN } from '../../manifest';
 import { PAKETE, WURZEL, dateien, manifestAus } from './hilfen/paket';
 
 const zeilen = readFileSync(`${WURZEL}store/berechtigungen.md`, 'utf8')
@@ -15,7 +15,7 @@ const begruendet = new Set(zeilen.map((z) => /`([^`]+)`/.exec(z)?.[1] ?? ''));
 const SPEZ = `${WURZEL}../../SPEC-PLUGINS-HAGELIT.md`;
 
 test('U-40 jede Zeile von store/berechtigungen.md steht wortgleich in Spez. §8', () => {
-  expect(zeilen.length).toBe(6);
+  expect(zeilen.length).toBe(7);
   // Im öffentlichen Quelltext-Spiegel (H21) fehlt die Spezifikation; dort entfällt der Abgleich.
   if (!existsSync(SPEZ)) return;
   const p8 = readFileSync(SPEZ, 'utf8').split('## 8. Berechtigungen')[1]?.split('## 9.')[0] ?? '';
@@ -75,9 +75,9 @@ describe.each(quellen)('Manifest %s', (_n, quelle) => {
       expect(m, k).not.toHaveProperty(k);
   });
 
-  test('U-42 CSP der Erweiterungsseiten mit connect-src none', () => {
+  test('U-42 CSP der Erweiterungsseiten: connect-src nur die Status-Adresse (S8)', () => {
     const csp = (m.content_security_policy as { extension_pages?: string } | undefined)?.extension_pages ?? '';
-    expect(csp).toContain("connect-src 'none'");
+    expect(/connect-src ([^;]*)/.exec(csp)?.[1]).toBe(STATUS_HERKUNFT);
     expect(csp).toBe(CSP);
   });
 });
@@ -86,7 +86,6 @@ describe.each(quellen)('Manifest %s', (_n, quelle) => {
  *  Der eigene Quelltext verbietet beides (U-21); im Bündel ist genau diese Stelle erlaubt, jede andere nicht. */
 const PREACT_INNERHTML = /\.innerHTML(?:==?)?[A-Za-z_$][\w$]*\.__html|__html==[A-Za-z_$][\w$]*\.innerHTML/g;
 const NETZ_UND_CODE: [string, RegExp][] = [
-  ['fetch(', /\bfetch\(/],
   ['Function(', /\bFunction\(/],
   ['(0,eval)', /\(0,\s*eval\)/],
   ['setTimeout/setInterval mit Text', /set(?:Timeout|Interval)\(\s*['"`]/],
@@ -124,6 +123,20 @@ describe.each(Object.entries(PAKETE))('U-43 Bündel %s', (_b, ordner) => {
     '%s schickt nichts in die Seite',
     (_n, p) => expect(readFileSync(p, 'utf8')).not.toMatch(SEITENEREIGNIS),
   );
+
+  // S8: Genau ein `fetch(` im ganzen Paket — im Dienstarbeiter, auf die Status-Adresse. Inhalts-Skripte und Seiten haben keins.
+  test('U-43c fetch nur einmal, nur im Dienstarbeiter, nur auf die Status-Adresse', () => {
+    const mit = js.filter((p) => /\bfetch\(/.test(readFileSync(p, 'utf8')));
+    expect(mit.map((p) => relative(ordner, p))).toEqual(['background.js']);
+    const code = readFileSync(mit[0]!, 'utf8');
+    expect(code.match(/\bfetch\(/g)?.length).toBe(1);
+    expect(code).toContain(STATUS_HERKUNFT);
+    // Die Abfrage selbst: ohne Cookies, ohne Referrer, keine Umleitung (Bündel nutzt `…`, '…' oder "…").
+    const aufruf = code.slice(code.indexOf('fetch('), code.indexOf('fetch(') + 200);
+    for (const muster of [/credentials:\s*["'`]omit["'`]/, /referrerPolicy:\s*["'`]no-referrer["'`]/, /redirect:\s*["'`]error["'`]/, /method:\s*["'`]GET["'`]/])
+      expect(aufruf).toMatch(muster);
+    // Die CSP lässt ohnehin nur die Status-Adresse durch (U-42); der Test hält zusätzlich den Aufruf an der Konstante.
+  });
 
   test.each(js.map((p) => [relative(ordner, p), p]))('%s', (_n, p) => {
     const code = readFileSync(p, 'utf8');

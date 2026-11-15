@@ -3,7 +3,7 @@ import { render } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { Fuss } from '../../components/leiste';
 import { LotsenZeichen } from '../../components/zeichen';
-import { ausblenden, ausgeblendetLaden, beiAenderung, firmaLaden } from '../../lib/einstellungen';
+import { ausblenden, ausgeblendetLaden, beiAenderung, firmaLaden, nutzerAnzeigeLaden, nutzerAnzeigeSetzen } from '../../lib/einstellungen';
 import { OHNE_FIRMA, type Firma } from '../../lib/firmenmodus';
 import { text } from '../../lib/i18n';
 import { eintragMit } from '../../lib/inhalte';
@@ -16,8 +16,10 @@ const sprache = await seiteVorbereiten('optionen_titel');
 function Ansicht() {
   const [liste, setListe] = useState<string[] | undefined>(undefined);
   const [firma, setFirma] = useState<Firma>(OHNE_FIRMA);
+  const [nutzerAnzeige, setNutzerAnzeige] = useState(false);
   useEffect(() => {
     const laden = () => {
+      void nutzerAnzeigeLaden().then(setNutzerAnzeige);
       void ausgeblendetLaden().then(setListe);
       void firmaLaden().then(setFirma);
     };
@@ -74,6 +76,28 @@ function Ansicht() {
         <p>{text('erst_was')}</p>
         <p>{text('erst_zusagen')}</p>
         <p>{text('optionen_daten')}</p>
+      </section>
+      <section class="kasten" aria-labelledby="opt-stoerung" data-stoerungsanzeige={String(firma.stoerungsanzeige ?? nutzerAnzeige)}>
+        <h2 id="opt-stoerung">{text('optionen_stoerung_titel')}</h2>
+        <label class="schalter">
+          <input
+            type="checkbox"
+            role="switch"
+            checked={firma.stoerungsanzeige ?? nutzerAnzeige}
+            disabled={firma.stoerungsanzeige !== null}
+            aria-describedby="opt-stoerung-text"
+            onChange={(e) => void nutzerAnzeigeSetzen((e.currentTarget as HTMLInputElement).checked)}
+          />
+          <span>{text('optionen_stoerung_schalter')}</span>
+        </label>
+        <p id="opt-stoerung-text">
+          {/* Die Adresse nie am Bindestrich umbrechen („www.hagel-“ / „it.de“ las sich auf 320 px wie zwei Wörter, T-22). */}
+          {text('optionen_stoerung_text')
+            .split(/(www\.hagel-it\.de)/)
+            .map((teil, i) => (i % 2 === 1 ? <span key={i} class="adresse">{teil}</span> : teil))}
+        </p>
+        <p>{text('optionen_stoerung_was')}</p>
+        {firma.stoerungsanzeige !== null && <p>{text(firma.stoerungsanzeige ? 'optionen_stoerung_firma_an' : 'optionen_stoerung_firma_aus')}</p>}
       </section>
       <section ref={listeRef} class="kasten" aria-labelledby="opt-aus" data-ausgeblendet={liste?.join(' ') ?? ''}>
         <h2 id="opt-aus" tabIndex={-1}>{text('optionen_ausgeblendet_titel')}</h2>

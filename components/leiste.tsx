@@ -1,5 +1,6 @@
 // Die Seitenleiste als reine Ansicht (Spez. §11.2, §11.3): bekommt den Tab-Zustand und Rückrufe, kennt kein `browser`.
 // So rendern Seitenleiste und Musterseite (Fotos Z-1 bis Z-16, axe) dieselbe Komponente.
+import type { ComponentChildren } from 'preact';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import type { Eintrag } from '../inhalte/schema';
 import { ansage, angezeigtZeile, sortieren, statusSchluessel, wichtigste, type Uebersetzer, type UiSprache } from '../lib/ansicht';
@@ -37,6 +38,8 @@ export interface LeisteProps {
   onAusblenden?: (id: string, an: boolean) => void;
   /** Läuft als Popup statt als Seitenleiste (Edge ohne Leiste, M-8). */
   alsPopup?: boolean;
+  /** S8: Störungskasten über dem Inhalt (nur bei Störung gefüllt). */
+  stoerung?: ComponentChildren;
 }
 
 function useNach(ms: number, an: boolean) {
@@ -252,6 +255,7 @@ export function Leiste(p: LeisteProps) {
         data-abweichungen={z?.abweichungen ?? 0}
         aria-busy={liest}
       >
+        {p.stoerung}
         {inhalt}
       </div>
       <p class="nur-vorlesen" aria-live="polite">

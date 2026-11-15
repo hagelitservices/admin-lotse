@@ -2,6 +2,24 @@
 
 Neueste Fassung oben. Jede Version, die in einen Store geht, bekommt hier einen Abschnitt (Spez. §17.2).
 
+## 1.1.0 — 16.11.2026: Störungsanzeige
+
+* Neu: Störungsanzeige, ab Werk aus. Einschalten in den Einstellungen der Erweiterung: „Microsoft-Störungen am Symbol
+  anzeigen“. Eingeschaltet fragt der Lotse alle fünf Minuten `https://www.hagel-it.de/api/status` nach dem Zustand von
+  Microsoft 365, Microsoft Teams und Exchange Online. Meldet Microsoft dort eine Störung, zeigt das Symbol einen roten
+  Punkt; Popup und Seitenleiste nennen den Dienst und verlinken die passende Seite im Störungsmonitor
+  (www.hagel-it.de/it-stoerungen). Ein Stand, der älter als 15 Minuten ist, gilt als „nicht abrufbar“.
+* Der Abruf trägt keine Cookies, keinen Referrer und keinen Inhalt. Aus den Portalen geht nichts mit.
+* Gespeichert werden nur der Schalter (`storage.local`) und der letzte Stand (`storage.session`, weg beim Schließen des
+  Browsers).
+* Firmenmodus: neuer Schlüssel `stoerungsanzeige` (`true` = für alle an, `false` = aus und nicht einschaltbar, ohne
+  Angabe entscheidet der Nutzer).
+* Neues Recht `alarms` für den Fünf-Minuten-Takt. Kein neues Host-Recht.
+* Sicherheitsrichtlinie der Erweiterungsseiten: `connect-src https://www.hagel-it.de/api/status` statt
+  `connect-src 'none'`, genau diese eine Adresse.
+* Erklärt 39 Einstellungen, wie 1.0.0.
+* Ändert nichts. Sendet nichts aus Ihren Portalen.
+
 ## 1.0.0 — erste Store-Fassung
 
 * Erklärt 39 Einstellungen im Microsoft 365 Admin Center, im Entra Admin Center, in Intune und im Exchange Admin

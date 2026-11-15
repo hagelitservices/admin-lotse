@@ -264,7 +264,7 @@ test('T-09 englisches Portal bei Browsersprache en: gelesen, Oberfläche englisc
   await expect.poll(() => abzeichen(tab)).toBe('1');
   await expect(l.locator('html')).toHaveAttribute('lang', 'en');
   await expect(l.getByRole('heading', { level: 2, name: 'Users can register applications' })).toBeVisible();
-  await expect(l.getByText('Changes nothing. Sends nothing.', { exact: false })).toBeVisible();
+  await expect(l.getByText('Changes nothing. Sends nothing from your portals.', { exact: false })).toBeVisible();
   await expect(l.getByRole('button', { name: 'Hide this notice' })).toBeVisible();
 });
 

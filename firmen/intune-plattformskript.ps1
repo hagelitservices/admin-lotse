@@ -10,11 +10,11 @@ $Entfernen = $false
 $ExtensionSettingsSetzen = $true
 
 $ErrorActionPreference = 'Stop'
-if ('<chrome-store-id>' -like '<*') { Write-Error 'Store-Kennung fehlt (chrome).'; exit 1 }
+if ('lcfimfdbdclcdnphmkhikfcimamodphf' -like '<*') { Write-Error 'Store-Kennung fehlt (chrome).'; exit 1 }
 if ('hkpgjiooldogphbobmhbkmkkgjdgneei' -like '<*') { Write-Error 'Store-Kennung fehlt (edge).'; exit 1 }
 
 # Google Chrome
-$id = '<chrome-store-id>'
+$id = 'lcfimfdbdclcdnphmkhikfcimamodphf'
 $basis = 'HKLM:\SOFTWARE\Policies\Google\Chrome'
 $policy = "$basis\3rdparty\extensions\$id\policy"
 if (Test-Path $policy) { Remove-Item -Path $policy -Recurse -Force }
@@ -29,6 +29,11 @@ if (-not $Entfernen) {
   New-Item -Path "$policy\bewussteAbweichungen\1" -Force | Out-Null
   Set-ItemProperty -Path "$policy\bewussteAbweichungen\1" -Name 'eintrag' -Value 'entra-app-registrierung' -Type String
   Set-ItemProperty -Path "$policy\bewussteAbweichungen\1" -Name 'begruendung' -Value 'Apps registriert bei uns nur die IT, per Rollenzuweisung.' -Type String
+}
+if ($Entfernen) {
+  foreach ($k in @("$basis\3rdparty\extensions\$id", "$basis\3rdparty\extensions", "$basis\3rdparty")) {
+    if ((Test-Path $k) -and -not (Get-ChildItem -Path $k) -and -not (Get-Item -Path $k).Property) { Remove-Item -Path $k -Force }
+  }
 }
 if ($ExtensionSettingsSetzen) {
   $alt = (Get-ItemProperty -Path $basis -Name ExtensionSettings -ErrorAction SilentlyContinue).ExtensionSettings
@@ -56,6 +61,11 @@ if (-not $Entfernen) {
   New-Item -Path "$policy\bewussteAbweichungen\1" -Force | Out-Null
   Set-ItemProperty -Path "$policy\bewussteAbweichungen\1" -Name 'eintrag' -Value 'entra-app-registrierung' -Type String
   Set-ItemProperty -Path "$policy\bewussteAbweichungen\1" -Name 'begruendung' -Value 'Apps registriert bei uns nur die IT, per Rollenzuweisung.' -Type String
+}
+if ($Entfernen) {
+  foreach ($k in @("$basis\3rdparty\extensions\$id", "$basis\3rdparty\extensions", "$basis\3rdparty")) {
+    if ((Test-Path $k) -and -not (Get-ChildItem -Path $k) -and -not (Get-Item -Path $k).Property) { Remove-Item -Path $k -Force }
+  }
 }
 if ($ExtensionSettingsSetzen) {
   $alt = (Get-ItemProperty -Path $basis -Name ExtensionSettings -ErrorAction SilentlyContinue).ExtensionSettings

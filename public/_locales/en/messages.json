@@ -48,7 +48,7 @@
     "message": "The pilot explains the setting you are looking at and tells you what we recommend."
   },
   "erst_zusagen": {
-    "message": "It changes nothing and sends nothing. Everything stays in your browser."
+    "message": "It changes nothing and sends nothing from your portals. Everything stays in your browser."
   },
   "erst_keine_pruefung": {
     "message": "Not an audit, an explanation: it only reads what the page shows. The decision is yours."
@@ -180,7 +180,7 @@
     "message": "hagel IT can help."
   },
   "zusage_kurz": {
-    "message": "Changes nothing. Sends nothing."
+    "message": "Changes nothing. Sends nothing from your portals."
   },
   "fuss_version": {
     "message": "Version $1"
@@ -259,7 +259,7 @@
     "message": "Allow access with the button. Or right-click the guide’s icon, “Can read and change site data”, then “On $1”."
   },
   "zugriff_zusage": {
-    "message": "Even with access, the guide changes nothing and sends nothing."
+    "message": "Even with access, the guide changes nothing and sends nothing from your portals."
   },
   "zugriff_fehlt_titel": {
     "message": "Site access is missing for these portals"
@@ -284,5 +284,41 @@
   },
   "start_zahl": {
     "message": "A red number on the icon shows how many settings on the page differ from our recommendation."
+  },
+  "stoerung_symbol": {
+    "message": "Outage reported: $1"
+  },
+  "stoerung_titel": {
+    "message": "Microsoft reports an outage"
+  },
+  "stoerung_link": {
+    "message": "$1: view live status"
+  },
+  "stoerung_stand": {
+    "message": "Checked at $1 (Berlin time)."
+  },
+  "stoerung_keine": {
+    "message": "Microsoft 365, Teams and Outlook: no outage reported. Checked at $1 (Berlin time)."
+  },
+  "stoerung_unbekannt": {
+    "message": "We could not fetch the Microsoft status just now. That does not rule out an outage."
+  },
+  "optionen_stoerung_titel": {
+    "message": "Outage indicator"
+  },
+  "optionen_stoerung_schalter": {
+    "message": "Show Microsoft outages on the icon"
+  },
+  "optionen_stoerung_text": {
+    "message": "Asks www.hagel-it.de for the Microsoft status every five minutes. Nothing from your portals is sent."
+  },
+  "optionen_stoerung_was": {
+    "message": "If Microsoft reports an outage for Microsoft 365, Teams or Exchange Online, a red dot appears on the icon. Clicking the icon names the service and links to its status page."
+  },
+  "optionen_stoerung_firma_an": {
+    "message": "Turned on by your IT."
+  },
+  "optionen_stoerung_firma_aus": {
+    "message": "Turned off by your IT."
   }
 }

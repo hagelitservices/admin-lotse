@@ -1,13 +1,13 @@
 # Admin-Lotse in der Firma verteilen und einstellen
 
-Der Admin-Lotse liest nur, was im Admin Center ohnehin auf dem Bildschirm steht. Er ändert nichts und sendet nichts.
+Der Admin-Lotse liest nur, was im Admin Center ohnehin auf dem Bildschirm steht. Er ändert nichts. Er sendet nichts aus Ihren Portalen.
 Mit diesen Beispielen installiert Ihre IT ihn für alle Admins und legt fest, wie er sich verhält.
 
 > **Zwei Kennungen.** Die Erweiterung hat im Chrome Web Store und bei Microsoft Edge Add-ons je eine eigene Kennung.
-> Edge nimmt die Chrome-Kennung nicht. Die Edge-Kennung `hkpgjiooldogphbobmhbkmkkgjdgneei` ist in den Dateien schon
-> eingetragen. Ersetzen Sie `<chrome-store-id>` durch die Kennung aus der Adresse der Seite im Chrome Web Store.
+> Edge nimmt die Chrome-Kennung nicht. Beide sind in den Dateien schon eingetragen: Chrome
+> `lcfimfdbdclcdnphmkhikfcimamodphf`, Edge `hkpgjiooldogphbobmhbkmkkgjdgneei`.
 
-## Die fünf Einstellungen
+## Die sechs Einstellungen
 
 | Name | Art | Wirkung |
 |---|---|---|
@@ -16,6 +16,13 @@ Mit diesen Beispielen installiert Ihre IT ihn für alle Admins und legt fest, wi
 | `bewussteAbweichungen` | Liste aus `eintrag` und `begruendung` | Dieser Eintrag zeigt „Bewusst so“ mit Ihrer Begründung statt „Weicht ab“. Die Kennungen stehen in `eintraege.md` |
 | `werteLesen` | Wahr/Falsch, Standard wahr | Falsch: nur Erklärungen, der Lotse liest keine Werte |
 | `sprache` | `auto`, `de` oder `en` | Feste Sprache der Erweiterung; `auto` folgt dem Browser |
+| `stoerungsanzeige` | Wahr/Falsch, ohne Angabe entscheidet der Nutzer | Wahr: Störungsanzeige für alle an. Falsch: aus, Nutzer können sie nicht einschalten. In der Registrierung als `dword:00000001` bzw. `dword:00000000` |
+
+**Zur Störungsanzeige:** Ist sie an, fragt der Lotse alle fünf Minuten `https://www.hagel-it.de/api/status` nach dem
+Zustand von Microsoft 365, Microsoft Teams und Exchange Online und zeigt bei einer Störung einen roten Punkt am Symbol.
+Der Abruf trägt keine Cookies, keinen Referrer und keinen Inhalt; aus den Portalen geht nichts mit. Unser Server sieht
+dabei, wie bei jedem Abruf, die IP-Adresse des Geräts. Ab Werk ist die Anzeige aus. Die Beispieldateien setzen den
+Schlüssel nicht, dort entscheidet also jeder Nutzer selbst.
 
 Sobald eine Einstellung gesetzt ist, steht oben in der Seitenleiste „Von Ihrer IT eingerichtet“. Nutzer können diese
 Werte nicht überschreiben. Unbekannte Namen und Kennungen ignoriert der Lotse.
@@ -25,7 +32,7 @@ Werte nicht überschreiben. Unbekannte Namen und Kennungen ignoriert der Lotse.
 | Datei | Wofür |
 |---|---|
 | `chrome-erzwingen.json` · `edge-erzwingen.json` | Wert für die Richtlinie `ExtensionSettings`, einzeilig zum Einfügen: installiert den Lotsen fest, Edge zeigt das Symbol in der Leiste, Chrome heftet es an |
-| `chrome-firmeneinstellungen.reg` · `edge-firmeneinstellungen.reg` | Die fünf Einstellungen in der Registrierung (`…\3rdparty\extensions\<Kennung>\policy`) |
+| `chrome-firmeneinstellungen.reg` · `edge-firmeneinstellungen.reg` | Beispielwerte für die Einstellungen in der Registrierung (ohne `stoerungsanzeige`) (`…\3rdparty\extensions\<Kennung>\policy`) |
 | `intune-plattformskript.ps1` | Beides zusammen für Chrome und Edge; zwei Schalter oben im Skript |
 | `eintraege.md` | Kennungen aller Einträge für `bewussteAbweichungen` |
 
@@ -45,7 +52,7 @@ Werte nicht überschreiben. Unbekannte Namen und Kennungen ignoriert der Lotse.
    `ExtensionSettings` schon zentral**, stellen Sie den Schalter auf `$false` und nehmen Schritt 1 — sonst überschreibt
    die nächste Synchronisierung den Wert, den das Skript zusammengeführt hat, und der Lotse verschwindet wieder.
 3. Prüfen auf einem Gerät: `chrome://policy` bzw. `edge://policy` öffnen, „Richtlinien neu laden“. Unter
-   „Admin-Lotse“ stehen die fünf Werte.
+   „Admin-Lotse“ stehen die gesetzten Werte.
 
 ## Gruppenrichtlinie
 

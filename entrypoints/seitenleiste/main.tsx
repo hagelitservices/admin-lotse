@@ -1,4 +1,6 @@
 import '../../components/bausteine.css';
+import { StoerungKasten } from '../../components/stoerung';
+import { useStoerung } from '../../lib/stoerung-lesen';
 import { render } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { Leiste } from '../../components/leiste';
@@ -18,6 +20,7 @@ const version = browser.runtime.getManifest().version;
 const popup = alsPopup(location.search);
 
 function Ansicht() {
+  const stoerung = useStoerung();
   const [zustand, setZustand] = useState<TabZustand | null | undefined>(Number.isInteger(tabId) && tabId > 0 ? undefined : null);
   const [bewertungen, setBewertungen] = useState<ZustandMeldung['bewertungen']>({});
   const [anzeige, setAnzeige] = useState<ZustandMeldung['anzeige']>({});
@@ -83,6 +86,7 @@ function Ansicht() {
       // Der Hintergrund hört auf `storage.local` und bewertet neu (Z-11, Abzeichen).
       onAusblenden={(id, an) => void ausblenden(id, an)}
       alsPopup={popup}
+      stoerung={<StoerungKasten t={text} an={stoerung.an} stand={stoerung.stand} nurStoerung />}
     />
   );
 }

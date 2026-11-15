@@ -3,7 +3,7 @@
  * Jedes Recht und jede Herkunft braucht eine Zeile in `store/berechtigungen.md` (Rahmen E3), sonst wird U-40 rot.
  * Herkünfte gemessen in H2 (05.11.2026, docs/messung-portale.md).
  */
-export const BERECHTIGUNGEN = ['sidePanel', 'storage'] as const;
+export const BERECHTIGUNGEN = ['sidePanel', 'storage', 'alarms'] as const;
 
 /** Die vier Portale auf drei Hosts: M365 und Exchange teilen sich `admin.cloud.microsoft` (`/` bzw. `/exchange`). */
 export const PORTAL_HOSTS = [
@@ -25,9 +25,12 @@ export const PORTAL_URSPRUENGE = [
 /** `sidePanel.open()` gibt es ab 116 (Spez. §3.2). */
 export const MINDESTVERSION = '116';
 
-/** CSP der Erweiterungsseiten, wörtlich aus Spez. §8. */
+/** Einzige Adresse, die der Lotse je abfragt — nur bei eingeschalteter Störungsanzeige (S8, Spez. §9). */
+export const STATUS_HERKUNFT = 'https://www.hagel-it.de/api/status';
+
+/** CSP der Erweiterungsseiten, wörtlich aus Spez. §8. `connect-src` erlaubt genau die Status-Adresse (Pfad, kein Host). */
 export const CSP =
-  "script-src 'self'; object-src 'self'; connect-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'";
+  "script-src 'self'; object-src 'self'; connect-src https://www.hagel-it.de/api/status; img-src 'self'; style-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'";
 
 /** Verboten im Manifest (Spez. §8, U-41). */
 export const VERBOTEN = [

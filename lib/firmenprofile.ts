@@ -6,7 +6,7 @@
  * nicht). Bis zur Einreichung (H18) stehen Platzhalter da; das Plattformskript bricht dann mit `exit 1` ab, statt still
  * einen falschen Pfad zu schreiben.
  */
-export const STORE_ID = { chrome: '<chrome-store-id>', edge: 'hkpgjiooldogphbobmhbkmkkgjdgneei' } as const;
+export const STORE_ID = { chrome: 'lcfimfdbdclcdnphmkhikfcimamodphf', edge: 'hkpgjiooldogphbobmhbkmkkgjdgneei' } as const;
 export type Browser = keyof typeof STORE_ID;
 
 const UPDATE_URL: Record<Browser, string> = {
@@ -126,6 +126,13 @@ export function plattformskript(): string {
       for (const [n, v] of s.werte)
         z.push(`  Set-ItemProperty -Path "$policy${rel}" -Name ${psText(n)} -Value ${typeof v === 'number' ? v : psText(v)} -Type ${typeof v === 'number' ? 'DWord' : 'String'}`);
     }
+    z.push('}');
+    // H12b (win11test): Ohne das blieben bei der Rücknahme leere Schlüssel `3rdparty\extensions\<id>` stehen.
+    // Nur leere Elternschlüssel weg — liegt dort etwas Fremdes, bleibt es.
+    z.push('if ($Entfernen) {');
+    z.push('  foreach ($k in @("$basis\\3rdparty\\extensions\\$id", "$basis\\3rdparty\\extensions", "$basis\\3rdparty")) {');
+    z.push('    if ((Test-Path $k) -and -not (Get-ChildItem -Path $k) -and -not (Get-Item -Path $k).Property) { Remove-Item -Path $k -Force }');
+    z.push('  }');
     z.push('}');
     // ExtensionSettings ist ein JSON-Text; fremde Erweiterungen darin bleiben stehen.
     z.push('if ($ExtensionSettingsSetzen) {');

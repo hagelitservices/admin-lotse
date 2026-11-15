@@ -37,6 +37,11 @@
       "description": "auto (Browsersprache), de oder en.",
       "type": "string",
       "enum": ["auto", "de", "en"]
+    },
+    "stoerungsanzeige": {
+      "title": "Störungsanzeige",
+      "description": "true: Der Lotse fragt alle fünf Minuten www.hagel-it.de nach dem Status von Microsoft 365, Teams und Exchange Online und zeigt eine Störung am Symbol. false: aus, Nutzer können sie nicht einschalten. Ohne Angabe entscheidet der Nutzer (Standard aus).",
+      "type": "boolean"
     }
   }
 }

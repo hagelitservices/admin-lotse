@@ -14,7 +14,7 @@ describe('U-46 Firmenmodus: Zusammenführung, unbekannte Schlüssel, fremde Kenn
   test('leer, kein Objekt oder nur unbekannte Schlüssel → Normalbetrieb, kein Band', () => {
     for (const roh of [undefined, null, 'x', 3, [], {}, { unbekannt: true, Sprache: 'de' }]) expect(firmaAus(roh, IDS)).toEqual(OHNE_FIRMA);
   });
-  test('alle fünf Schlüssel werden übernommen, Band an', () => {
+  test('alle sechs Schlüssel werden übernommen, Band an', () => {
     const f = firmaAus(
       {
         hilfeKontakt: { name: ' IT-Team ', url: 'https://it.musterfirma.de/hilfe' },
@@ -22,6 +22,7 @@ describe('U-46 Firmenmodus: Zusammenführung, unbekannte Schlüssel, fremde Kenn
         bewussteAbweichungen: [{ eintrag: 'entra-sicherheitsstandards', begruendung: 'Bedingter Zugriff ersetzt das.' }],
         werteLesen: false,
         sprache: 'en',
+        stoerungsanzeige: true,
       },
       IDS,
     );
@@ -32,6 +33,7 @@ describe('U-46 Firmenmodus: Zusammenführung, unbekannte Schlüssel, fremde Kenn
       bewusst: { 'entra-sicherheitsstandards': 'Bedingter Zugriff ersetzt das.' },
       werteLesen: false,
       sprache: 'en',
+      stoerungsanzeige: true,
     });
   });
   test('fremde Eintrags-Kennung und leere Begründung fallen weg', () => {
@@ -104,9 +106,10 @@ describe('U-46b Richtlinien-Schema und feste Sprache (Spez. §10)', () => {
     type: string;
     properties: Record<string, { type: string; enum?: string[]; properties?: Record<string, unknown>; items?: { properties?: Record<string, unknown> } }>;
   };
-  test('genau die fünf Schlüssel aus §10, mit den Typen der Zusammenführung', () => {
+  test('genau die sechs Schlüssel aus §10, mit den Typen der Zusammenführung', () => {
     expect(schema.type).toBe('object');
-    expect(Object.keys(schema.properties).sort()).toEqual(['bewussteAbweichungen', 'hilfeAusblenden', 'hilfeKontakt', 'sprache', 'werteLesen']);
+    expect(Object.keys(schema.properties).sort()).toEqual(['bewussteAbweichungen', 'hilfeAusblenden', 'hilfeKontakt', 'sprache', 'stoerungsanzeige', 'werteLesen']);
+    expect(schema.properties.stoerungsanzeige?.type).toBe('boolean');
     expect(schema.properties.hilfeKontakt?.type).toBe('object');
     expect(Object.keys(schema.properties.hilfeKontakt?.properties ?? {}).sort()).toEqual(['name', 'url']);
     expect(schema.properties.hilfeAusblenden?.type).toBe('boolean');

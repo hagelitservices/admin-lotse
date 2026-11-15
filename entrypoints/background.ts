@@ -16,11 +16,26 @@ import {
   type TabZustand,
   type ZustandMeldung,
 } from '../lib/nachrichten';
-import { ausgeblendetLaden, beiAenderung, firmaLaden } from '../lib/einstellungen';
+import { ausgeblendetLaden, beiAenderung, firmaLaden, nutzerAnzeigeLaden } from '../lib/einstellungen';
+import {
+  ABGEFRAGT,
+  ABSTAND_MIN,
+  STAND,
+  STATUS_ADRESSE,
+  WECKER,
+  abzeichenMit,
+  anzeigeAn,
+  dienstName,
+  gespeicherterStand,
+  standAus,
+  type Stand,
+} from '../lib/stoerung';
 // Firmenmodus `sprache` (Spez. §10): Der Symboltitel kommt sonst aus dem Manifest in Browsersprache. Nur dieser eine Text
 // aus beiden Dateien (benannter JSON-Import, der Rest fällt beim Bau weg); im Dienstarbeiter gibt es kein `import()`.
 import { erweiterung_titel as TITEL_DE } from '../public/_locales/de/messages.json';
 import { erweiterung_titel as TITEL_EN } from '../public/_locales/en/messages.json';
+import { stoerung_symbol as STOERUNG_DE } from '../public/_locales/de/messages.json';
+import { stoerung_symbol as STOERUNG_EN } from '../public/_locales/en/messages.json';
 import { bewusstVon, OHNE_FIRMA, type Firma } from '../lib/firmenmodus';
 import { seiteBewerten } from '../lib/seite';
 import { popupFuer, startSeiteBei } from '../lib/flaeche';
@@ -34,10 +49,23 @@ const MIT_ANZEIGE = AKTIVE_EINTRAEGE.filter((e) => e.leser?.art === 'domains').m
 
 /** Firmeneinstellungen (§10) und ausgeblendete Hinweise (Z-11); geladen mit `bereit`, nachgezogen bei jeder Änderung. */
 let firma: Firma = OHNE_FIRMA;
-const titelSetzen = () =>
-  browser.action.setTitle({
-    title: firma.sprache === 'de' ? TITEL_DE.message : firma.sprache === 'en' ? TITEL_EN.message : browser.i18n.getMessage('erweiterung_titel'),
-  });
+/** S8: letzter brauchbarer Stand der Störungsanzeige (`null` = aus, nichts gestört bekannt oder veraltet). */
+let stand: Stand | null = null;
+let anzeige = false;
+const titelSetzen = () => {
+  const basis =
+    firma.sprache === 'de' ? TITEL_DE.message : firma.sprache === 'en' ? TITEL_EN.message : browser.i18n.getMessage('erweiterung_titel');
+  const gestoert = stand?.gestoert ?? [];
+  if (gestoert.length === 0) return browser.action.setTitle({ title: basis });
+  const namen = gestoert.map(dienstName).join(', ');
+  const zusatz =
+    firma.sprache === 'de'
+      ? STOERUNG_DE.message.replace('$1', namen)
+      : firma.sprache === 'en'
+        ? STOERUNG_EN.message.replace('$1', namen)
+        : browser.i18n.getMessage('stoerung_symbol', [namen]);
+  return browser.action.setTitle({ title: `${basis} · ${zusatz}` });
+};
 let ausgeblendet: ReadonlySet<string> = new Set();
 
 function leserFuer(z: TabZustand): LeserAuftrag[] {
@@ -78,8 +106,9 @@ export default defineBackground(() => {
   const bereit = (async () => {
     await rechteLaden();
     [firma, ausgeblendet] = await Promise.all([firmaLaden(), ausgeblendetLaden().then((l) => new Set(l))]);
-    void titelSetzen();
     const alles = await browser.storage.session.get(null);
+    stand = gespeicherterStand(alles[STAND], Date.now());
+    void titelSetzen();
     for (const [k, v] of Object.entries(alles)) {
       if (k.startsWith(SPEICHER_PRAEFIX)) zustaende.set(Number(k.slice(SPEICHER_PRAEFIX.length)), v as TabZustand);
     }
@@ -92,6 +121,62 @@ export default defineBackground(() => {
       // Laufende Ladefrist: Der Wecker lag nur im Arbeitsspeicher (H17c); ist sie inzwischen um, gleich neu bewerten.
       else if (typeof z.ladeBis === 'number') void setzen(tabId, z);
     }
+  });
+
+  // S8 Störungsanzeige: Standard aus. An → Wecker alle fünf Minuten und ein `GET` auf genau `STATUS_ADRESSE`; aus → Wecker
+  // weg, Stand gelöscht. Nichts aus den Portalen geht mit (kein Tab, kein Schlüssel, keine Lesung) — Prüfung U-43c.
+  // Abzeichen aller Tabs neu setzen: Tab-eigene Texte (Portal-Zahl, '' außerhalb) überdecken das globale, und ein Merkzettel im
+  // Arbeitsspeicher wäre nach dem Schlafen leer (Prüfer S8). `tabs.query` liefert ohne `tabs`-Recht die Kennungen.
+  async function stoerungZeigen() {
+    void titelSetzen();
+    await browser.action.setBadgeText({ text: abzeichenMit('', stand) });
+    for (const tab of await browser.tabs.query({})) {
+      if (tab.id === undefined) continue;
+      const z = zustaende.get(tab.id);
+      await browser.action.setBadgeText({ tabId: tab.id, text: abzeichenMit(z ? abzeichenText(z.abweichungen) : '', stand) }).catch(() => undefined);
+    }
+  }
+
+  /** `zwingend` nur vom Wecker; sonst (Aufwachen, Einstellungsänderung) nur, wenn die letzte eigene Abfrage ≥ 5 Min. her ist. */
+  async function stoerungAbfragen(zwingend: boolean) {
+    if (!anzeige) return;
+    const zuletzt = (await browser.storage.session.get(ABGEFRAGT))[ABGEFRAGT];
+    if (!zwingend && typeof zuletzt === 'number' && Date.now() - zuletzt < ABSTAND_MIN * 60_000 - 5_000) return stoerungZeigen();
+    await browser.storage.session.set({ [ABGEFRAGT]: Date.now() });
+    let neu: Stand | null = null;
+    try {
+      const antwort = await fetch(STATUS_ADRESSE, { method: 'GET', credentials: 'omit', cache: 'no-store', referrerPolicy: 'no-referrer', redirect: 'error' });
+      if (antwort.ok) neu = standAus(await antwort.json(), Date.now());
+    } catch {
+      // Kein Netz oder Website nicht erreichbar: alter Stand gilt, solange er frisch ist.
+    }
+    if (!anzeige) return;
+    stand = neu ?? gespeicherterStand(stand, Date.now());
+    await (stand ? browser.storage.session.set({ [STAND]: stand }) : browser.storage.session.remove(STAND));
+    await stoerungZeigen();
+  }
+
+  // Nacheinander, nie parallel (Start und Speicheränderung können sich sonst überholen und einen Wecker übrig lassen).
+  let anpassenKette: Promise<void> = Promise.resolve();
+  const anzeigeAnpassen = () => (anpassenKette = anpassenKette.then(anpassen, anpassen));
+  async function anpassen() {
+    anzeige = anzeigeAn(firma.stoerungsanzeige, await nutzerAnzeigeLaden());
+    if (anzeige) {
+      if (!(await browser.alarms.get(WECKER))) await browser.alarms.create(WECKER, { periodInMinutes: ABSTAND_MIN });
+      await stoerungAbfragen(false);
+    } else {
+      await browser.alarms.clear(WECKER);
+      // Nach dem Schlafen weiß der Dienstarbeiter nicht, ob vorher ein Punkt stand — der Speicher weiß es (Prüfer S8).
+      const war = Object.keys(await browser.storage.session.get([STAND, ABGEFRAGT])).length > 0;
+      stand = null;
+      await browser.storage.session.remove([STAND, ABGEFRAGT]);
+      if (war) await stoerungZeigen();
+    }
+  }
+  void bereit.then(anzeigeAnpassen);
+
+  browser.alarms.onAlarm.addListener((w) => {
+    if (w.name === WECKER) void bereit.then(() => stoerungAbfragen(true));
   });
 
   async function lesenAnfordern(tabId: number, z: TabZustand, behalten = false) {
@@ -146,6 +231,7 @@ export default defineBackground(() => {
       await bereit;
       [firma, ausgeblendet] = await Promise.all([firmaLaden(), ausgeblendetLaden().then((l) => new Set(l))]);
       void titelSetzen();
+      await anzeigeAnpassen();
       // Über die Kennungen gehen und je Tab frisch lesen: Zwischen zwei `await` können Lesungen ankommen oder Tabs schließen
       // (Prüfer H11b). Entschieden wird am Zustand selbst, nicht am Vorher-Wert der Firma — der ist nach dem Aufwachen schon neu.
       for (const tabId of [...zustaende.keys()]) {
@@ -189,11 +275,11 @@ export default defineBackground(() => {
       if (z) {
         if (!ohneLeiste) await browser.sidePanel.setOptions({ tabId, path: `seitenleiste.html?tab=${tabId}`, enabled: true });
         await browser.action.setPopup({ tabId, popup: popupFuer(tabId, ohneLeiste) });
-        await browser.action.setBadgeText({ tabId, text: abzeichenText(z.abweichungen) });
+        await browser.action.setBadgeText({ tabId, text: abzeichenMit(abzeichenText(z.abweichungen), stand) });
       } else {
         if (!ohneLeiste) await browser.sidePanel.setOptions({ tabId, enabled: false });
         await browser.action.setPopup({ tabId, popup: 'ausserhalb.html' });
-        await browser.action.setBadgeText({ tabId, text: '' });
+        await browser.action.setBadgeText({ tabId, text: abzeichenMit('', stand) });
       }
     } catch {
       // Tab inzwischen geschlossen.

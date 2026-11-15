@@ -9,6 +9,7 @@ die Felder „Begründung der Berechtigung“ beider Stores.
 |---|---|---|
 | `sidePanel` | Die Erklärung erscheint neben dem Portal, ohne die Microsoft-Seite zu verändern. | Ein Popup schließt sich bei jedem Klick ins Portal; Sandra müsste es für jede Einstellung neu öffnen. |
 | `storage` | Merkt sich, welche Hinweise der Nutzer ausgeblendet hat, und liest Firmeneinstellungen (`storage.managed`). Zustand je Tab nur in `storage.session`. | – |
+| `alarms` | Nur bei eingeschalteter Störungsanzeige (Standard aus): weckt den Lotsen alle fünf Minuten, damit er `https://www.hagel-it.de/api/status` nach dem Microsoft-Status fragt. Aus den Portalen geht dabei nichts mit. | Ein Zeitgeber im Dienstarbeiter endet, sobald der Browser ihn schlafen legt; nur der Wecker überlebt das. |
 | Host `https://admin.cloud.microsoft/*` | Seite erkennen und angezeigte Werte lesen — Microsoft 365 Admin Center und Exchange Admin Center (`/exchange`) laufen unter dieser Adresse; `admin.microsoft.com` und `admin.exchange.microsoft.com` leiten nur dorthin um und bekommen kein Recht (H2, 05.11.2026). | `activeTab` gilt nur nach einem Klick und nur bis zur nächsten Navigation. Der Lotse soll beim Blättern im Portal mitgehen und die Abweichungszahl am Symbol zeigen, bevor jemand klickt. |
 | Host `https://entra.microsoft.com/*` | wie oben | wie oben |
 | Host `https://intune.microsoft.com/*` | wie oben | wie oben |

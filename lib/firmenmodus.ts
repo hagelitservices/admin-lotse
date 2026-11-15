@@ -12,9 +12,11 @@ export interface Firma {
   bewusst: Record<string, string>;
   werteLesen: boolean;
   sprache: 'auto' | 'de' | 'en';
+  /** Störungsanzeige (S8): `true`/`false` von der Firma erzwungen, `null` = der Nutzer entscheidet (Standard aus). */
+  stoerungsanzeige: boolean | null;
 }
 
-export const OHNE_FIRMA: Firma = { verwaltet: false, hilfeKontakt: null, hilfeAusblenden: false, bewusst: {}, werteLesen: true, sprache: 'auto' };
+export const OHNE_FIRMA: Firma = { verwaltet: false, hilfeKontakt: null, hilfeAusblenden: false, bewusst: {}, werteLesen: true, sprache: 'auto', stoerungsanzeige: null };
 
 const text = (w: unknown, max: number) => (typeof w === 'string' && w.trim() !== '' ? w.trim().slice(0, max) : null);
 
@@ -47,6 +49,7 @@ export function firmaAus(roh: unknown, ids: ReadonlySet<string>): Firma {
   }
   const werteLesen = r.werteLesen !== false;
   const sprache = r.sprache === 'de' || r.sprache === 'en' ? r.sprache : 'auto';
+  const stoerungsanzeige = typeof r.stoerungsanzeige === 'boolean' ? r.stoerungsanzeige : null;
   // §10: Das Band steht, sobald ein verwalteter Wert gesetzt ist — auch wenn er dem Standard entspricht (Prüfer H11b).
   const verwaltet =
     hilfeKontakt !== null ||
@@ -54,8 +57,9 @@ export function firmaAus(roh: unknown, ids: ReadonlySet<string>): Firma {
     Object.keys(bewusst).length > 0 ||
     typeof r.werteLesen === 'boolean' ||
     r.sprache === 'auto' ||
-    sprache !== 'auto';
-  return { verwaltet, hilfeKontakt, hilfeAusblenden, bewusst, werteLesen, sprache };
+    sprache !== 'auto' ||
+    stoerungsanzeige !== null;
+  return { verwaltet, hilfeKontakt, hilfeAusblenden, bewusst, werteLesen, sprache, stoerungsanzeige };
 }
 
 /** Wer hat die Abweichung als bewusst markiert? Firma vor Nutzer. */

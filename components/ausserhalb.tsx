@@ -5,6 +5,7 @@ import type { Uebersetzer } from '../lib/ansicht';
 import { hostVon, type Herkunft } from '../lib/zugriff';
 import { Fuss } from './leiste';
 import { LotsenZeichen } from './zeichen';
+import type { ComponentChildren } from 'preact';
 
 const PORTALE = ['m365', 'entra', 'intune', 'exo'] as const;
 
@@ -17,9 +18,11 @@ export interface AusserhalbProps {
   imTab?: boolean;
   abgelehnt?: boolean;
   onErlauben?: (h: Herkunft) => void;
+  /** S8: Störungskasten, steht vor allem anderen (Antwort zuerst). */
+  stoerung?: ComponentChildren;
 }
 
-export function Ausserhalb({ t, version, fehlend = [], imTab = false, abgelehnt = false, onErlauben }: AusserhalbProps) {
+export function Ausserhalb({ t, version, fehlend = [], imTab = false, abgelehnt = false, onErlauben, stoerung }: AusserhalbProps) {
   const zugriff = fehlend.length > 0;
   return (
     <div class="popup">
@@ -30,6 +33,7 @@ export function Ausserhalb({ t, version, fehlend = [], imTab = false, abgelehnt 
         </div>
       </header>
       <div class="leiste__inhalt" data-zugriff={fehlend.join(' ')}>
+        {stoerung}
         {zugriff && (
           <section class="kasten kasten--hinweis" aria-labelledby="zugriff-titel">
             <h2 id="zugriff-titel">{t(imTab ? 'zugriff_titel' : 'zugriff_fehlt_titel')}</h2>
