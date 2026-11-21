@@ -2,6 +2,12 @@
 
 Neueste Fassung oben. Jede Version, die in einen Store geht, bekommt hier einen Abschnitt (Spez. §17.2).
 
+## 1.1.1 — 21.11.2026: nur neue Versionsnummer
+
+* Keine Änderung am Code. Die Nummer ist neu, damit der Edge-Store die neuen Store-Bilder (Zusage „Sendet nichts aus
+  Ihren Portalen.“) annimmt: Im Partner-Center-Entwurf lag schon ein zweites 1.1.0-Paket, das sich nicht verwerfen lässt.
+* Erklärt 39 Einstellungen, wie 1.1.0.
+
 ## 1.1.0 — 16.11.2026: Störungsanzeige
 
 * Neu: Störungsanzeige, ab Werk aus. Einschalten in den Einstellungen der Erweiterung: „Microsoft-Störungen am Symbol

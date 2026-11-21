@@ -1,7 +1,7 @@
 {
   "name": "admin-lotse",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Admin-Lotse für Microsoft 365 — Browser-Erweiterung für Chrome und Edge. Ändert nichts. Sendet nichts aus Ihren Portalen.",
   "scripts": {
